@@ -1,0 +1,92 @@
+## Assignments
+
+**Complete with Check Mark at the end**
+
+  - About SPDX
+      - Background -- Phil O - X
+          - History - X
+          - Vision, Strategy, Execution - X
+      - Membership - Jack Manbeck - X
+          - Principal Contacts - X
+          - Working Group Roster - TO DO
+          - SPDX Users - TO DO
+      - How to Participate - Jack Manbeck - X
+          - Join a working group - X
+          - Use the SPDX Spec - X
+          - Review and Comment the SPDX Spec - TO DO
+      - Roles & Responsibilities - Jack Manbeck - TO DO
+          - Technical - TO DO
+          - Legal - X
+          - Business - TO D
+  - Documentation - TO DO
+      - Current Specification – Tech team - X
+          - Examples – Tech team - X
+          - License List – Tech team or Jilayne - X
+          - Usage Guidelines and FAQs – Mark Gisi - X
+          - RDF Vocabulary – Tech team - X
+          - RDF References – tech team - TO DO (Current page on the live
+            website has weird layout <http://spdx.org/rdf/terms>)
+          - Proposals – Tech team - X
+      - Archive Specs - Kate Stewart - TO DO
+      - Whitepapers/Tutorials/Other Content - Kim - X
+      - Beta Collateral - X (move to Archives)
+      - Launch Collateral – X
+      - VOD’s and Webinar - TO DO
+  - WorkGroups - TO DO
+      - General - Phil O - X
+          - Meeting Calendar & Conference Access - X
+          - Meeting Minutes & Decisions - Needs Linking
+          - Current Priorities / WIP - X
+          - Participation Guidelines - X
+          - Member Address book and Roles - TO DO
+      - Technical – Tech team - X
+          - Meeting Calendar & Conference Access - X
+          - Meeting Minutes & Decisions - X
+          - Current Priorities / WIP - X
+          - Participation Guidelines - X
+          - Member Address book and Roles - TO DO
+      - Legal – Legal team - X
+          - Meeting Calendar & Conference Access - X
+          - Meeting Minutes & Decisions - X
+          - Current Priorities / WIP - X
+          - Participation Guidelines - X
+          - Member Address book and Roles - X
+      - Business - X
+          - Meeting Calendar & Conference Access - TO DO
+          - Meeting Minutes & Decisions - TO DO
+          - Current Priorities / WIP - TO DO
+          - Participation Guidelines - TO DO
+          - Member Address book and Roles - To DO
+          - Forum - X
+      - Website Refresh - Web Team
+          - Meeting Calendar & Conference Access - TO DO
+          - Meeting Minutes & Decisions - TO DO
+          - Current Priorities / WIP - TO DO
+          - Participation Guidelines - TO DO
+          - Member Address book and Roles - To DO
+  - Calendar - TO DO
+  - Blogs & Discussion - TO DO
+      - Feedback - TO DO
+      - Suggestions - TO DO
+      - How do I? - TO DO
+      - Technical group forum - TO DO
+      - Legal group forum - TO DO
+      - Business group forum - TO DO
+      - Website group forum - TO DO
+      - General forum - TO DO
+      - Archives - TO DO
+  - Finding your way around this site - Page does not exist
+  - Current Activities - TO DO
+      - Beta Test - TO DO
+          - Beta Test Guidelines - TO DO
+          - Beta Test Site - TO DO
+          - Beta Feedback - TO DO
+          - Current Specification - TO DO
+          - Tools - TO DO
+          - Beta Collateral - TO DO
+      - SPDX Launch - TO DO
+  - Tools -- Gary - X
+      - Open Source Prototypes - TO DO
+      - Tools Sandbox - TO DO
+
+[Category:Archived](Category:Archived "wikilink")
