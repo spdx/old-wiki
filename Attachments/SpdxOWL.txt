@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns="http://spdx.org/ont/#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://spdx.org/ont/">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Package">
+    <rdfs:label>package</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu May 27 13:55:05 EDT 2010</owl:versionInfo>
+  </owl:Class>
+  <owl:Class rdf:ID="License">
+    <rdfs:label>License</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:21:39 EDT 2010</owl:versionInfo>
+  </owl:Class>
+  <owl:Class rdf:ID="SPDXDoc">
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 09:36:27 EDT 2010</owl:versionInfo>
+    <rdfs:label>SPDXDocument</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="File">
+    <rdfs:label>File</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 10:56:33 EDT 2010</owl:versionInfo>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasDeclaredLicense">
+    <rdfs:domain rdf:resource="#Package"/>
+    <rdfs:label>DeclaredLicense</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:33:53 EDT 2010</owl:versionInfo>
+    <rdfs:range rdf:resource="#License"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="DescribesPackage">
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 09:37:19 EDT 2010</owl:versionInfo>
+    <rdfs:label>describesPackage</rdfs:label>
+    <rdfs:domain rdf:resource="#SPDXDoc"/>
+    <rdfs:range rdf:resource="#Package"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDetectedLicense">
+    <rdfs:domain rdf:resource="#Package"/>
+    <rdfs:label>hasDiscoveredLicense</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:37:51 EDT 2010</owl:versionInfo>
+    <rdfs:range rdf:resource="#License"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasFileLicense">
+    <rdfs:range rdf:resource="#License"/>
+    <rdfs:domain rdf:resource="#File"/>
+    <rdfs:label>hasFileLicense</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 10:58:32 EDT 2010</owl:versionInfo>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasNonStandardLicense">
+    <rdfs:range rdf:resource="#License"/>
+    <rdfs:domain rdf:resource="#SPDXDoc"/>
+    <rdfs:label>hasNonStandardLicense</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 10:53:07 EDT 2010</owl:versionInfo>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="copyrightDate">
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:49:36 EDT 2010</owl:versionInfo>
+    <rdfs:label>copyrightDate</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="DeclaredName">
+    <rdfs:domain rdf:resource="#Package"/>
+    <owl:versionInfo>Created by bschineller on Thu May 27 13:56:32 EDT 2010</owl:versionInfo>
+    <rdfs:label>DeclaredName</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="FileType">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >other</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >archive</rdf:first>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >binary</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >source</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#File"/>
+    <rdfs:label>FileType</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 10:57:05 EDT 2010</owl:versionInfo>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasCopyright">
+    <rdfs:label>hasCopyright</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:51:07 EDT 2010</owl:versionInfo>
+    <rdfs:domain rdf:resource="#Package"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Description">
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:42:13 EDT 2010</owl:versionInfo>
+    <rdfs:label>Description</rdfs:label>
+    <rdfs:domain rdf:resource="#Package"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="ReviewedBy">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SPDXDoc"/>
+    <rdfs:label>ReviewedBy</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 09:49:53 EDT 2010</owl:versionInfo>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasFileCopyright">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#File"/>
+    <rdfs:label>hasFileCopyright</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 10:59:11 EDT 2010</owl:versionInfo>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="SourceInfo">
+    <rdfs:domain rdf:resource="#Package"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>SourceInfo</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:20:04 EDT 2010</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="CreatedBy">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SPDXDoc"/>
+    <rdfs:label>CreatedBy</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 09:40:51 EDT 2010</owl:versionInfo>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="LicenseText">
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:25:59 EDT 2010</owl:versionInfo>
+    <rdfs:label>LicenseText</rdfs:label>
+    <rdfs:domain rdf:resource="#License"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="URL">
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:17:20 EDT 2010</owl:versionInfo>
+    <rdfs:domain rdf:resource="#Package"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="FileName">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Package"/>
+          <owl:Class rdf:about="#File"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label>Specific Package File Name</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:14:43 EDT 2010</owl:versionInfo>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="SHA1">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Package"/>
+          <owl:Class rdf:about="#File"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>SHA1</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 09:54:54 EDT 2010</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="ShortDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Package"/>
+    <rdfs:label>ShortDescription</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:42:47 EDT 2010</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="copyrightHolder">
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:48:51 EDT 2010</owl:versionInfo>
+    <rdfs:label>copyrightHolder</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="LicenseURL">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>LicenseURL</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 10:54:03 EDT 2010</owl:versionInfo>
+    <rdfs:domain rdf:resource="#License"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="Created">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="#SPDXDoc"/>
+    <rdfs:label>Created</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 09:49:14 EDT 2010</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="LicenseID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#License"/>
+    <rdfs:label>LicenseID</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu May 27 14:24:37 EDT 2010</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="SPDXVersion">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SPDXDoc"/>
+    <rdfs:label>SPDXVersion</rdfs:label>
+    <owl:versionInfo>Created by bschineller on Thu Jul 08 09:39:33 EDT 2010</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+</rdf:RDF>

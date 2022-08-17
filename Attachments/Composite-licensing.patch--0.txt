@@ -1,0 +1,239 @@
+diff --git a/section_3.html b/section_3.html
+index c707ec3..a84b0b3 100644
+--- a/section_3.html
++++ b/section_3.html
+@@ -308,7 +308,7 @@
+   <h5>Range</h5>
+   <p>The value is
+     an <a href="#License"><span about="#DeclaredLicense"
+-                                rel="rdfs:range" href="#License"/>License</a>.</p>
++                                rel="rdfs:range" href="#LicensingInfo"/>LicenseInfo</a>.</p>
+ 
+   <h4>3.6.1 RDF/XML serialization</h4>
+   
+@@ -356,7 +356,7 @@
+   <h5>Range</h5>
+   <p>The value is
+     an <a href="#License"><span about="#DetectedLicense"
+-                                rel="rdfs:range" href="#License"/>License</a>.</p>
++                                rel="rdfs:range" href="#LicensingInfo"/>LicensingInfo</a>.</p>
+ 
+   <h4>3.7.1 RDF/XML serialization</h4>
+   
+diff --git a/section_4.html b/section_4.html
+index 7c60828..f8e6066 100644
+--- a/section_4.html
++++ b/section_4.html
+@@ -1,6 +1,9 @@
+ <div class="rdf-class" about="#License" typeof="owl:Class">
+   <h2 id="License">4 <span property="rdfs:label">License</span></h2>
+ 
++  <p>Subclass of <span href="#LicensingInfo"
++    rel="rdfs:subClassOf"><a href="#LicensingInfo">LicensingInfo</a></span></p>
++
+   <p property="rdfs:comment">This section is used for any detected
+     or declared licenses that are NOT one of the standard licenses.
+     One instance should be created for every unique license detected
+diff --git a/section_5.html b/section_5.html
+index b66f3ec..745d278 100644
+--- a/section_5.html
++++ b/section_5.html
+@@ -166,7 +166,7 @@
+   <h5>Range</h5>
+   <p>The value is
+     an <a href="#License"><span about="#License"
+-                                rel="rdfs:range" href="#License"/>License</a>.</p>
++                                rel="rdfs:range" href="#LicensingInfo"/>LicensingInfo</a>.</p>
+ 
+   <h4>5.6.1 RDF/XML serialization</h4>
+   
+diff --git a/section_6.html b/section_6.html
+new file mode 100644
+index 0000000..e380724
+--- /dev/null
++++ b/section_6.html
+@@ -0,0 +1,13 @@
++<div class="rdf-class" about="#LicensingInfo" typeof="owl:Class">
++  <h2 id="LicensingInfo">6 <span property="rdfs:label">LicensingInfo</span></h2>
++
++  <p>Subclass
++    of <a href="http://dublincore.org/documents/dcmi-terms/#classes-LicenseDocument">
++    <span about="#LicensingInfo" href="dc:LicenseDocument" rel="rdfs:subClassOf">dc:LicenseDocument</span></a></p>
++
++  <p property="rdfs:comment">A LicenseingInfo resource represents
++    a <a href="#License">License</a> or set of Licenses under which
++    a <a href="#File">File</a> or <a href="#Package">Package</a>
++    may be copied.</p>
++
++</div>
+diff --git a/section_7.html b/section_7.html
+new file mode 100644
+index 0000000..588ac84
+--- /dev/null
++++ b/section_7.html
+@@ -0,0 +1,71 @@
++<div class="rdf-class" about="#DisjunctiveLicenseSet" typeof="owl:Class">
++  <h2 id="DisjunctiveLicenseSet">7 <span property="rdfs:label">DisjunctiveLicenseSet</span></h2>
++
++  <p>Subclass of <span href="#LicensingInfo"
++    rel="rdfs:subClassOf"><a href="#LicensingInfo">LicensingInfo</a></span></p>
++
++  <p property="rdfs:comment">A DisjunctiveLicenseSet is a
++  set <a href="#License">Licenses</a>,
++  or <a href="#LicensingInfo">LicensingInfo</a>, that any one of which
++  constitues the complete terms and conditions of coping
++  a <a href="#File">File</a> or <a href="#Package">Package</a>.  The
++  copier/user of a File or Package may choose, at their disgression,
++  which License in a disjuntive set.</p>
++  
++  <h3>Properties</h3>
++  <ul>
++    <li rel="rdfs:subClassOf">
++      <p typeof="owl:Restriction">
++        <a href="#Licenses" rel="owl:onProperty">Licenses</a>
++        <br/>Cardinality: Mandatory, one (<span property="owl:cardinality">1</span>).
++      </p>
++    </li>
++  </ul>
++</div>
++
++<div class="rdf-property" about="#Licenses" typeof="owl:DatatypeProperty">
++  <h3 id="Licenses">7.1 <span property="rdfs:label">Licenses</span></h3>
++
++  <h5>Purpose</h5>
++  <p property="rdfs:comment">This is a list of members of this set.</p>
++  
++  <h5>Intent</h5>
++  <p>To provide a list of the members of this disjunctive set.</p>
++
++  <h5>Domain</h5> 
++  <p><a rel="rdfs:domain" href="#DisjunctiveLicenseSet">DisjunctiveLicenseSet</a></p>
++
++  <h5>Range</h5> 
++  <p>The value is <span rel="rdfs:range"
++    href="rdf:List"/><a href="http://www.w3.org/TR/rdf-schema/#ch_list">rdf:List</a>
++    of <a href="#LicensingInfo">LicenseInfo</a> resources.</p>
++
++  <h4>2.1.1.1 RDF/XML serialization</h4>
++
++  <h5>Example</h5>
++  <pre><code>
++&lt;DisjunctiveLicenseSet&gt;
++  &lt;Licenses rdf:parseType="Collection"&gt;
++    &lt;rdf:Description rdf:about="license:GPL" /&gt;
++    &lt;rdf:Description rdf:about="license:BSD" /&gt;
++  &lt;/Licenses&gt;
++&lt;/DisjunctiveLicenseSet&gt;
++  </code></pre>
++
++  <h4>2.1.1.2 Tag-Value serialization</h4>
++
++  <p></p>
++
++  <pre><code class="tag-value grammar">
++disjunctivelicenseset = "DisjunctiveLicenseSet(" *WSP [setmembership] *WSP ")"
++setmembership         = licensinginfoid *[*WSP "," *WSP licensinginfoid]
++licensinginfoid       = 1*(ALPHA / DIGIT / "-" / "_" / ".")
++  </code></pre>
++
++  <h5>Example</h5>
++  <pre><code>
++DisjunctiveLicenseSet(GPLv2, BSD)
++  </code></pre>
++</div>
++
++
+diff --git a/section_8.html b/section_8.html
+new file mode 100644
+index 0000000..510f5c8
+--- /dev/null
++++ b/section_8.html
+@@ -0,0 +1,71 @@
++<div class="rdf-class" about="#ConjunctiveLicenseSet" typeof="owl:Class">
++  <h2 id="ConjunctiveLicenseSet">8 <span property="rdfs:label">ConjunctiveLicenseSet</span></h2>
++
++  <p>Subclass of <span href="#LicensingInfo"
++    rel="rdfs:subClassOf"><a href="#LicensingInfo">LicensingInfo</a></span></p>
++
++  <p property="rdfs:comment">A ConjunctiveLicenseSet is a
++  set <a href="#License">Licenses</a>,
++  or <a href="#LicensingInfo">LicensingInfo</a>, that any one of which
++  constitues the complete terms and conditions of coping
++  a <a href="#File">File</a> or <a href="#Package">Package</a>.  The
++  copier/user of a File or Package may choose, at their disgression,
++  which License in a disjuntive set.</p>
++  
++  <h3>Properties</h3>
++  <ul>
++    <li rel="rdfs:subClassOf">
++      <p typeof="owl:Restriction">
++        <a href="#Licenses" rel="owl:onProperty">Licenses</a>
++        <br/>Cardinality: Mandatory, one (<span property="owl:cardinality">1</span>).
++      </p>
++    </li>
++  </ul>
++</div>
++
++<div class="rdf-property" about="#Licenses" typeof="owl:DatatypeProperty">
++  <h3 id="Licenses">8.1 <span property="rdfs:label">Licenses</span></h3>
++
++  <h5>Purpose</h5>
++  <p property="rdfs:comment">This is a list of members of this set.</p>
++  
++  <h5>Intent</h5>
++  <p>To provide a list of the members of this conjunctive set.</p>
++
++  <h5>Domain</h5> 
++  <p><a rel="rdfs:domain" href="#ConjunctiveLicenseSet">ConjunctiveLicenseSet</a></p>
++
++  <h5>Range</h5> 
++  <p>The value is <span rel="rdfs:range"
++    href="rdf:List"/><a href="http://www.w3.org/TR/rdf-schema/#ch_list">rdf:List</a>
++    of <a href="#LicensingInfo">LicenseInfo</a> resources.</p>
++
++  <h4>2.1.1.1 RDF/XML serialization</h4>
++
++  <h5>Example</h5>
++  <pre><code>
++&lt;ConjunctiveLicenseSet&gt;
++  &lt;Licenses rdf:parseType="Collection"&gt;
++    &lt;rdf:Description rdf:about="license:GPL" /&gt;
++    &lt;rdf:Description rdf:about="license:BSD" /&gt;
++  &lt;/Licenses&gt;
++&lt;/ConjunctiveLicenseSet&gt;
++  </code></pre>
++
++  <h4>2.1.1.2 Tag-Value serialization</h4>
++
++  <p></p>
++
++  <pre><code class="tag-value grammar">
++conjunctivelicenseset = "ConjunctiveLicenseSet(" *WSP [setmembership] *WSP ")"
++setmembership         = licensinginfoid *[*WSP "," *WSP licensinginfoid]
++licensinginfoid       = 1*(ALPHA / DIGIT / "-" / "_" / ".")
++  </code></pre>
++
++  <h5>Example</h5>
++  <pre><code>
++ConjunctiveLicenseSet(GPLv2, BSD)
++  </code></pre>
++</div>
++
++
+diff --git a/spec.html b/spec.html
+index 620f244..2f351de 100644
+--- a/spec.html
++++ b/spec.html
+@@ -148,5 +148,12 @@ for their contributions and assistance.</p>
+ 
+ {{> section_5}}
+ 
++{{> section_6}}
++
++{{> section_7}}
++
++{{> section_8}}
++
++
+ </body>
+ </html>

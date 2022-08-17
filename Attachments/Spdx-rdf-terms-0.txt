@@ -1,0 +1,184 @@
+Namespace(rdf	= <http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Namespace(owl	= <http://www.w3.org/2002/07/owl#>)
+Namespace(xsd	= <http://www.w3.org/2001/XMLSchema#>)
+Namespace(rdfs	= <http://www.w3.org/2000/01/rdf-schema#>)
+Namespace(a	= <#>)
+
+Ontology( <http://spdx.org/rdf/terms>
+
+ Annotation(rdfs:label "UtcXsdDate")
+ Annotation(rdfs:label "LicenseSlug")
+
+ ObjectProperty(a:algorithm
+  domain(a:Checksum)
+  range(oneOf(a:checksumAlgorithm_sha1)))
+ ObjectProperty(a:checksum
+  domain(unionOf(a:Package a:File))
+  range(a:Checksum))
+ ObjectProperty(a:creationInfo
+  domain(a:SpdxDocument)
+  range(a:CreationInfo))
+ ObjectProperty(a:describesPackage
+  domain(a:SpdxDocument)
+  range(a:Package))
+ ObjectProperty(a:fileType
+  domain(a:File)
+  range(oneOf(a:fileType_binary a:fileType_archive a:fileType_other a:fileType_source)))
+ ObjectProperty(a:hasFile
+  domain(a:Package)
+  range(a:File))
+ ObjectProperty(a:licenseConcluded
+  domain(unionOf(a:Package a:File))
+  range(unionOf(a:License a:ConjunctiveLicenseSet oneOf(a:none) a:ExtractedLicensingInfo a:DisjunctiveLicenseSet)))
+ ObjectProperty(a:licenseDeclared
+  domain(a:Package)
+  range(unionOf(a:License a:ConjunctiveLicenseSet oneOf(a:none) a:ExtractedLicensingInfo a:DisjunctiveLicenseSet)))
+ ObjectProperty(a:licenseInfoFromFiles
+  domain(a:Package)
+  range(unionOf(a:License oneOf(a:none) a:ExtractedLicensingInfo)))
+ ObjectProperty(a:licenseInfoInFile
+  domain(a:File)
+  range(unionOf(a:License oneOf(a:none) a:ExtractedLicensingInfo)))
+ ObjectProperty(a:member
+  domain(unionOf(a:ConjunctiveLicenseSet a:DisjunctiveLicenseSet))
+  range(unionOf(a:License a:ConjunctiveLicenseSet a:ExtractedLicensingInfo a:DisjunctiveLicenseSet)))
+ ObjectProperty(a:reviewed
+  domain(a:SpdxDocument)
+  range(a:Review))
+ ObjectProperty(rdf:first)
+ ObjectProperty(<rdfs:comment>)
+
+ DatatypeProperty(a:checksumValue
+  domain(a:Checksum)
+  range(xsd:string))
+ DatatypeProperty(a:created
+  domain(a:CreationInfo)
+  range(a:UtcXsdDate))
+ DatatypeProperty(a:creator
+  domain(a:CreationInfo)
+  range(xsd:string))
+ DatatypeProperty(a:downloadLocation
+  domain(a:File)
+  range(xsd:anyURI))
+ DatatypeProperty(a:extractedText
+  domain(a:License)
+  range(xsd:string))
+ DatatypeProperty(a:fileName
+  domain(a:File)
+  range(xsd:string))
+ DatatypeProperty(a:licenseId
+  domain(a:License)
+  range(a:LicenseSlug))
+ DatatypeProperty(a:licenseText
+  domain(a:File)
+  range(xsd:string))
+ DatatypeProperty(a:name
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:packageFileName
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:packageVerificationCode
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:reviewDate
+  domain(a:Review)
+  range(a:UtcXsdDate))
+ DatatypeProperty(a:reviewer
+  domain(a:Review)
+  range(xsd:string))
+ DatatypeProperty(a:sourceInfo
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:spdxVersion
+  domain(a:SpdxDocument)
+  range(xsd:string))
+ DatatypeProperty(rdf:rest)
+
+ Class(a:Checksum partial 
+  restriction(a:checksumValue cardinality(1))
+  restriction(a:algorithm cardinality(1)))
+ Class(a:Checksum partial 
+  annotation(rdfs:label "Checksum")
+)
+ Class(a:ConjunctiveLicenseSet partial 
+  restriction(a:member minCardinality(1)))
+ Class(a:ConjunctiveLicenseSet partial 
+  annotation(rdfs:label "ConjunctiveLicenseSet")
+)
+ Class(a:CreationInfo partial 
+  restriction(<rdfs:comment> cardinality(1))
+  restriction(a:created cardinality(1))
+  restriction(a:creator cardinality(1)))
+ Class(a:CreationInfo partial 
+  annotation(rdfs:label "CreationInfo")
+)
+ Class(a:DisjunctiveLicenseSet partial 
+  restriction(a:member minCardinality(1)))
+ Class(a:DisjunctiveLicenseSet partial 
+  annotation(rdfs:label "DisjunctiveLicenseSet")
+)
+ Class(a:ExtractedLicensingInfo partial 
+  restriction(a:extractedText cardinality(1))
+  restriction(a:licenseId cardinality(1)))
+ Class(a:ExtractedLicensingInfo partial 
+  annotation(rdfs:label "ExtractedLicensingInfo")
+)
+ Class(a:File partial 
+  restriction(a:checksum cardinality(1))
+  restriction(a:licenseConcluded maxCardinality(1))
+  restriction(a:fileType cardinality(1))
+  restriction(a:fileName cardinality(1))
+  restriction(a:licenseInfoInFile minCardinality(1)))
+ Class(a:File partial 
+  annotation(rdfs:label "File")
+)
+ Class(a:License partial 
+  restriction(a:licenseText cardinality(1))
+  restriction(a:licenseId cardinality(1)))
+ Class(a:License partial 
+  annotation(rdfs:label "License")
+)
+ Class(a:Package partial 
+  restriction(a:downloadLocation cardinality(1))
+  restriction(a:packageFileName cardinality(1))
+  restriction(a:licenseConcluded maxCardinality(1))
+  restriction(a:licenseDeclared maxCardinality(1))
+  restriction(a:name cardinality(1))
+  restriction(a:checksum maxCardinality(1))
+  restriction(a:hasFile minCardinality(1))
+  restriction(a:packageVerificationCode cardinality(1))
+  restriction(a:sourceInfo maxCardinality(1)))
+ Class(a:Package partial 
+  annotation(rdfs:label "Package")
+)
+ Class(a:Review partial 
+  restriction(a:reviewer cardinality(1))
+  restriction(<rdfs:comment> cardinality(1))
+  restriction(a:reviewDate cardinality(1)))
+ Class(a:Review partial 
+  annotation(rdfs:label "Review")
+)
+ Class(a:SpdxDocument partial 
+  restriction(a:describesPackage cardinality(1))
+  restriction(a:spdxVersion cardinality(1))
+  restriction(a:creationInfo minCardinality(1)))
+ Class(a:SpdxDocument partial 
+  annotation(rdfs:label "SpdxDocument")
+)
+
+ AnnotationProperty(rdfs:comment)
+ AnnotationProperty(rdfs:label)
+
+ Individual(a:License)
+ Individual(a:checksumAlgorithm_sha1)
+ Individual(a:fileType_archive)
+ Individual(a:fileType_binary)
+ Individual(a:fileType_other)
+ Individual(a:fileType_source)
+ Individual(a:none)
+ Individual(_
+  value(rdf:first a:License)
+  value(rdf:rest ""))
+
+)

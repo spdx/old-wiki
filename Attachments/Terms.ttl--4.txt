@@ -1,0 +1,640 @@
+
+<http://spdx.org/rdf/terms> <http://www.w3.org/1999/xhtml/vocab#icon> <http://spdx.org/sites/all/themes/spdx/favicon.ico>;
+   <http://www.w3.org/1999/xhtml/vocab#stylesheet> <http://spdx.org/sites/all/themes/spdx/universe_nav.css?a>,
+     <http://spdx.org/sites/all/themes/spdx/style.css?a>,
+     <http://spdx.org/sites/all/themes/spdx/zen.css?a> .
+
+<http://spdx.org/rdf/terms#hasExtractedLicensingInfo> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a particular <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#ExtractedLicensingInfo\"><code>ExtractedLicensingInfo</code></a> was defined in the subject <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#SpdxDocument\"><code>SpdxDocument</code></a>."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#SpdxDocument>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#ExtractedLicensingInfo>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#packageVerificationCodeExcludedFile> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A file that was excluded when calculating the <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#packageVerificationCode\">package verification code</a>.  This is usually a file containing SPDX data regarding the package.  If a package contains more than one SPDX file all SPDX files must be excluded from the package verification code.  If this is not done it would be impossible to correctly calculate the verification codes in both files."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#PackageVerificationCode>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#reviewed> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">review</code> property relates a <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">SpdxDocument</code> to the review history."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#SpdxDocument>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#Review>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#algorithm> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies the algorithm used to produce the subject <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#Checksum\"><code>Checksum</code></a>."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Checksum>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#oneOf> (<http://spdx.org/rdf/terms#checksumAlgorithm_sha1>)];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#artifactOf> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> """
+            <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Indicates the project in which the file originated.</p>
+            
+            <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Tools must preserve <code>doap:hompage</code> and <code>doap:name</code> properties and the URI (if one is known) of <code>doap:Project</code> resources that are values of this property.  All other properties of <code>doap:Projects</code> are not directly supported by SPDX and may be dropped when translating to or from some SPDX formats.</p>
+
+          """^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#File>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://usefulinc.com/ns/doap#Project>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#checksumAlgorithm_sha1> a <http://www.w3.org/2002/07/owl#Thing>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the algorithm used was <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"http://www.itl.nist.gov/fipspubs/fip180-1.htm\">SHA-1</a>"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#checksumValue> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">checksumValue</code> property provides a lower case hexidecimal encoded digest value produced using a specific algorithm."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Checksum>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#hexBinary>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#created> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The date and time at which the <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#SpdxDocument\"><code>SpdxDocument</code></a> was created.  This value must in UTC and have 'Z' as its timezone indicator."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#CreationInfo>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#creationInfo> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">creationInfo</code> property relates an <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#SpdxDocument\"><code>SpdxDocument</code></a> to a set of information about the creation of the <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#SpdxDocument\"><code>SpdxDocument</code></a>."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#SpdxDocument>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#CreationInfo>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#creator> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> """
+          <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">The name and, optionally, contact information of a person, organization or tool that created, or was used to create, the <a href="#SpdxDocument"><code>SpdxDocument</code></a>.</p>
+
+          <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Values of this property must conform to the <a href="#agent-syntax">agent and tool syntax</a>.</p>
+          """^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#CreationInfo>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#dataLicense> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> """
+            <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">The licensing under which the <a href="#creator"><code>creator</code></a> of this SPDX document allows related data to be reproduced.</p>
+
+            <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">The only valid value for this property is <code>http://spdx.org/licenses/CC0-1.0</code>. This is to alleviate any concern that content (the data) in an SPDX file is subject to any form of intellectual property right that could restrict the re-use of the information or the creation of another SPDX file for the same project(s). This approach avoids intellectual property and related restrictions over the SPDX file, however individuals can still contract one to one to restrict release of specific collections of SPDX files (which map to software bill of materials) and the identification of the supplier of SPDX files.</p>
+          """^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#SpdxDocument>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#oneOf> (<http://spdx.org/licenses/CC0-1.0>)];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#describesPackage> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">describesPackage</code> property relates an <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">SpdxDocument</code> to the package which it describes."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#SpdxDocument>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#description> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Provides a detailed description of the package.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#downloadLocation> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The URI at which this package is available for download.  Private (i.e., not publicly reachable) URIs are acceptable as values of this property.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#extractedText> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Verbatim license or licensing notice text that was discovered.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#ExtractedLicensingInfo>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#fileName> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the file relative to the root of the package.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#File>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#fileType> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The type of the file.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#File>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#oneOf> (<http://spdx.org/rdf/terms#fileType_source> <http://spdx.org/rdf/terms#fileType_archive> <http://spdx.org/rdf/terms#fileType_binary> <http://spdx.org/rdf/terms#fileType_other>)];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#fileType_archive> a <http://www.w3.org/2002/07/owl#Thing>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the file is an archive file.";
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#fileType_binary> a <http://www.w3.org/2002/07/owl#Thing>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the file is not a text file.  <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#fileType_archive\"><code>spdx:filetype_archive</code></a> is preferred for archive files even though they are binary."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#fileType_other> a <http://www.w3.org/2002/07/owl#Thing>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the file is not a <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#fileType_source\">source</a>, <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#fileType_archive\">archive</a> or <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#fileType_binary\">binary</a> file."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#fileType_source> a <http://www.w3.org/2002/07/owl#Thing>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the file is a source code file.";
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#hasFile> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a particular <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#File\">file</a> belongs to a <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#Package\">package</a>."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#File>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#isOsiApproved> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a particular <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#License\">license</a> has been approved by the <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"http://opensource.org/\">OSI</a> as an open source licenses. If this property is true there <em xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">should</em> be a <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">seeAlso</code> property linking to the OSI version of the license."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#License>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#licenseDeclared> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The licensing that the creators of the software in the package, or the packager, have declared.  Declarations by the original software creator should be preferred, if they exist.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#AnyLicenseInfo> _:NoneClass _:NoAssertionClass)];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#licenseInfoFromFiles> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The licensing information that was discovered directly within the package.  There will be an instance of this property for each distinct value of all <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#licenseInfoInFile\"><code>licenseInfoInFile</code></a> properties of all files contained in the package."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#SimpleLicenseInfo> _:NoneClass _:NoAssertionClass)];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#licenseInfoInFile> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Licensing information that was discovered directly in the subject file.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#File>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#SimpleLicenseInfo> _:NoneClass _:NoAssertionClass)];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#licenseText> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The full text of the license.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#License>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#noassertion> a <http://www.w3.org/2002/07/owl#Thing>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> """Indicates that the preparer of the SPDX document is not making any assertion
+            regarding the value of this field.""";
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#none> a <http://www.w3.org/2002/07/owl#Thing>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "When this value is used as the object of a property it indicates that the preparer of the <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#SpdxDocument\"><code>SpdxDocument</code></a> believes that there is no value for the property.  This value should only be used if there is sufficient evidence to support this assertion."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#originator> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> """
+          <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">The name and, optionally, contact information of the person or organization that originally created the package.</p>
+
+          <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Values of this property must conform to the <a href="#agent-syntax">agent and tool syntax</a>.</p>
+          """^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://www.w3.org/2001/XMLSchema#string> _:NoAssertionClass)];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#packageFileName> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The base name of the package file name.  For example, <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">zlib-1.2.5.tar.gz</code>."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#packageVerificationCode> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> """
+            <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">A manifest based authentication code for the package.  This allows consumers of this data to determine if a package they have in hand is identical to the package from which the data was produced.  This algorithm works even if the SPDX document is included in the package.  This algorithm is described in detail in the SPDX specification.</p>
+
+            <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">The package verification code algorithm is defined in section 4.7 of the full specification.</p>
+          """^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#PackageVerificationCode>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#packageVerificationCodeValue> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The actual package verification code as a hex encoded value.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#PackageVerificationCode>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#hexBinary>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#referencesFile> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a particular file belongs as part of the set of analyzed files in the <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#SpdxDocument\"><code>SpdxDocument</code></a>."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#SpdxDocument>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#File>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#reviewDate> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The date and time at which the <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#SpdxDocument\"><code>SpdxDocument</code></a> was reviewed.  This value must be in UTC and have 'Z' as its timezone indicator."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Review>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#reviewer> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> """
+          <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">The name and, optionally, contact information of the person who performed the review.</p>
+          
+          <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Values of this property must conform to the <a href="#agent-syntax">agent and tool syntax</a>.</p>
+          """^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Review>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#sourceInfo> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Allows the producer(s) of the SPDX document to describe how the package was acquired and/or changed from the original source.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#specVersion> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies the version of this specification that was used to produce this SPDX document.  The value for this version of the spec is <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">SPDX-1.1</code>. The value <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">SPDX-1.0</code> may also be supported by SPDX tools for backwards compatibility purposes."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#SpdxDocument>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#standardLicenseHeader> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Text specifically delineated by the license, or license appendix, as the preferred way to indicate that a source, or other, file is copyable under the license.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#License>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#summary> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Provides a short description of the package.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#supplier> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> """
+          <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">The name and, optionally, contact information of the person or organization who was the immediate supplier of this package to the recipient.  The supplier may be different than <a href="#originator"><code>originator</code></a> when the software has been repackaged.</p>
+
+          <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">Values of this property must conform to the <a href="#agent-syntax">agent and tool syntax</a>.</p>
+          """^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://www.w3.org/2001/XMLSchema#string> _:NoAssertionClass)];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#versionInfo> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Provides an indication of the version of the package that is described by this <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#SpdxDocument\"><code>SpdxDocument</code></a>."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#ConjunctiveLicenseSet> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">ConjunctiveLicenseSet</code> represents a set of <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#AnyLicenseInfo\">licensing information</a> all of which apply."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Container>,
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "2";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#member>];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#DisjunctiveLicenseSet> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">DisjunctiveLicenseSet</code> represents a set of <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#AnyLicenseInfo\">licensing information</a> where only one license applies at a time.  This class implies that the recipient gets to choose one of these licenses they would prefer to use."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Container>,
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "2";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#member>];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#SimpleLicenseInfo> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">SimpleLicenseInfo</code> class includes all resources that represent simple, atomic, licensing information."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#License> <http://spdx.org/rdf/terms#ExtractedLicensingInfo>);
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#checksum> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">checksum</code> property provides a mechanism that can be used to verify that the contents of a <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#File\"><code>File</code></a> or <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#Package\"><code>Package</code></a> have not changed."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#Package> <http://spdx.org/rdf/terms#File>)];
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#Checksum>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#copyrightText> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The text of copyright declarations recited in the <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#Package\"><code>Package</code></a> or <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#File\"><code>File</code></a>."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#Package> <http://spdx.org/rdf/terms#File>)];
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://www.w3.org/2000/01/rdf-schema#Literal> _:NoneClass _:NoAssertionClass)];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#licenseComments> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">licenseComments</code> property allows the preparer of the SPDX document to describe why the licensing in <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#licenseConcluded\"><code>spdx:licenseConcluded</code></a> was chosen."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> [ <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#Package> <http://spdx.org/rdf/terms#File>)];
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#licenseConcluded> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The licensing that the preparer of this SPDX document has concluded, based on the evidence, actually applies to the package.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#Package> <http://spdx.org/rdf/terms#File>)];
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#AnyLicenseInfo> _:NoneClass _:NoAssertionClass)];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#licenseId> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A short name for the license that is at least 3 characters long and made up of the characters from the set 'a'-'z', 'A'-'Z', '0'-'9', '+', '_', '.', and '-'.  Formally, all <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">licenseId</code> values must match the regular expression: <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">[-+_.a-zA-Z0-9]{3,}</code>"^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> [ <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#License> <http://spdx.org/rdf/terms#ExtractedLicensingInfo>)];
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#member> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#License\">license</a>, or other licensing information, that is a member of the subject license set."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#domain> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#ConjunctiveLicenseSet> <http://spdx.org/rdf/terms#DisjunctiveLicenseSet>)];
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#AnyLicenseInfo>;
+   <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#member>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#AnyLicenseInfo> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">AnyLicenseInfo</code> class includes all resources that represent licensing information."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#License> <http://spdx.org/rdf/terms#ExtractedLicensingInfo> <http://spdx.org/rdf/terms#ConjunctiveLicenseSet> <http://spdx.org/rdf/terms#DisjunctiveLicenseSet>);
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#Checksum> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">Checksum</code> is value that allows the contents of a file to be authenticated.  Even small changes to the content of the file will change it's checksum.  This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#algorithm>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#checksumValue>];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#CreationInfo> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">CreationInfo</code> provides information about the individuals, organizations and tools involved in the creation of an <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#SpdxDocument\"><code>SpdxDocument</code></a>."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#creator>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#created>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2000/01/rdf-schema#comment>];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#PackageVerificationCode> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A manifest based verification code (the algorithm is defined in section 4.7 of the full specification) of the package. This allows consumers of this data and/or database to determine if a package they have in hand is identical to the package from which the data was produced. This algorithm works even if the SPDX document is included in the package.";
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#packageVerificationCodeValue>];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#Review> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">Review</code> represents an audit and signoff by an individual, organization or tool on the information in an <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#SpdxDocument\"><code>SpdxDocument</code></a>."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#reviewer>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#reviewDate>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2000/01/rdf-schema#comment>];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#name> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The full human readable name of the item. This should include version information when applicable.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#Package> <http://spdx.org/rdf/terms#ExtractedLicensingInfo> <http://spdx.org/rdf/terms#License>)];
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#label>;
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#ExtractedLicensingInfo> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "An <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">ExtractedLicensingInfo</code> represents a license or licensing notice that was found in the package.  Any license text that is recognized as a license may be represented as a <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"#License\"><code>License</code></a> rather than an <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">ExtractedLicensingInfo</code>."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseId>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#name>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#extractedText>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2000/01/rdf-schema#comment>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "0";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2000/01/rdf-schema#seeAlso>];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#License> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">License</code> represents a copyright license. The <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"http://spdx.org/licenses\">SPDX license list website</a> is annotated with these properties (using <a xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\" href=\"http://www.w3.org/TR/2008/REC-rdfa-syntax-20081014/\">RDFa</a>) to allow license data published there to be easily processed."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseId>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#name>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseText>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#isOsiApproved>],
+     <http://opensource.org/>,
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#standardLicenseHeader>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2000/01/rdf-schema#comment>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "0";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2000/01/rdf-schema#seeAlso>];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#SpdxDocument> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "An <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">SdpxDocument</code> is a summary of the contents, provenance, ownership and licensing analysis of a specific software package.  This is, effectively, the top level of SPDX information."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#specVersion>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#dataLicense>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2000/01/rdf-schema#comment>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#creationInfo>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#describesPackage>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#referencesFile>];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#File> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">File</code> represents a named sequence of information that is contained in a software package."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#fileName>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2000/01/rdf-schema#comment>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#fileType>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#checksum>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseConcluded>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseInfoInFile>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseComments>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#copyrightText>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#artifactOf>];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#Package> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A <code xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:foaf=\"http://xmlns.com/foaf/0.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\" xmlns:owl=\"http://www.w3.org/2002/07/owl#\" xmlns:doap=\"http://usefulinc.com/ns/doap\" xmlns:vs=\"http://www.w3.org/2003/06/sw-vocab-status/ns#\">Package</code> represents a collection of software files that are delivered as a single functional component."^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://spdx.org/rdf/terms#>;
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#name>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#versionInfo>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#packageFileName>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#supplier>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#originator>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#downloadLocation>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#packageVerificationCode>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#checksum>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#sourceInfo>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseConcluded>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseInfoFromFiles>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseDeclared>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseComments>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#copyrightText>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#summary>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#description>],
+     [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#hasFile>];
+   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+<http://spdx.org/rdf/terms#> a <http://www.w3.org/2002/07/owl#Ontology>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> """
+          <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">This specification describes the SPDX™ language, defined as a dictionary of named properties and classes using W3C's RDF Technology.</p>
+
+          <p xmlns="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:doap="http://usefulinc.com/ns/doap" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">SPDX™ is a designed to allow the exchange of data about software packages.  This information includes general information about the package, licensing information about the package as a whole, a manifest of files contained in the package and licensing information related to the contained files.</p>
+        """^^<http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral>;
+   <http://www.w3.org/2002/07/owl#imports> <http://usefulinc.com/ns/doap>,
+     <http://www.w3.org/2000/01/rdf-schema>;
+   <http://www.w3.org/2002/07/owl#sameAs> <http://spdx.org/rdf/terms.rdf>,
+     <http://spdx.org/rdf/terms.ttl>;
+   <http://www.w3.org/2002/07/owl#versionInfo> "1.1-DRAFT (21 Aug 2012 18:26 UTC/61361e)" .
+
+<http://www.w3.org/2000/01/rdf-schema#comment> a <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+
+(<http://spdx.org/rdf/terms#none>) a <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+
+(<http://spdx.org/rdf/terms#noassertion>) a <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+
+_:NoneClass a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2002/07/owl#oneOf> (<http://spdx.org/rdf/terms#none>) .
+
+_:NoAssertionClass a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2002/07/owl#oneOf> (<http://spdx.org/rdf/terms#noassertion>) .

@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+>
+  <owl:ObjectProperty rdf:about="#reviewed">
+    <rdfs:domain>
+      <owl:Class rdf:about="#SpdxDocument">
+        <rdfs:label>SpdxDocument</rdfs:label>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:cardinality>1</owl:cardinality>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#describesPackage">
+                <rdfs:domain rdf:resource="#SpdxDocument"/>
+                <rdfs:comment rdf:parseType="Literal">The <code xmlns="http://www.w3.org/1999/xhtml">describesPackage</code> property relates an <code xmlns="http://www.w3.org/1999/xhtml">SpdxDocument</code> to the package which it describes.</rdfs:comment>
+                <rdfs:label>describesPackage</rdfs:label>
+                <rdfs:range>
+                  <owl:Class rdf:about="#Package">
+                    <rdfs:label>Package</rdfs:label>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS22"/>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS10"/>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS26"/>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS24"/>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS12"/>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS14"/>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS16"/>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS18"/>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS20"/>
+                  </owl:Class>
+                </rdfs:range>
+              </owl:ObjectProperty>
+            </owl:onProperty>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:cardinality>1</owl:cardinality>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#spdxVersion">
+                <rdfs:domain rdf:resource="#SpdxDocument"/>
+                <rdfs:comment>Identifies the version of this specification that was used to produce this SPDX document.</rdfs:comment>
+                <rdfs:label>sdpxVersion</rdfs:label>
+                <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+              </owl:DatatypeProperty>
+            </owl:onProperty>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#creationInfo">
+                <rdfs:domain rdf:resource="#SpdxDocument"/>
+                <rdfs:comment rdf:parseType="Literal">The <code xmlns="http://www.w3.org/1999/xhtml">creationInfo</code> property relates an <code xmlns="http://www.w3.org/1999/xhtml">SpdxDocument</code> to a set of information about the creation of the SpdxDocument.</rdfs:comment>
+                <rdfs:label>creationInfo</rdfs:label>
+                <rdfs:range>
+                  <owl:Class rdf:about="#CreationInfo">
+                    <rdfs:label>CreationInfo</rdfs:label>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS41"/>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS42"/>
+                    <rdfs:subClassOf rdf:nodeID="HOXWZuMS43"/>
+                  </owl:Class>
+                </rdfs:range>
+              </owl:ObjectProperty>
+            </owl:onProperty>
+            <owl:minCardinality>1</owl:minCardinality>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:parseType="Literal">The <code xmlns="http://www.w3.org/1999/xhtml">review</code> property relates a <code xmlns="http://www.w3.org/1999/xhtml">SpdxDocument</code> to the review history.</rdfs:comment>
+    <rdfs:label>reviewed</rdfs:label>
+    <rdfs:range>
+      <owl:Class rdf:about="#Review">
+        <rdfs:label>Review</rdfs:label>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:cardinality>1</owl:cardinality>
+            <owl:onProperty rdf:resource="rdfs:comment"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:cardinality>1</owl:cardinality>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#reviewer">
+                <rdfs:domain rdf:resource="#Review"/>
+                <rdfs:comment>The name and, optionally, contact information of the person who performed the review.</rdfs:comment>
+                <rdfs:label>reviewer</rdfs:label>
+                <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+              </owl:DatatypeProperty>
+            </owl:onProperty>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:cardinality>1</owl:cardinality>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#reviewDate">
+                <rdfs:domain rdf:resource="#Review"/>
+                <rdfs:comment rdf:parseType="Literal">The date and time at which the <a href="#SpdxDocument" xmlns="http://www.w3.org/1999/xhtml">SpdxDocument</a> was reviewed.</rdfs:comment>
+                <rdfs:label>reviewDate</rdfs:label>
+                <rdfs:range>
+                  <owl:DatatypeProperty rdf:about="#UtcXsdDate">
+                    <rdfs:label>UtcXsdDate</rdfs:label>
+                  </owl:DatatypeProperty>
+                </rdfs:range>
+              </owl:DatatypeProperty>
+            </owl:onProperty>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:Ontology rdf:about="uploaded:"/>
+  <owl:ObjectProperty rdf:about="#licenseInfoFromFiles">
+    <rdfs:domain rdf:resource="#Package"/>
+    <rdfs:comment rdf:parseType="Literal">Licensing information that was discovered directly in the package.  This is effectively a union of the <a href="#licenseInfoInFile" xmlns="http://www.w3.org/1999/xhtml">licenseInfoInFile</a> properties of all the files contained in the package.</rdfs:comment>
+    <rdfs:label>licenseInfoFromFiles</rdfs:label>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#License">
+            <rdfs:label>License</rdfs:label>
+            <rdfs:subClassOf>
+              <owl:Restriction>
+                <owl:cardinality>1</owl:cardinality>
+                <owl:onProperty>
+                  <owl:DatatypeProperty rdf:about="#licenseId">
+                    <rdfs:domain rdf:resource="#License"/>
+                    <rdfs:comment>A short name for the license that is made up of ascii characters from the set 'a'-'z', 'A'-'Z', '0'-'9', '+', '_', and '-'.</rdfs:comment>
+                    <rdfs:label>licenseId</rdfs:label>
+                    <rdfs:range>
+                      <owl:DatatypeProperty rdf:about="#LicenseSlug">
+                        <rdfs:label>LicenseSlug</rdfs:label>
+                      </owl:DatatypeProperty>
+                    </rdfs:range>
+                  </owl:DatatypeProperty>
+                </owl:onProperty>
+              </owl:Restriction>
+            </rdfs:subClassOf>
+            <rdfs:subClassOf>
+              <owl:Restriction>
+                <owl:cardinality>1</owl:cardinality>
+                <owl:onProperty>
+                  <owl:DatatypeProperty rdf:about="#licenseText">
+                    <rdfs:domain>
+                      <owl:Class rdf:about="#File">
+                        <rdfs:label>File</rdfs:label>
+                        <rdfs:subClassOf>
+                          <owl:Restriction>
+                            <owl:onProperty rdf:resource="#licenseInfoInFile"/>
+                            <owl:minCardinality>1</owl:minCardinality>
+                          </owl:Restriction>
+                        </rdfs:subClassOf>
+                        <rdfs:subClassOf>
+                          <owl:Restriction>
+                            <owl:cardinality>1</owl:cardinality>
+                            <owl:onProperty rdf:resource="#checksum"/>
+                          </owl:Restriction>
+                        </rdfs:subClassOf>
+                        <rdfs:subClassOf>
+                          <owl:Restriction>
+                            <owl:cardinality>1</owl:cardinality>
+                            <owl:onProperty rdf:resource="#fileName"/>
+                          </owl:Restriction>
+                        </rdfs:subClassOf>
+                        <rdfs:subClassOf>
+                          <owl:Restriction>
+                            <owl:maxCardinality>1</owl:maxCardinality>
+                            <owl:onProperty rdf:resource="#licenseConcluded"/>
+                          </owl:Restriction>
+                        </rdfs:subClassOf>
+                        <rdfs:subClassOf>
+                          <owl:Restriction>
+                            <owl:cardinality>1</owl:cardinality>
+                            <owl:onProperty rdf:resource="#fileType"/>
+                          </owl:Restriction>
+                        </rdfs:subClassOf>
+                      </owl:Class>
+                    </rdfs:domain>
+                    <rdfs:comment>The full text of the license.</rdfs:comment>
+                    <rdfs:label>licenseText</rdfs:label>
+                    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                  </owl:DatatypeProperty>
+                </owl:onProperty>
+              </owl:Restriction>
+            </rdfs:subClassOf>
+          </owl:Class>
+          <owl:Class rdf:about="#ExtractedLicensingInfo">
+            <rdfs:label>ExtractedLicensingInfo</rdfs:label>
+            <rdfs:subClassOf>
+              <owl:Restriction>
+                <owl:cardinality>1</owl:cardinality>
+                <owl:onProperty rdf:resource="#licenseId"/>
+              </owl:Restriction>
+            </rdfs:subClassOf>
+            <rdfs:subClassOf>
+              <owl:Restriction>
+                <owl:cardinality>1</owl:cardinality>
+                <owl:onProperty>
+                  <owl:DatatypeProperty rdf:about="#extractedText">
+                    <rdfs:domain rdf:resource="#License"/>
+                    <rdfs:comment>Verbatim license or licensing notice text that was discovered.</rdfs:comment>
+                    <rdfs:label>extractedText</rdfs:label>
+                    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                  </owl:DatatypeProperty>
+                </owl:onProperty>
+              </owl:Restriction>
+            </rdfs:subClassOf>
+          </owl:Class>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#algorithm">
+    <rdfs:domain>
+      <owl:Class rdf:about="#Checksum">
+        <rdfs:label>Checksum</rdfs:label>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:cardinality>1</owl:cardinality>
+            <owl:onProperty rdf:resource="#algorithm"/>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:cardinality>1</owl:cardinality>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#checksumValue">
+                <rdfs:domain rdf:resource="#Checksum"/>
+                <rdfs:comment rdf:parseType="Literal">The <code xmlns="http://www.w3.org/1999/xhtml">checksumValue</code> property provides a digest value produced using a specific algorithm.</rdfs:comment>
+                <rdfs:label>checksumValue</rdfs:label>
+                <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+              </owl:DatatypeProperty>
+            </owl:onProperty>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment>Identifies the algorithm used to produce a checksum.</rdfs:comment>
+    <rdfs:label>algorithm</rdfs:label>
+    <rdfs:range>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="#checksumAlgorithm_sha1"/>
+        </owl:oneOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:Restriction rdf:nodeID="HOXWZuMS43">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="rdfs:comment"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="HOXWZuMS12">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty>
+      <owl:DatatypeProperty rdf:about="#packageFileName">
+        <rdfs:domain rdf:resource="#Package"/>
+        <rdfs:comment rdf:parseType="Literal">The base name of the package filename.  This will often included the package name, version information and archive/compression method.  For example, <code xmlns="http://www.w3.org/1999/xhtml">zlib-1.2.5.tar.gz</code>.</rdfs:comment>
+        <rdfs:label>packageFileName</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:DatatypeProperty>
+    </owl:onProperty>
+  </owl:Restriction>
+  <owl:DatatypeProperty rdf:about="#created">
+    <rdfs:domain rdf:resource="#CreationInfo"/>
+    <rdfs:comment rdf:parseType="Literal">The date and time at which the <a href="#SpdxDocument" xmlns="http://www.w3.org/1999/xhtml">SpdxDocument</a> was created.</rdfs:comment>
+    <rdfs:label>created</rdfs:label>
+    <rdfs:range rdf:resource="#UtcXsdDate"/>
+  </owl:DatatypeProperty>
+  <rdf:List rdf:nodeID="HOXWZuMS61">
+    <rdf:first rdf:resource="#Package"/>
+    <rdf:rest/>
+  </rdf:List>
+  <owl:DatatypeProperty rdf:about="#fileName">
+    <rdfs:domain rdf:resource="#File"/>
+    <rdfs:comment>The name of the file relative to the root of the package.</rdfs:comment>
+    <rdfs:label>fileName</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#downloadLocation">
+    <rdfs:domain rdf:resource="#File"/>
+    <rdfs:comment>The URI at which this package is available for download.  Private (ie, not publicly reachable) URIs are acceptable as values of this property.</rdfs:comment>
+    <rdfs:label>downloadLocation</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <rdf:List rdf:nodeID="HOXWZuMS95">
+    <rdf:first>
+      <owl:Class rdf:about="#ConjunctiveLicenseSet">
+        <rdfs:label>ConjunctiveLicenseSet</rdfs:label>
+        <rdfs:subClassOf>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#member">
+                <rdfs:domain>
+                  <owl:Class>
+                    <owl:unionOf rdf:parseType="Collection">
+                      <rdf:Description rdf:about="#ConjunctiveLicenseSet"/>
+                      <owl:Class rdf:about="#DisjunctiveLicenseSet">
+                        <rdfs:label>DisjunctiveLicenseSet</rdfs:label>
+                        <rdfs:subClassOf>
+                          <owl:Restriction>
+                            <owl:onProperty rdf:resource="#member"/>
+                            <owl:minCardinality>1</owl:minCardinality>
+                          </owl:Restriction>
+                        </rdfs:subClassOf>
+                      </owl:Class>
+                    </owl:unionOf>
+                  </owl:Class>
+                </rdfs:domain>
+                <rdfs:comment rdf:parseType="Literal">A <a href="#License" xmlns="http://www.w3.org/1999/xhtml">license</a>, or other licensing information, that is a member of the subject license set.</rdfs:comment>
+                <rdfs:label>member</rdfs:label>
+                <rdfs:range>
+                  <owl:Class>
+                    <owl:unionOf rdf:parseType="Collection">
+                      <rdf:Description rdf:about="#License"/>
+                      <rdf:Description rdf:about="#ExtractedLicensingInfo"/>
+                      <rdf:Description rdf:about="#ConjunctiveLicenseSet"/>
+                      <rdf:Description rdf:about="#DisjunctiveLicenseSet"/>
+                    </owl:unionOf>
+                  </owl:Class>
+                </rdfs:range>
+              </owl:ObjectProperty>
+            </owl:onProperty>
+            <owl:minCardinality>1</owl:minCardinality>
+          </owl:Restriction>
+        </rdfs:subClassOf>
+      </owl:Class>
+    </rdf:first>
+    <rdf:rest/>
+  </rdf:List>
+  <owl:Restriction rdf:nodeID="HOXWZuMS26">
+    <owl:onProperty>
+      <owl:ObjectProperty rdf:about="#hasFile">
+        <rdfs:domain rdf:resource="#Package"/>
+        <rdfs:comment rdf:parseType="Literal">Indicates that a particular <a href="#File" xmlns="http://www.w3.org/1999/xhtml">file</a> belongs to a <a href="#Package" xmlns="http://www.w3.org/1999/xhtml">package</a>.</rdfs:comment>
+        <rdfs:label>hasFile</rdfs:label>
+        <rdfs:range rdf:resource="#File"/>
+      </owl:ObjectProperty>
+    </owl:onProperty>
+    <owl:minCardinality>1</owl:minCardinality>
+  </owl:Restriction>
+  <owl:Class rdf:nodeID="HOXWZuMS64">
+    <owl:oneOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="#fileType_source"/>
+      <rdf:Description rdf:about="#fileType_archive"/>
+      <rdf:Description rdf:about="#fileType_binary"/>
+      <rdf:Description rdf:about="#fileType_other"/>
+    </owl:oneOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="#sourceInfo">
+    <rdfs:domain rdf:resource="#Package"/>
+    <rdfs:comment>Allows the producer(s) of the SPDX document to describe how the package was acquired and/or changed from the original source.</rdfs:comment>
+    <rdfs:label>sourceInfo</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Restriction rdf:nodeID="HOXWZuMS20">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="#sourceInfo"/>
+  </owl:Restriction>
+  <owl:DatatypeProperty rdf:about="#creator">
+    <rdfs:domain rdf:resource="#CreationInfo"/>
+    <rdfs:comment rdf:parseType="Literal">The name and, optionally, contact information of a person, organization or tool that created, or was used to create, the <a href="#SpdxDocument" xmlns="http://www.w3.org/1999/xhtml">SpdxDocument</a>.</rdfs:comment>
+    <rdfs:label>creator</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Restriction rdf:nodeID="HOXWZuMS42">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="#created"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="HOXWZuMS18">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty>
+      <owl:DatatypeProperty rdf:about="#packageVerificationCode">
+        <rdfs:domain rdf:resource="#Package"/>
+        <rdfs:comment>A manifest based hash of the package.  This allows consumers of this dataset to determin if a package they have in hand is identical to the package from which the data was produced.  This algorithm works even if the SPDX document is included in the package.  This algorithm is described in detail in the SPDX spec.</rdfs:comment>
+        <rdfs:label>packageVerificationCode</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:DatatypeProperty>
+    </owl:onProperty>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="HOXWZuMS10">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty>
+      <owl:DatatypeProperty rdf:about="#name">
+        <rdfs:domain rdf:resource="#Package"/>
+        <rdfs:comment>The full name of the package including version information.</rdfs:comment>
+        <rdfs:label>name</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:DatatypeProperty>
+    </owl:onProperty>
+  </owl:Restriction>
+  <owl:Class rdf:nodeID="HOXWZuMS80">
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="#License"/>
+      <rdf:Description rdf:about="#ExtractedLicensingInfo"/>
+      <rdf:Description rdf:about="#ConjunctiveLicenseSet"/>
+      <rdf:Description rdf:about="#DisjunctiveLicenseSet"/>
+    </owl:unionOf>
+  </owl:Class>
+  <rdf:List rdf:nodeID="HOXWZuMS75">
+    <rdf:first rdf:resource="#License"/>
+    <rdf:rest/>
+  </rdf:List>
+  <rdf:List rdf:nodeID="HOXWZuMS71">
+    <rdf:first rdf:resource="#Package"/>
+    <rdf:rest/>
+  </rdf:List>
+  <owl:Restriction rdf:nodeID="HOXWZuMS24">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty>
+      <owl:ObjectProperty rdf:about="#licenseConcluded">
+        <rdfs:domain>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="#Package"/>
+              <rdf:Description rdf:about="#File"/>
+            </owl:unionOf>
+          </owl:Class>
+        </rdfs:domain>
+        <rdfs:comment>The licensing that the preparer of this SPDX document has concluded, based on the evidence, actual applies to the package.</rdfs:comment>
+        <rdfs:label>licenseConcluded</rdfs:label>
+        <rdfs:range>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="#License"/>
+              <rdf:Description rdf:about="#ExtractedLicensingInfo"/>
+              <rdf:Description rdf:about="#ConjunctiveLicenseSet"/>
+              <rdf:Description rdf:about="#DisjunctiveLicenseSet"/>
+            </owl:unionOf>
+          </owl:Class>
+        </rdfs:range>
+      </owl:ObjectProperty>
+    </owl:onProperty>
+  </owl:Restriction>
+  <owl:Class rdf:nodeID="HOXWZuMS90">
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="#License"/>
+      <rdf:Description rdf:about="#ExtractedLicensingInfo"/>
+    </owl:unionOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#licenseDeclared">
+    <rdfs:domain rdf:resource="#Package"/>
+    <rdfs:comment>The licensing that is declared by the authors of the package.</rdfs:comment>
+    <rdfs:label>licenseDeclared</rdfs:label>
+    <rdfs:range rdf:nodeID="HOXWZuMS80"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#checksum">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="#Package"/>
+          <rdf:Description rdf:about="#File"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:parseType="Literal">The <code xmlns="http://www.w3.org/1999/xhtml">checksum</code> property provides a digest of a <code xmlns="http://www.w3.org/1999/xhtml">File</code> or <code xmlns="http://www.w3.org/1999/xhtml">File</code>. This allows consumers of the SPDX document to verify that the content of the files or package has not changed.</rdfs:comment>
+    <rdfs:label>checksum</rdfs:label>
+    <rdfs:range rdf:resource="#Checksum"/>
+  </owl:ObjectProperty>
+  <owl:Restriction rdf:nodeID="HOXWZuMS14">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="#downloadLocation"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="HOXWZuMS16">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="#checksum"/>
+  </owl:Restriction>
+  <owl:ObjectProperty rdf:about="#fileType">
+    <rdfs:domain rdf:resource="#File"/>
+    <rdfs:comment>The type of the file.</rdfs:comment>
+    <rdfs:label>fileType</rdfs:label>
+    <rdfs:range rdf:nodeID="HOXWZuMS64"/>
+  </owl:ObjectProperty>
+  <owl:Restriction rdf:nodeID="HOXWZuMS22">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="#licenseDeclared"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="HOXWZuMS41">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="#creator"/>
+  </owl:Restriction>
+  <owl:ObjectProperty rdf:about="#licenseInfoInFile">
+    <rdfs:domain rdf:resource="#File"/>
+    <rdfs:comment rdf:parseType="Literal">Licensing information that was discovered directly in the subject <a href="#File" xmlns="http://www.w3.org/1999/xhtml">File</a>.</rdfs:comment>
+    <rdfs:label>licenseInfoInFile</rdfs:label>
+    <rdfs:range rdf:nodeID="HOXWZuMS90"/>
+  </owl:ObjectProperty>
+</rdf:RDF>

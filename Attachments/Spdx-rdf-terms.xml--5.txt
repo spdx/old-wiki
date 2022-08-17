@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ns0="http://www.w3.org/2002/07/owl#" xmlns:ns1="http://www.w3.org/2000/01/rdf-schema#" xmlns:ns2="http://www.w3.org/2003/06/sw-vocab-status/ns#">
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#reviewed">
+    <ns1:comment>The review property relates a SpdxDocument to the review history.</ns1:comment>
+    <ns1:domain>
+      <ns0:Class rdf:about="http://spdx.org/rdf/terms#SpdxDocument">
+        <ns1:comment>Each SdpxDocument represents the results of a provenance, ownership and licensing analysis of exactly on software package.  This is, effectively, the top level of SPDX information.</ns1:comment>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>SpdxDocument</ns1:label>
+        <ns1:subClassOf rdf:nodeID="g2154025600"/>
+        <ns1:subClassOf rdf:nodeID="g2154159540"/>
+        <ns1:subClassOf rdf:nodeID="g2154265160"/>
+        <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#hasExtractedLicensingInfo"/>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:Class>
+    </ns1:domain>
+    <ns1:isDefinedBy>
+      <ns0:Ontology rdf:about="http://spdx.org/rdf/terms#">
+        <ns1:comment>
+    This specification describes the SPDX language, defined as a dictionary of named properties and classes using W3C's RDF Technology.
+
+    SPDX is a designed to allow the exchange of data about software package.  This information includes both lists of files contained in the package and the licensing information related to the contained files or the package as a whole.
+    </ns1:comment>
+        <ns0:imports rdf:resource="http://usefulinc.com/ns/doap"/>
+      </ns0:Ontology>
+    </ns1:isDefinedBy>
+    <ns1:label>reviewed</ns1:label>
+    <ns1:range>
+      <ns0:Class rdf:about="http://spdx.org/rdf/terms#Review">
+        <ns1:comment>Each Review represents a signoff by an individual on the information in the SpdxDocument.</ns1:comment>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>Review</ns1:label>
+        <ns1:subClassOf rdf:nodeID="g2155189760"/>
+        <ns1:subClassOf rdf:nodeID="g2155254120"/>
+        <ns1:subClassOf rdf:nodeID="g2155323000"/>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:Class>
+    </ns1:range>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#hasExtractedLicensingInfo">
+    <ns1:comment>Indicates that a particular ExtractedLicensingInfo was defined in the subject SpdxDocument.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#SpdxDocument"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>hasExtractedLicensingInfo</ns1:label>
+    <ns1:range>
+      <ns0:Class rdf:about="http://spdx.org/rdf/terms#ExtractedLicensingInfo">
+        <ns1:comment>Each ExtractedLicensingInfo represents a license or licensing notice that was found in the package.  Any license text that is recognized as a license may be represented as a License rather than and ExtractedLicensingInfo.</ns1:comment>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>ExtractedLicensingInfo</ns1:label>
+        <ns1:subClassOf rdf:nodeID="g2154205360"/>
+        <ns1:subClassOf rdf:nodeID="g2154343640"/>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:Class>
+    </ns1:range>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:Thing rdf:about="http://spdx.org/rdf/terms#fileType_archive">
+    <ns1:comment>Indicates the file is a archive file.</ns1:comment>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>fileType_archive</ns1:label>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:Thing>
+  <ns0:Thing rdf:about="http://spdx.org/rdf/terms#checksumAlgorithm_sha1">
+    <ns1:comment>Indicates the algorithm used was SHA-1</ns1:comment>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>checksumAlgorithm_sha1</ns1:label>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:Thing>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#summary">
+    <ns1:comment>Provides a short description of the package.</ns1:comment>
+    <ns1:domain>
+      <ns0:Class rdf:about="http://spdx.org/rdf/terms#Package">
+        <ns1:comment>Each Package represents a piece software that is delivered as a single unit.</ns1:comment>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>Package</ns1:label>
+        <ns1:subClassOf rdf:nodeID="g2153601800"/>
+        <ns1:subClassOf rdf:nodeID="g2153663960"/>
+        <ns1:subClassOf rdf:nodeID="g2155177640"/>
+        <ns1:subClassOf rdf:nodeID="g2155247820"/>
+        <ns1:subClassOf rdf:nodeID="g2155322000"/>
+        <ns1:subClassOf rdf:nodeID="g2155453060"/>
+        <ns1:subClassOf rdf:nodeID="g2155533200"/>
+        <ns1:subClassOf rdf:nodeID="g2160315580"/>
+        <ns1:subClassOf rdf:nodeID="g2160448020"/>
+        <ns1:subClassOf rdf:nodeID="g2160583380"/>
+        <ns1:subClassOf rdf:nodeID="g2160874140"/>
+        <ns1:subClassOf rdf:nodeID="g2161200060"/>
+        <ns1:subClassOf rdf:nodeID="g2161367020"/>
+        <ns1:subClassOf rdf:nodeID="g2161512400"/>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:Class>
+    </ns1:domain>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>summary</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#specVersion">
+    <ns1:comment>Identifies the version of this specification that was used to produce this SPDX document.  Currently the only supported value is SPDX-1.0.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#SpdxDocument"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>specVersion</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#sourceInfo">
+    <ns1:comment>Allows the producer(s) of the SPDX document to describe how the package was acquired and/or changed from the original source.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>sourceInfo</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#reviewer">
+    <ns1:comment>The name and, optionally, contact information of the person who performed the review.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Review"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>reviewer</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:Thing rdf:about="http://spdx.org/rdf/terms#fileType_binary">
+    <ns1:comment>Indicates the file is not a text file.  spdx:filetype_archive is preferred for archive files even though they are binary.</ns1:comment>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>fileType_binary</ns1:label>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:Thing>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#reviewDate">
+    <ns1:comment>The date and time at which the SpdxDocument was reviewed.  This value must be in UTC and have 'Z' as its timezone indicator.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Review"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>reviewDate</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#packageVerificationCode">
+    <ns1:comment>A manifest based hash (the algorithm is defined in section [link goes here]) of the package.  This allows consumers of this dataset to determine if a package they have in hand is identical to the package from which the data was produced.  This algorithm works even if the SPDX document is included in the package.  This algorithm is described in detail in the SPDX spec.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>packageVerificationCode</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#packageFileName">
+    <ns1:comment>The base name of the package file name.  For example, zlib-1.2.5.tar.gz.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>packageFileName</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#name">
+    <ns1:comment>The full name of the package including version information.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>name</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#licenseInfoInFile">
+    <ns1:comment>Licensing information that was discovered directly in the subject File.</ns1:comment>
+    <ns1:domain>
+      <ns0:Class rdf:about="http://spdx.org/rdf/terms#File">
+        <ns1:comment>Each File represents a sequence of octets that is contained in a software package.</ns1:comment>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>File</ns1:label>
+        <ns1:subClassOf rdf:nodeID="g2153733160"/>
+        <ns1:subClassOf rdf:nodeID="g2153804160"/>
+        <ns1:subClassOf rdf:nodeID="g2153872160"/>
+        <ns1:subClassOf rdf:nodeID="g2153950160"/>
+        <ns1:subClassOf rdf:nodeID="g2154035860"/>
+        <ns1:subClassOf rdf:nodeID="g2154131280"/>
+        <ns1:subClassOf rdf:nodeID="g2154222060"/>
+        <ns1:subClassOf rdf:nodeID="g2154378060"/>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:Class>
+    </ns1:domain>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>licenseInfoInFile</ns1:label>
+    <ns1:range>
+      <ns0:Class>
+        <ns0:unionOf rdf:parseType="Collection">
+          <ns0:Class rdf:about="http://spdx.org/rdf/terms#SimpleLicenseInfo">
+            <ns1:comment>The SimpleLicenseInfo class includes all resources that represent simple, atomic, licensing information.</ns1:comment>
+            <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <ns1:label>SimpleLicenseInfo</ns1:label>
+            <ns0:unionOf rdf:parseType="Collection">
+              <ns0:Class rdf:about="http://spdx.org/rdf/terms#License">
+                <ns1:comment>Each License represents a software license.  This class is used by the SPDX license repository to represent standard license.</ns1:comment>
+                <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+                <ns1:label>License</ns1:label>
+                <ns1:subClassOf rdf:nodeID="g2153478120"/>
+                <ns1:subClassOf rdf:nodeID="g2153538280"/>
+                <ns2:term_status>testing</ns2:term_status>
+              </ns0:Class>
+              <rdf:Description rdf:about="http://spdx.org/rdf/terms#ExtractedLicensingInfo"/>
+            </ns0:unionOf>
+            <ns2:term_status>testing</ns2:term_status>
+          </ns0:Class>
+          <ns0:Class rdf:about="http://spdx.org/rdf/terms#NoneSeen">
+            <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <ns1:label>NoneSeen</ns1:label>
+            <ns0:oneOf rdf:parseType="Collection">
+              <ns0:Thing rdf:about="http://spdx.org/rdf/terms#noneSeen">
+                <ns1:comment>When this value is used as the object of a property it indicates that the preparer of the SpdxDocument found no information for the property.</ns1:comment>
+                <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+                <ns1:label>noneSeen</ns1:label>
+                <ns2:term_status>testing</ns2:term_status>
+              </ns0:Thing>
+            </ns0:oneOf>
+          </ns0:Class>
+          <ns0:Class rdf:about="http://spdx.org/rdf/terms#Undetermined">
+            <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <ns1:label>Undetermined</ns1:label>
+            <ns0:oneOf rdf:parseType="Collection">
+              <ns0:Thing rdf:about="http://spdx.org/rdf/terms#undetermined">
+                <ns1:comment>When this value is used as the object of a property it indicates that the preparer of the SpdxDocument made no attempt to determine the actual value.</ns1:comment>
+                <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+                <ns1:label>undetermined</ns1:label>
+                <ns2:term_status>testing</ns2:term_status>
+              </ns0:Thing>
+            </ns0:oneOf>
+          </ns0:Class>
+        </ns0:unionOf>
+      </ns0:Class>
+    </ns1:range>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:Thing rdf:about="http://spdx.org/rdf/terms#fileType_other">
+    <ns1:comment>Indicates the file is not a source, archive or binary file.</ns1:comment>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>fileType_other</ns1:label>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:Thing>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#licenseInfoFromFiles">
+    <ns1:comment>Licensing information that was discovered directly in the package.  This is effectively a union of the licenseInfoInFile properties of all the files contained in the package.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>licenseInfoFromFiles</ns1:label>
+    <ns1:range>
+      <ns0:Class>
+        <ns0:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#SimpleLicenseInfo"/>
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#NoneSeen"/>
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#Undetermined"/>
+        </ns0:unionOf>
+      </ns0:Class>
+    </ns1:range>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#licenseText">
+    <ns1:comment>The full text of the license.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#License"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>licenseText</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#licenseDeclared">
+    <ns1:comment>The licensing that is declared by the authors of the package.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>licenseDeclared</ns1:label>
+    <ns1:range>
+      <ns0:Class>
+        <ns0:unionOf rdf:parseType="Collection">
+          <ns0:Class rdf:about="http://spdx.org/rdf/terms#AnyLicenseInfo">
+            <ns1:comment>The AnyLicenseInfo class includes all resources that represent licensing information.</ns1:comment>
+            <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <ns1:label>AnyLicenseInfo</ns1:label>
+            <ns0:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://spdx.org/rdf/terms#License"/>
+              <rdf:Description rdf:about="http://spdx.org/rdf/terms#ExtractedLicensingInfo"/>
+              <ns0:Class rdf:about="http://spdx.org/rdf/terms#ConjunctiveLicenseSet">
+                <ns1:comment>Each ConjunctiveLicenseSet represents set of licenses, or other licensing information, all of which apply.</ns1:comment>
+                <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+                <ns1:label>ConjunctiveLicenseSet</ns1:label>
+                <ns1:subClassOf rdf:nodeID="g2153877340"/>
+                <ns1:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+                <ns2:term_status>testing</ns2:term_status>
+              </ns0:Class>
+              <ns0:Class rdf:about="http://spdx.org/rdf/terms#DisjunctiveLicenseSet">
+                <ns1:comment>Each DisjunctiveLicenseSet represents set of licenses, or other licensing information, only one of which apply.</ns1:comment>
+                <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+                <ns1:label>DisjunctiveLicenseSet</ns1:label>
+                <ns1:subClassOf rdf:nodeID="g2153614740"/>
+                <ns1:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+                <ns2:term_status>testing</ns2:term_status>
+              </ns0:Class>
+            </ns0:unionOf>
+            <ns2:term_status>testing</ns2:term_status>
+          </ns0:Class>
+          <ns0:Class rdf:about="http://spdx.org/rdf/terms#None">
+            <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <ns1:label>None</ns1:label>
+            <ns0:oneOf rdf:parseType="Collection">
+              <ns0:Thing rdf:about="http://spdx.org/rdf/terms#none">
+                <ns1:comment>When this value is used as the object of a property it indicates that the preparer of the SpdxDocument believes that there is no value for the property.  This value should only be used if there is sufficient evidence to support this contention.  This is different from spdx:undetermined in that spdx:none indicates some effort was taken to determine the value.</ns1:comment>
+                <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+                <ns1:label>none</ns1:label>
+                <ns2:term_status>testing</ns2:term_status>
+              </ns0:Thing>
+            </ns0:oneOf>
+          </ns0:Class>
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#Undetermined"/>
+        </ns0:unionOf>
+      </ns0:Class>
+    </ns1:range>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#hasFile">
+    <ns1:comment>Indicates that a particular file belongs to a package.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>hasFile</ns1:label>
+    <ns1:range rdf:resource="http://spdx.org/rdf/terms#File"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:Class rdf:about="http://spdx.org/rdf/terms#NotAnalyzed">
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>NotAnalyzed</ns1:label>
+    <ns0:oneOf rdf:parseType="Collection">
+      <ns0:Thing rdf:about="http://spdx.org/rdf/terms#notAnalyzed">
+        <ns1:comment>When this value is used as the object of a property it indicates that the preparer of the SpdxDocument made no attempt to determine the actual value.</ns1:comment>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>notAnalyzed</ns1:label>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:Thing>
+    </ns0:oneOf>
+  </ns0:Class>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#fileType">
+    <ns1:comment>The type of the file.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#File"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>fileType</ns1:label>
+    <ns1:range>
+      <ns0:Class>
+        <ns0:oneOf rdf:parseType="Collection">
+          <ns0:Thing rdf:about="http://spdx.org/rdf/terms#fileType_source">
+            <ns1:comment>Indicates the file is a source code file.</ns1:comment>
+            <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <ns1:label>fileType_source</ns1:label>
+            <ns2:term_status>testing</ns2:term_status>
+          </ns0:Thing>
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#fileType_archive"/>
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#fileType_binary"/>
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#fileType_other"/>
+        </ns0:oneOf>
+      </ns0:Class>
+    </ns1:range>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#fileName">
+    <ns1:comment>The name of the file relative to the root of the package.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#File"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>fileName</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#extractedText">
+    <ns1:comment>Verbatim license or licensing notice text that was discovered.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#ExtractedLicensingInfo"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>extractedText</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#downloadLocation">
+    <ns1:comment>The URI at which this package is available for download.  Private (ie, not publicly reachable) URIs are acceptable as values of this property.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>downloadLocation</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#description">
+    <ns1:comment>Provides a detailed description of the package.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>description</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#describesPackage">
+    <ns1:comment>The describesPackage property relates an SpdxDocument to the package which it describes.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#SpdxDocument"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>describesPackage</ns1:label>
+    <ns1:range rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#creator">
+    <ns1:comment>The name and, optionally, contact information of a person, organization or tool that created, or was used to create, the SpdxDocument.</ns1:comment>
+    <ns1:domain>
+      <ns0:Class rdf:about="http://spdx.org/rdf/terms#CreationInfo">
+        <ns1:comment>Each CreationInfo provides information about an individual, organization or tool that was involved in the creation of this SpdxDocument.</ns1:comment>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>CreationInfo</ns1:label>
+        <ns1:subClassOf rdf:nodeID="g2160355000"/>
+        <ns1:subClassOf rdf:nodeID="g2160492680"/>
+        <ns1:subClassOf rdf:nodeID="g2160662320"/>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:Class>
+    </ns1:domain>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>creator</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#creationInfo">
+    <ns1:comment>The creationInfo property relates an SpdxDocument to a set of information about the creation of the SpdxDocument.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#SpdxDocument"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>creationInfo</ns1:label>
+    <ns1:range rdf:resource="http://spdx.org/rdf/terms#CreationInfo"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <rdf:List>
+    <rdf:first rdf:resource="http://spdx.org/rdf/terms#None"/>
+    <rdf:rest rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#Undetermined"/>
+    </rdf:rest>
+  </rdf:List>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#created">
+    <ns1:comment>The date and time at which the SpdxDocument was created.  This value must in UTC and have 'Z' as its timezone indicator.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#CreationInfo"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>created</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#checksumValue">
+    <ns1:comment>The checksumValue property provides a hex encoded digest value produced using a specific algorithm.</ns1:comment>
+    <ns1:domain>
+      <ns0:Class rdf:about="http://spdx.org/rdf/terms#Checksum">
+        <ns1:comment>Each Checksum is a digest of a file.  This digest is produced using a cryptographic hash algorithm which allows the contents of a file to be verified.</ns1:comment>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>Checksum</ns1:label>
+        <ns1:subClassOf rdf:nodeID="g2155089220"/>
+        <ns1:subClassOf rdf:nodeID="g2161404740"/>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:Class>
+    </ns1:domain>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>checksumValue</ns1:label>
+    <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:DatatypeProperty>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#artifactOf">
+    <ns1:comment>Indicates the project in which the file originated.  Full doap:Project resources are supported.  However, some SPDX specific formats can only encode the doap:name and doap:homepage properties.  Those formats also encode the doap:Project URI so if the resource is publicly dereferenceable and has an RDF representation the full set of data can pass through those formats.  If the URI is not publicly dereferenceable all properties except the name and homepage will be lost in the translation.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#File"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>artifactOf</ns1:label>
+    <ns1:range rdf:resource="http://usefulinc.com/ns/doap#Project"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#algorithm">
+    <ns1:comment>Identifies the algorithm used to produce the subject checksum.</ns1:comment>
+    <ns1:domain rdf:resource="http://spdx.org/rdf/terms#Checksum"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>algorithm</ns1:label>
+    <ns1:range>
+      <ns0:Class>
+        <ns0:oneOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#checksumAlgorithm_sha1"/>
+        </ns0:oneOf>
+      </ns0:Class>
+    </ns1:range>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:Class rdf:nodeID="g2155287060">
+    <ns0:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#Package"/>
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#File"/>
+    </ns0:unionOf>
+  </ns0:Class>
+  <ns0:Restriction rdf:nodeID="g2160492680">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#created"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2155323000">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#reviewer"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2155254120">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#reviewDate"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2155189760">
+    <ns0:maxCardinality>1</ns0:maxCardinality>
+    <ns0:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2154343640">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty>
+      <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#licenseId">
+        <ns1:comment>A short name for the license that is at least 3 characters long and made up of the characters from the set 'a'-'z', 'A'-'Z', '0'-'9', '+', '_', '.', and '-'.  Formally, all licenseId values must match the regular expression: [-+_.a-zA-Z0-9]{3,}</ns1:comment>
+        <ns1:domain rdf:nodeID="g2154205920"/>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>licenseId</ns1:label>
+        <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:DatatypeProperty>
+    </ns0:onProperty>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2154205360">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#extractedText"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2153877340">
+    <ns0:minCardinality>1</ns0:minCardinality>
+    <ns0:onProperty>
+      <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#member">
+        <ns1:comment>A license, or other licensing information, that is a member of the subject license set.</ns1:comment>
+        <ns1:domain rdf:nodeID="g2160254380"/>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>member</ns1:label>
+        <ns1:range rdf:resource="http://spdx.org/rdf/terms#AnyLicenseInfo"/>
+        <ns1:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#member"/>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:ObjectProperty>
+    </ns0:onProperty>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2153614740">
+    <ns0:minCardinality>1</ns0:minCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#member"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2160662320">
+    <ns0:minCardinality>1</ns0:minCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#creator"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2161404740">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#checksumValue"/>
+  </ns0:Restriction>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#checksum">
+    <ns1:comment>The checksum property provides a digest of a File or Package. This allows consumers of the SPDX document to verify that the content of the files or package has not changed.</ns1:comment>
+    <ns1:domain>
+      <ns0:Class>
+        <ns0:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#Package"/>
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#File"/>
+        </ns0:unionOf>
+      </ns0:Class>
+    </ns1:domain>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>checksum</ns1:label>
+    <ns1:range rdf:resource="http://spdx.org/rdf/terms#Checksum"/>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:Restriction rdf:nodeID="g2155089220">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#algorithm"/>
+  </ns0:Restriction>
+  <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#copyrightText">
+    <ns1:comment>The text of copyright declarations discovered in the package or file.</ns1:comment>
+    <ns1:domain rdf:nodeID="g2155287060"/>
+    <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <ns1:label>copyrightText</ns1:label>
+    <ns1:range>
+      <ns0:Class>
+        <ns0:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#File"/>
+        </ns0:unionOf>
+      </ns0:Class>
+    </ns1:range>
+    <ns2:term_status>testing</ns2:term_status>
+  </ns0:ObjectProperty>
+  <ns0:Restriction rdf:nodeID="g2160355000">
+    <ns0:maxCardinality>1</ns0:maxCardinality>
+    <ns0:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2153478120">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseText"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2153538280">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseId"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2153733160">
+    <ns0:maxCardinality>1</ns0:maxCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#artifactOf"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2153804160">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#checksum"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2153872160">
+    <ns0:minCardinality>1</ns0:minCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseInfoInFile"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2153950160">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty>
+      <ns0:ObjectProperty rdf:about="http://spdx.org/rdf/terms#licenseConcluded">
+        <ns1:comment>The licensing that the preparer of this SPDX document has concluded, based on the evidence, actual applies to the package.</ns1:comment>
+        <ns1:domain rdf:nodeID="g2154483340"/>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>licenseConcluded</ns1:label>
+        <ns1:range rdf:nodeID="g2161152280"/>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:ObjectProperty>
+    </ns0:onProperty>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2154035860">
+    <ns0:maxCardinality>1</ns0:maxCardinality>
+    <ns0:onProperty>
+      <ns0:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#licenseComments">
+        <ns1:comment>The licenseComments property allows the preparer of the SPDX document to describe why the licensing in spdx:licenseConcluded was chosen.</ns1:comment>
+        <ns1:domain rdf:nodeID="g2153584040"/>
+        <ns1:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <ns1:label>licenseComments</ns1:label>
+        <ns1:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <ns2:term_status>testing</ns2:term_status>
+      </ns0:DatatypeProperty>
+    </ns0:onProperty>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2154131280">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#copyrightText"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2154222060">
+    <ns0:maxCardinality>1</ns0:maxCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#fileType"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2154378060">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#fileName"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2155177640">
+    <ns0:minCardinality>1</ns0:minCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#hasFile"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2155247820">
+    <ns0:minCardinality>1</ns0:minCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseInfoFromFiles"/>
+  </ns0:Restriction>
+  <rdf:Description rdf:nodeID="g2153584040">
+    <ns0:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#Package"/>
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#File"/>
+    </ns0:unionOf>
+  </rdf:Description>
+  <ns0:Class rdf:nodeID="g2154483340">
+    <ns0:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#Package"/>
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#File"/>
+    </ns0:unionOf>
+  </ns0:Class>
+  <ns0:Class rdf:nodeID="g2161152280">
+    <ns0:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#AnyLicenseInfo"/>
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#None"/>
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#NotAnalyzed"/>
+    </ns0:unionOf>
+  </ns0:Class>
+  <ns0:Restriction rdf:nodeID="g2155322000">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseConcluded"/>
+  </ns0:Restriction>
+  <rdf:Description rdf:nodeID="g2154205920">
+    <ns0:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#License"/>
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#ExtractedLicensingInfo"/>
+    </ns0:unionOf>
+  </rdf:Description>
+  <ns0:Restriction rdf:nodeID="g2155453060">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseDeclared"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2155533200">
+    <ns0:maxCardinality>1</ns0:maxCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseComments"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2160315580">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#copyrightText"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2160448020">
+    <ns0:maxCardinality>1</ns0:maxCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#sourceInfo"/>
+  </ns0:Restriction>
+  <ns0:Class rdf:nodeID="g2160254380">
+    <ns0:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#ConjunctiveLicenseSet"/>
+      <rdf:Description rdf:about="http://spdx.org/rdf/terms#DisjunctiveLicenseSet"/>
+    </ns0:unionOf>
+  </ns0:Class>
+  <ns0:Restriction rdf:nodeID="g2160583380">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#packageVerificationCode"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2160874140">
+    <ns0:maxCardinality>1</ns0:maxCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#checksum"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2161200060">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#downloadLocation"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2161367020">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#packageFileName"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2161512400">
+    <ns0:maxCardinality>1</ns0:maxCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#description"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2153601800">
+    <ns0:maxCardinality>1</ns0:maxCardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#summary"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2153663960">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#name"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2154025600">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#describesPackage"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2154159540">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#creationInfo"/>
+  </ns0:Restriction>
+  <ns0:Restriction rdf:nodeID="g2154265160">
+    <ns0:cardinality>1</ns0:cardinality>
+    <ns0:onProperty rdf:resource="http://spdx.org/rdf/terms#specVersion"/>
+  </ns0:Restriction>
+</rdf:RDF>

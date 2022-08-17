@@ -1,0 +1,466 @@
+
+Namespace(rdf	= <http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Namespace(owl	= <http://www.w3.org/2002/07/owl#>)
+Namespace(xsd	= <http://www.w3.org/2001/XMLSchema#>)
+Namespace(rdfs	= <http://www.w3.org/2000/01/rdf-schema#>)
+Namespace(a	= <http://spdx.org/rdf/terms#>)
+Namespace(b	= <http://usefulinc.com/ns/doap#>)
+Namespace(c	= <http://www.w3.org/1999/xhtml/vocab#>)
+Namespace(d	= <http://www.w3.org/2003/06/sw-vocab-status/ns#>)
+
+Ontology( <http://spdx.org/rdf/terms>
+
+ Annotation(owl:versionInfo "1.1-DRAFT (24 Aug 2012 17:18 UTC/6b70e2)")
+ Annotation(rdfs:comment "
+          <p>This specification describes the SPDXÂ® language, defined as a dictionary of named properties and classes using W3C's RDF Technology.</p>
+
+          <p>SPDXÂ® is a designed to allow the exchange of data about software packages.  This information includes general information about the package, licensing information about the package as a whole, a manifest of files contained in the package and licensing information related to the contained files.</p>
+        "^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+
+ ObjectProperty(a:algorithm
+  domain(a:Checksum)
+  range(oneOf(a:checksumAlgorithm_sha1)))
+ ObjectProperty(a:artifactOf
+  domain(a:File)
+  range(b:Project))
+ ObjectProperty(a:checksum
+  domain(unionOf(a:Package a:File))
+  range(a:Checksum))
+ ObjectProperty(a:copyrightText
+  domain(unionOf(a:Package a:File))
+  range(unionOf(oneOf(a:noassertion) oneOf(a:none) rdfs:Literal)))
+ ObjectProperty(a:creationInfo
+  domain(a:SpdxDocument)
+  range(a:CreationInfo))
+ ObjectProperty(a:dataLicense
+  domain(a:SpdxDocument)
+  range(oneOf(<http://spdx.org/licenses/CC0-1.0>)))
+ ObjectProperty(a:describesPackage
+  domain(a:SpdxDocument)
+  range(a:Package))
+ ObjectProperty(a:fileType
+  domain(a:File)
+  range(oneOf(a:fileType_source a:fileType_other a:fileType_archive a:fileType_binary)))
+ ObjectProperty(a:hasExtractedLicensingInfo
+  domain(a:SpdxDocument)
+  range(a:ExtractedLicensingInfo))
+ ObjectProperty(a:hasFile
+  domain(a:Package)
+  range(a:File))
+ ObjectProperty(a:licenseConcluded
+  domain(unionOf(a:Package a:File))
+  range(unionOf(oneOf(a:noassertion) a:AnyLicenseInfo oneOf(a:none))))
+ ObjectProperty(a:licenseDeclared
+  domain(a:Package)
+  range(unionOf(oneOf(a:noassertion) a:AnyLicenseInfo oneOf(a:none))))
+ ObjectProperty(a:licenseInfoFromFiles
+  domain(a:Package)
+  range(unionOf(a:SimpleLicenseInfo oneOf(a:noassertion) oneOf(a:none))))
+ ObjectProperty(a:licenseInfoInFile
+  domain(a:File)
+  range(unionOf(a:SimpleLicenseInfo oneOf(a:noassertion) oneOf(a:none))))
+ ObjectProperty(a:member
+  domain(unionOf(a:DisjunctiveLicenseSet a:ConjunctiveLicenseSet))
+  range(a:AnyLicenseInfo))
+ ObjectProperty(a:originator
+  domain(a:Package)
+  range(unionOf(oneOf(a:noassertion) xsd:string)))
+ ObjectProperty(a:packageVerificationCode
+  domain(a:Package)
+  range(a:PackageVerificationCode))
+ ObjectProperty(a:referencesFile
+  domain(a:SpdxDocument)
+  range(a:File))
+ ObjectProperty(a:reviewed
+  domain(a:SpdxDocument)
+  range(a:Review))
+ ObjectProperty(a:supplier
+  domain(a:Package)
+  range(unionOf(oneOf(a:noassertion) xsd:string)))
+ ObjectProperty(c:icon)
+ ObjectProperty(c:stylesheet)
+ ObjectProperty(rdfs:seeAlso)
+
+ DatatypeProperty(a:checksumValue
+  domain(a:Checksum)
+  range(xsd:hexBinary))
+ DatatypeProperty(a:created
+  domain(a:CreationInfo)
+  range(xsd:dateTime))
+ DatatypeProperty(a:creator
+  domain(a:CreationInfo)
+  range(xsd:string))
+ DatatypeProperty(a:description
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:downloadLocation
+  domain(a:Package)
+  range(xsd:anyURI))
+ DatatypeProperty(a:extractedText
+  domain(a:ExtractedLicensingInfo)
+  range(xsd:string))
+ DatatypeProperty(a:fileName
+  domain(a:File)
+  range(xsd:string))
+ DatatypeProperty(a:isOsiApproved
+  domain(a:License)
+  range(xsd:boolean))
+ DatatypeProperty(a:licenseComments
+  domain(unionOf(a:Package a:File))
+  range(xsd:string))
+ DatatypeProperty(a:licenseId
+  domain(unionOf(a:License a:ExtractedLicensingInfo))
+  range(xsd:string))
+ DatatypeProperty(a:licenseText
+  domain(a:License)
+  range(xsd:string))
+ DatatypeProperty(a:name
+  domain(unionOf(a:Package a:License a:ExtractedLicensingInfo))
+  range(xsd:string))
+ DatatypeProperty(a:packageFileName
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:packageVerificationCodeExcludedFile
+  domain(a:PackageVerificationCode)
+  range(xsd:string))
+ DatatypeProperty(a:packageVerificationCodeValue
+  domain(a:PackageVerificationCode)
+  range(xsd:hexBinary))
+ DatatypeProperty(a:reviewDate
+  domain(a:Review)
+  range(xsd:dateTime))
+ DatatypeProperty(a:reviewer
+  domain(a:Review)
+  range(xsd:string))
+ DatatypeProperty(a:sourceInfo
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:specVersion
+  domain(a:SpdxDocument)
+  range(xsd:string))
+ DatatypeProperty(a:standardLicenseHeader
+  domain(a:License)
+  range(xsd:string))
+ DatatypeProperty(a:summary
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:versionInfo
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(rdfs:comment)
+ DatatypeProperty(d:term_status)
+
+ Class(<http://opensource.org/> partial)
+ Class(a:AnyLicenseInfo complete 
+  unionOf(a:DisjunctiveLicenseSet a:License a:ConjunctiveLicenseSet a:ExtractedLicensingInfo))
+ Class(a:AnyLicenseInfo partial 
+  annotation(rdfs:comment "The <code>AnyLicenseInfo</code> class includes all resources that represent licensing information."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+)
+ Class(a:Checksum partial 
+  restriction(a:algorithm cardinality(1))
+  restriction(a:checksumValue cardinality(1)))
+ Class(a:Checksum partial 
+  annotation(rdfs:comment "A <code>Checksum</code> is value that allows the contents of a file to be authenticated.  Even small changes to the content of the file will change it's checksum.  This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+)
+ Class(a:ConjunctiveLicenseSet partial 
+  restriction(a:member minCardinality(2))
+  rdfs:Container)
+ Class(a:ConjunctiveLicenseSet partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "A <code>ConjunctiveLicenseSet</code> represents a set of <a href=\"#AnyLicenseInfo\">licensing information</a> all of which apply."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+)
+ Class(a:CreationInfo partial 
+  restriction(a:creator minCardinality(1))
+  restriction(rdfs:comment maxCardinality(1))
+  restriction(a:created cardinality(1)))
+ Class(a:CreationInfo partial 
+  annotation(rdfs:comment "A <code>CreationInfo</code> provides information about the individuals, organizations and tools involved in the creation of an <a href=\"#SpdxDocument\"><code>SpdxDocument</code></a>."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+)
+ Class(a:DisjunctiveLicenseSet partial 
+  restriction(a:member minCardinality(2))
+  rdfs:Container)
+ Class(a:DisjunctiveLicenseSet partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "A <code>DisjunctiveLicenseSet</code> represents a set of <a href=\"#AnyLicenseInfo\">licensing information</a> where only one license applies at a time.  This class implies that the recipient gets to choose one of these licenses they would prefer to use."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+)
+ Class(a:ExtractedLicensingInfo partial 
+  restriction(rdfs:seeAlso minCardinality(0))
+  restriction(a:name maxCardinality(1))
+  restriction(rdfs:comment maxCardinality(1))
+  restriction(a:extractedText cardinality(1))
+  restriction(a:licenseId cardinality(1)))
+ Class(a:ExtractedLicensingInfo partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "An <code>ExtractedLicensingInfo</code> represents a license or licensing notice that was found in the package.  Any license text that is recognized as a license may be represented as a <a href=\"#License\"><code>License</code></a> rather than an <code>ExtractedLicensingInfo</code>."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+)
+ Class(a:File partial 
+  restriction(a:fileType maxCardinality(1))
+  restriction(a:checksum cardinality(1))
+  restriction(a:licenseConcluded cardinality(1))
+  restriction(rdfs:comment maxCardinality(1))
+  restriction(a:copyrightText cardinality(1))
+  restriction(a:licenseInfoInFile minCardinality(1))
+  restriction(a:licenseComments maxCardinality(1))
+  restriction(a:artifactOf maxCardinality(1))
+  restriction(a:fileName cardinality(1)))
+ Class(a:File partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "A <code>File</code> represents a named sequence of information that is contained in a software package."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+)
+ Class(a:License partial 
+  restriction(rdfs:seeAlso minCardinality(0))
+  restriction(a:isOsiApproved cardinality(1))
+  <http://opensource.org/>
+  restriction(a:standardLicenseHeader maxCardinality(1))
+  restriction(a:name maxCardinality(1))
+  restriction(rdfs:comment maxCardinality(1))
+  restriction(a:licenseText cardinality(1))
+  restriction(a:licenseId cardinality(1)))
+ Class(a:License partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "A <code>License</code> represents a copyright license. The <a href=\"http://spdx.org/licenses\">SPDX license list website</a> is annotated with these properties (using <a href=\"http://www.w3.org/TR/2008/REC-rdfa-syntax-20081014/\">RDFa</a>) to allow license data published there to be easily processed."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+)
+ Class(a:Package partial 
+  restriction(a:licenseInfoFromFiles minCardinality(1))
+  restriction(a:downloadLocation cardinality(1))
+  restriction(a:licenseConcluded cardinality(1))
+  restriction(a:packageVerificationCode cardinality(1))
+  restriction(a:sourceInfo maxCardinality(1))
+  restriction(a:originator maxCardinality(1))
+  restriction(a:summary maxCardinality(1))
+  restriction(a:versionInfo maxCardinality(1))
+  restriction(a:packageFileName maxCardinality(1))
+  restriction(a:licenseDeclared cardinality(1))
+  restriction(a:description maxCardinality(1))
+  restriction(a:supplier maxCardinality(1))
+  restriction(a:checksum maxCardinality(1))
+  restriction(a:copyrightText cardinality(1))
+  restriction(a:licenseComments maxCardinality(1))
+  restriction(a:hasFile minCardinality(1))
+  restriction(a:name cardinality(1)))
+ Class(a:Package partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "A <code>Package</code> represents a collection of software files that are delivered as a single functional component."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+)
+ Class(a:PackageVerificationCode partial 
+  restriction(a:packageVerificationCodeValue cardinality(1)))
+ Class(a:PackageVerificationCode partial 
+  annotation(rdfs:comment "A manifest based verification code (the algorithm is defined in section 4.7 of the full specification) of the package. This allows consumers of this data and/or database to determine if a package they have in hand is identical to the package from which the data was produced. This algorithm works even if the SPDX document is included in the package.")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+)
+ Class(a:Review partial 
+  restriction(a:reviewer cardinality(1))
+  restriction(rdfs:comment maxCardinality(1))
+  restriction(a:reviewDate cardinality(1)))
+ Class(a:Review partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "A <code>Review</code> represents an audit and signoff by an individual, organization or tool on the information in an <a href=\"#SpdxDocument\"><code>SpdxDocument</code></a>."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+)
+ Class(a:SimpleLicenseInfo complete 
+  unionOf(a:License a:ExtractedLicensingInfo))
+ Class(a:SimpleLicenseInfo partial 
+  annotation(rdfs:comment "The <code>SimpleLicenseInfo</code> class includes all resources that represent simple, atomic, licensing information."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+)
+ Class(a:SpdxDocument partial 
+  restriction(a:describesPackage cardinality(1))
+  restriction(rdfs:comment maxCardinality(1))
+  restriction(a:referencesFile minCardinality(1))
+  restriction(a:specVersion cardinality(1))
+  restriction(a:dataLicense cardinality(1))
+  restriction(a:creationInfo cardinality(1)))
+ Class(a:SpdxDocument partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "An <code>SpdxDocument</code> is a summary of the contents, provenance, ownership and licensing analysis of a specific software package.  This is, effectively, the top level of SPDX information."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+)
+ Class(b:Project partial)
+ Class(rdfs:Container partial)
+ Class(rdfs:Literal partial)
+ Class(xsd:string partial)
+ Class(owl:Thing partial)
+
+ AnnotationProperty(rdfs:comment)
+ AnnotationProperty(rdfs:isDefinedBy)
+ AnnotationProperty(owl:versionInfo)
+
+ Individual(<http://spdx.org/licenses/CC0-1.0>)
+ Individual(<http://spdx.org/rdf/terms>
+  value(c:stylesheet <http://spdx.org/sites/all/themes/spdx/zen.css?a>)
+  value(c:stylesheet <http://spdx.org/sites/all/themes/spdx/universe_nav.css?a>)
+  value(c:stylesheet <http://spdx.org/sites/all/themes/spdx/style.css?a>)
+  value(c:icon <http://spdx.org/sites/all/themes/spdx/favicon.ico>))
+ Individual(a:AnyLicenseInfo
+  value(d:term_status "stable"))
+ Individual(a:Checksum
+  value(d:term_status "stable"))
+ Individual(a:ConjunctiveLicenseSet
+  value(d:term_status "stable"))
+ Individual(a:CreationInfo
+  value(d:term_status "stable"))
+ Individual(a:DisjunctiveLicenseSet
+  value(d:term_status "stable"))
+ Individual(a:ExtractedLicensingInfo
+  value(d:term_status "stable"))
+ Individual(a:File
+  value(d:term_status "stable"))
+ Individual(a:License
+  value(d:term_status "stable"))
+ Individual(a:Package
+  value(d:term_status "stable"))
+ Individual(a:PackageVerificationCode
+  value(d:term_status "stable"))
+ Individual(a:Review
+  value(d:term_status "stable"))
+ Individual(a:SimpleLicenseInfo
+  value(d:term_status "stable"))
+ Individual(a:SpdxDocument
+  value(d:term_status "stable"))
+ Individual(a:algorithm
+  value(d:term_status "stable"))
+ Individual(a:artifactOf
+  value(d:term_status "stable"))
+ Individual(a:checksum
+  value(d:term_status "stable"))
+ Individual(a:checksumAlgorithm_sha1
+  annotation(rdfs:comment "Indicates the algorithm used was <a href=\"http://www.itl.nist.gov/fipspubs/fip180-1.htm\">SHA-1</a>"^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  type(owl:Thing)
+  value(d:term_status "stable"))
+ Individual(a:checksumValue
+  value(d:term_status "stable"))
+ Individual(a:copyrightText
+  value(d:term_status "stable"))
+ Individual(a:created
+  value(d:term_status "stable"))
+ Individual(a:creationInfo
+  value(d:term_status "stable"))
+ Individual(a:creator
+  value(d:term_status "stable"))
+ Individual(a:dataLicense
+  value(d:term_status "stable"))
+ Individual(a:describesPackage
+  value(d:term_status "stable"))
+ Individual(a:description
+  value(d:term_status "stable"))
+ Individual(a:downloadLocation
+  value(d:term_status "stable"))
+ Individual(a:extractedText
+  value(d:term_status "stable"))
+ Individual(a:fileName
+  value(d:term_status "stable"))
+ Individual(a:fileType
+  value(d:term_status "stable"))
+ Individual(a:fileType_archive
+  annotation(rdfs:comment "Indicates the file is an archive file.")
+
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  type(owl:Thing)
+  value(d:term_status "stable"))
+ Individual(a:fileType_binary
+  annotation(rdfs:comment "Indicates the file is not a text file.  <a href=\"#fileType_archive\"><code>spdx:filetype_archive</code></a> is preferred for archive files even though they are binary."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  type(owl:Thing)
+  value(d:term_status "stable"))
+ Individual(a:fileType_other
+  annotation(rdfs:comment "Indicates the file is not a <a href=\"#fileType_source\">source</a>, <a href=\"#fileType_archive\">archive</a> or <a href=\"#fileType_binary\">binary</a> file."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  type(owl:Thing)
+  value(d:term_status "stable"))
+ Individual(a:fileType_source
+  annotation(rdfs:comment "Indicates the file is a source code file.")
+
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  type(owl:Thing)
+  value(d:term_status "stable"))
+ Individual(a:hasExtractedLicensingInfo
+  value(d:term_status "stable"))
+ Individual(a:hasFile
+  value(d:term_status "stable"))
+ Individual(a:isOsiApproved
+  value(d:term_status "stable"))
+ Individual(a:licenseComments
+  value(d:term_status "stable"))
+ Individual(a:licenseConcluded
+  value(d:term_status "stable"))
+ Individual(a:licenseDeclared
+  value(d:term_status "stable"))
+ Individual(a:licenseId
+  value(d:term_status "stable"))
+ Individual(a:licenseInfoFromFiles
+  value(d:term_status "stable"))
+ Individual(a:licenseInfoInFile
+  value(d:term_status "stable"))
+ Individual(a:licenseText
+  value(d:term_status "stable"))
+ Individual(a:member
+  value(d:term_status "stable"))
+ Individual(a:name
+  value(d:term_status "stable"))
+ Individual(a:noassertion
+  annotation(rdfs:comment "Indicates that the preparer of the SPDX document is not making any assertion
+            regarding the value of this field.")
+
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  type(owl:Thing)
+  value(d:term_status "stable"))
+ Individual(a:none
+  annotation(rdfs:comment "When this value is used as the object of a property it indicates that the preparer of the <a href=\"#SpdxDocument\"><code>SpdxDocument</code></a> believes that there is no value for the property.  This value should only be used if there is sufficient evidence to support this assertion."^^http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral)
+
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  type(owl:Thing)
+  value(d:term_status "stable"))
+ Individual(a:originator
+  value(d:term_status "stable"))
+ Individual(a:packageFileName
+  value(d:term_status "stable"))
+ Individual(a:packageVerificationCode
+  value(d:term_status "stable"))
+ Individual(a:packageVerificationCodeExcludedFile
+  value(d:term_status "stable"))
+ Individual(a:packageVerificationCodeValue
+  value(d:term_status "stable"))
+ Individual(a:referencesFile
+  value(d:term_status "stable"))
+ Individual(a:reviewDate
+  value(d:term_status "stable"))
+ Individual(a:reviewed
+  value(d:term_status "stable"))
+ Individual(a:reviewer
+  value(d:term_status "stable"))
+ Individual(a:sourceInfo
+  value(d:term_status "stable"))
+ Individual(a:specVersion
+  value(d:term_status "stable"))
+ Individual(a:standardLicenseHeader
+  value(d:term_status "stable"))
+ Individual(a:summary
+  value(d:term_status "stable"))
+ Individual(a:supplier
+  value(d:term_status "stable"))
+ Individual(a:versionInfo
+  value(d:term_status "stable"))
+ Individual(<http://spdx.org/rdf/terms.rdf>)
+ Individual(<http://spdx.org/rdf/terms.ttl>)
+ Individual(<http://spdx.org/sites/all/themes/spdx/favicon.ico>)
+ Individual(<http://spdx.org/sites/all/themes/spdx/style.css?a>)
+ Individual(<http://spdx.org/sites/all/themes/spdx/universe_nav.css?a>)
+ Individual(<http://spdx.org/sites/all/themes/spdx/zen.css?a>)
+
+ SameIndividual(<http://spdx.org/rdf/terms> <http://spdx.org/rdf/terms.ttl>)
+ SameIndividual(<http://spdx.org/rdf/terms> <http://spdx.org/rdf/terms.rdf>)
+
+)
+

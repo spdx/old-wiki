@@ -1,0 +1,441 @@
+Namespace(rdf	= <http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Namespace(owl	= <http://www.w3.org/2002/07/owl#>)
+Namespace(xsd	= <http://www.w3.org/2001/XMLSchema#>)
+Namespace(rdfs	= <http://www.w3.org/2000/01/rdf-schema#>)
+Namespace(a	= <http://spdx.org/rdf/terms#>)
+Namespace(b	= <http://usefulinc.com/ns/doap#>)
+Namespace(c	= <http://www.w3.org/2003/06/sw-vocab-status/ns#>)
+
+Ontology( <http://spdx.org/rdf/terms>
+
+ Annotation(rdfs:comment "This specification describes the SPDX language, defined as a dictionary of named properties and classes using W3C's RDF Technology.
+
+    SPDX is a designed to allow the exchange of data about software package.  This information includes both lists of files contained in the package and the licensing information related to the contained files or the package as a whole.")
+
+ ObjectProperty(a:algorithm
+  domain(a:Checksum)
+  range(oneOf(a:checksumAlgorithm_sha1)))
+ ObjectProperty(a:artifactOf
+  domain(a:File)
+  range(b:Project))
+ ObjectProperty(a:checksum
+  domain(unionOf(a:Package a:File))
+  range(a:Checksum))
+ ObjectProperty(a:copyrightText
+  domain(unionOf(a:Package a:File))
+  range(unionOf(xsd:string a:File)))
+ ObjectProperty(a:creationInfo
+  domain(a:SpdxDocument)
+  range(a:CreationInfo))
+ ObjectProperty(a:describesPackage
+  domain(a:SpdxDocument)
+  range(a:Package))
+ ObjectProperty(a:fileType
+  domain(a:File)
+  range(oneOf(a:fileType_source a:fileType_other a:fileType_archive a:fileType_binary)))
+ ObjectProperty(a:hasExtractedLicensingInfo
+  domain(a:SpdxDocument)
+  range(a:ExtractedLicensingInfo))
+ ObjectProperty(a:hasFile
+  domain(a:Package)
+  range(a:File))
+ ObjectProperty(a:licenseConcluded
+  domain(unionOf(a:Package a:File))
+  range(unionOf(a:AnyLicenseInfo a:NotAnalyzed a:None)))
+ ObjectProperty(a:licenseDeclared
+  domain(a:Package)
+  range(unionOf(a:Undetermined a:AnyLicenseInfo a:None)))
+ ObjectProperty(a:licenseInfoFromFiles
+  domain(a:Package)
+  range(unionOf(a:NoneSeen a:SimpleLicenseInfo a:Undetermined)))
+ ObjectProperty(a:licenseInfoInFile
+  domain(a:File)
+  range(unionOf(a:NoneSeen a:SimpleLicenseInfo a:Undetermined)))
+ ObjectProperty(a:member
+  domain(unionOf(a:DisjunctiveLicenseSet a:ConjunctiveLicenseSet))
+  range(a:AnyLicenseInfo))
+ ObjectProperty(a:reviewed
+  domain(a:SpdxDocument)
+  range(a:Review))
+ ObjectProperty(rdf:first)
+ ObjectProperty(rdf:rest)
+ ObjectProperty(rdfs:comment)
+ ObjectProperty(owl:onProperty)
+
+ DatatypeProperty(a:checksumValue
+  domain(a:Checksum)
+  range(xsd:hexBinary))
+ DatatypeProperty(a:created
+  domain(a:CreationInfo)
+  range(xsd:dateTime))
+ DatatypeProperty(a:creator
+  domain(a:CreationInfo)
+  range(xsd:string))
+ DatatypeProperty(a:description
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:downloadLocation
+  domain(a:Package)
+  range(xsd:anyURI))
+ DatatypeProperty(a:extractedText
+  domain(a:ExtractedLicensingInfo)
+  range(xsd:string))
+ DatatypeProperty(a:fileName
+  domain(a:File)
+  range(xsd:string))
+ DatatypeProperty(a:licenseComments
+  domain(unionOf(a:Package a:File))
+  range(xsd:string))
+ DatatypeProperty(a:licenseId
+  domain(unionOf(a:License a:ExtractedLicensingInfo))
+  range(xsd:string))
+ DatatypeProperty(a:licenseText
+  domain(a:License)
+  range(xsd:string))
+ DatatypeProperty(a:name
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:packageFileName
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:packageVerificationCode
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:reviewDate
+  domain(a:Review)
+  range(xsd:dateTime))
+ DatatypeProperty(a:reviewer
+  domain(a:Review)
+  range(xsd:string))
+ DatatypeProperty(a:sourceInfo
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(a:specVersion
+  domain(a:SpdxDocument)
+  range(xsd:string))
+ DatatypeProperty(a:summary
+  domain(a:Package)
+  range(xsd:string))
+ DatatypeProperty(c:term_status)
+
+ Class(a:AnyLicenseInfo complete 
+  unionOf(a:DisjunctiveLicenseSet a:License a:ConjunctiveLicenseSet a:ExtractedLicensingInfo))
+ Class(a:AnyLicenseInfo partial 
+  annotation(rdfs:comment "The AnyLicenseInfo class includes all resources that represent licensing information.")
+  annotation(rdfs:label "AnyLicenseInfo")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+)
+ Class(a:Checksum partial 
+  restriction(a:algorithm cardinality(1))
+  restriction(a:checksumValue cardinality(1)))
+ Class(a:Checksum partial 
+  annotation(rdfs:comment "Each Checksum is a digest of a file.  This digest is produced using a cryptographic hash algorithm which allows the contents of a file to be verified.")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:label "Checksum")
+)
+ Class(a:ConjunctiveLicenseSet partial 
+  restriction(a:member minCardinality(1))
+  rdfs:Container)
+ Class(a:ConjunctiveLicenseSet partial 
+  annotation(rdfs:comment "Each ConjunctiveLicenseSet represents set of licenses, or other licensing information, all of which apply.")
+  annotation(rdfs:label "ConjunctiveLicenseSet")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+)
+ Class(a:CreationInfo partial 
+  restriction(rdfs:comment maxCardinality(1))
+  restriction(a:created cardinality(1))
+  restriction(a:creator minCardinality(1)))
+ Class(a:CreationInfo partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "Each CreationInfo provides information about an individual, organization or tool that was involved in the creation of this SpdxDocument.")
+  annotation(rdfs:label "CreationInfo")
+)
+ Class(a:DisjunctiveLicenseSet partial 
+  restriction(a:member minCardinality(1))
+  rdfs:Container)
+ Class(a:DisjunctiveLicenseSet partial 
+  annotation(rdfs:label "DisjunctiveLicenseSet")
+  annotation(rdfs:comment "Each DisjunctiveLicenseSet represents set of licenses, or other licensing information, only one of which apply.")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+)
+ Class(a:ExtractedLicensingInfo partial 
+  restriction(a:extractedText cardinality(1))
+  restriction(a:licenseId cardinality(1)))
+ Class(a:ExtractedLicensingInfo partial 
+  annotation(rdfs:label "ExtractedLicensingInfo")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "Each ExtractedLicensingInfo represents a license or licensing notice that was found in the package.  Any license text that is recognized as a license may be represented as a License rather than and ExtractedLicensingInfo.")
+)
+ Class(a:File partial 
+  restriction(a:licenseInfoInFile minCardinality(1))
+  restriction(a:artifactOf maxCardinality(1))
+  restriction(a:licenseConcluded cardinality(1))
+  restriction(a:fileName cardinality(1))
+  restriction(a:fileType maxCardinality(1))
+  restriction(a:licenseComments maxCardinality(1))
+  restriction(a:copyrightText cardinality(1))
+  restriction(a:checksum cardinality(1)))
+ Class(a:File partial 
+  annotation(rdfs:label "File")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "Each File represents a sequence of octets that is contained in a software package.")
+)
+ Class(a:License partial 
+  restriction(a:licenseText cardinality(1))
+  restriction(a:licenseId cardinality(1)))
+ Class(a:License partial 
+  annotation(rdfs:comment "Each License represents a software license.  This class is used by the SPDX license repository to represent standard license.")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:label "License")
+)
+ EnumeratedClass(a:None a:none)
+ Class(a:None partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:label "None")
+)
+ EnumeratedClass(a:NoneSeen a:noneSeen)
+ Class(a:NoneSeen partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:label "NoneSeen")
+)
+ EnumeratedClass(a:NotAnalyzed a:notAnalyzed)
+ Class(a:NotAnalyzed partial 
+  annotation(rdfs:label "NotAnalyzed")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+)
+ Class(a:Package partial 
+  restriction(a:downloadLocation cardinality(1))
+  restriction(a:packageVerificationCode cardinality(1))
+  restriction(a:name cardinality(1))
+  restriction(a:summary maxCardinality(1))
+  restriction(a:licenseInfoFromFiles minCardinality(1))
+  restriction(a:checksum maxCardinality(1))
+  restriction(a:licenseDeclared cardinality(1))
+  restriction(a:description maxCardinality(1))
+  restriction(a:hasFile minCardinality(1))
+  restriction(a:licenseConcluded cardinality(1))
+  restriction(a:sourceInfo maxCardinality(1))
+  restriction(a:licenseComments maxCardinality(1))
+  restriction(a:copyrightText cardinality(1))
+  restriction(a:packageFileName cardinality(1)))
+ Class(a:Package partial 
+  annotation(rdfs:label "Package")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "Each Package represents a piece software that is delivered as a single unit.")
+)
+ Class(a:Review partial 
+  restriction(rdfs:comment maxCardinality(1))
+  restriction(a:reviewer cardinality(1))
+  restriction(a:reviewDate cardinality(1)))
+ Class(a:Review partial 
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:label "Review")
+  annotation(rdfs:comment "Each Review represents a signoff by an individual on the information in the SpdxDocument.")
+)
+ Class(a:SimpleLicenseInfo complete 
+  unionOf(a:License a:ExtractedLicensingInfo))
+ Class(a:SimpleLicenseInfo partial 
+  annotation(rdfs:label "SimpleLicenseInfo")
+  annotation(rdfs:comment "The SimpleLicenseInfo class includes all resources that represent simple, atomic, licensing information.")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+)
+ Class(a:SpdxDocument partial 
+  restriction(a:specVersion cardinality(1))
+  restriction(a:describesPackage cardinality(1))
+  restriction(a:creationInfo cardinality(1)))
+ Class(a:SpdxDocument partial 
+  annotation(rdfs:label "SpdxDocument")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+  annotation(rdfs:comment "Each SdpxDocument represents the results of a provenance, ownership and licensing analysis of exactly on software package.  This is, effectively, the top level of SPDX information.")
+)
+ EnumeratedClass(a:Undetermined a:undetermined)
+ Class(a:Undetermined partial 
+  annotation(rdfs:label "Undetermined")
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+)
+ Class(b:Project partial)
+ Class(rdfs:Container partial)
+ Class(xsd:string partial)
+ Class(owl:Thing partial)
+
+ AnnotationProperty(rdfs:comment)
+ AnnotationProperty(rdfs:isDefinedBy)
+ AnnotationProperty(rdfs:label)
+
+ Individual(a:AnyLicenseInfo
+  value(c:term_status "testing"))
+ Individual(a:Checksum
+  value(c:term_status "testing"))
+ Individual(a:ConjunctiveLicenseSet
+  value(c:term_status "testing"))
+ Individual(a:CreationInfo
+  value(c:term_status "testing"))
+ Individual(a:DisjunctiveLicenseSet
+  value(c:term_status "testing"))
+ Individual(a:ExtractedLicensingInfo
+  value(c:term_status "testing"))
+ Individual(a:File
+  value(c:term_status "testing"))
+ Individual(a:License
+  value(c:term_status "testing"))
+ Individual(a:None)
+ Individual(a:Package
+  value(c:term_status "testing"))
+ Individual(a:Review
+  value(c:term_status "testing"))
+ Individual(a:SimpleLicenseInfo
+  value(c:term_status "testing"))
+ Individual(a:SpdxDocument
+  value(owl:onProperty a:hasExtractedLicensingInfo)
+  value(c:term_status "testing"))
+ Individual(a:Undetermined)
+ Individual(a:algorithm
+  value(c:term_status "testing"))
+ Individual(a:artifactOf
+  value(c:term_status "testing"))
+ Individual(a:checksum
+  value(c:term_status "testing"))
+ Individual(a:checksumAlgorithm_sha1
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  annotation(rdfs:comment "Indicates the algorithm used was SHA-1")
+
+  annotation(rdfs:label "checksumAlgorithm_sha1")
+
+  type(owl:Thing)
+  value(c:term_status "testing"))
+ Individual(a:checksumValue
+  value(c:term_status "testing"))
+ Individual(a:copyrightText
+  value(c:term_status "testing"))
+ Individual(a:created
+  value(c:term_status "testing"))
+ Individual(a:creationInfo
+  value(c:term_status "testing"))
+ Individual(a:creator
+  value(c:term_status "testing"))
+ Individual(a:describesPackage
+  value(c:term_status "testing"))
+ Individual(a:description
+  value(c:term_status "testing"))
+ Individual(a:downloadLocation
+  value(c:term_status "testing"))
+ Individual(a:extractedText
+  value(c:term_status "testing"))
+ Individual(a:fileName
+  value(c:term_status "testing"))
+ Individual(a:fileType
+  value(c:term_status "testing"))
+ Individual(a:fileType_archive
+  annotation(rdfs:comment "Indicates the file is a archive file.")
+
+  annotation(rdfs:label "fileType_archive")
+
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  type(owl:Thing)
+  value(c:term_status "testing"))
+ Individual(a:fileType_binary
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  annotation(rdfs:comment "Indicates the file is not a text file.  spdx:filetype_archive is preferred for archive files even though they are binary.")
+
+  annotation(rdfs:label "fileType_binary")
+
+  type(owl:Thing)
+  value(c:term_status "testing"))
+ Individual(a:fileType_other
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  annotation(rdfs:label "fileType_other")
+
+  annotation(rdfs:comment "Indicates the file is not a source, archive or binary file.")
+
+  type(owl:Thing)
+  value(c:term_status "testing"))
+ Individual(a:fileType_source
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  annotation(rdfs:label "fileType_source")
+
+  annotation(rdfs:comment "Indicates the file is a source code file.")
+
+  type(owl:Thing)
+  value(c:term_status "testing"))
+ Individual(a:hasExtractedLicensingInfo
+  value(c:term_status "testing"))
+ Individual(a:hasFile
+  value(c:term_status "testing"))
+ Individual(a:licenseComments
+  value(c:term_status "testing"))
+ Individual(a:licenseConcluded
+  value(c:term_status "testing"))
+ Individual(a:licenseDeclared
+  value(c:term_status "testing"))
+ Individual(a:licenseId
+  value(c:term_status "testing"))
+ Individual(a:licenseInfoFromFiles
+  value(c:term_status "testing"))
+ Individual(a:licenseInfoInFile
+  value(c:term_status "testing"))
+ Individual(a:licenseText
+  value(c:term_status "testing"))
+ Individual(a:member
+  value(c:term_status "testing"))
+ Individual(a:name
+  value(c:term_status "testing"))
+ Individual(a:none
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  annotation(rdfs:label "none")
+
+  annotation(rdfs:comment "When this value is used as the object of a property it indicates that the preparer of the SpdxDocument believes that there is no value for the property.  This value should only be used if there is sufficient evidence to support this contention.  This is different from spdx:undetermined in that spdx:none indicates some effort was taken to determine the value.")
+
+  type(owl:Thing)
+  value(c:term_status "testing"))
+ Individual(a:noneSeen
+  annotation(rdfs:label "noneSeen")
+
+  annotation(rdfs:comment "When this value is used as the object of a property it indicates that the preparer of the SpdxDocument found no information for the property.")
+
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  type(owl:Thing)
+  value(c:term_status "testing"))
+ Individual(a:notAnalyzed
+  annotation(rdfs:label "notAnalyzed")
+
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  annotation(rdfs:comment "When this value is used as the object of a property it indicates that the preparer of the SpdxDocument made no attempt to determine the actual value.")
+
+  type(owl:Thing)
+  value(c:term_status "testing"))
+ Individual(a:packageFileName
+  value(c:term_status "testing"))
+ Individual(a:packageVerificationCode
+  value(c:term_status "testing"))
+ Individual(a:reviewDate
+  value(c:term_status "testing"))
+ Individual(a:reviewed
+  value(c:term_status "testing"))
+ Individual(a:reviewer
+  value(c:term_status "testing"))
+ Individual(a:sourceInfo
+  value(c:term_status "testing"))
+ Individual(a:specVersion
+  value(c:term_status "testing"))
+ Individual(a:summary
+  value(c:term_status "testing"))
+ Individual(a:undetermined
+  annotation(rdfs:isDefinedBy http://spdx.org/rdf/terms)
+
+  annotation(rdfs:comment "When this value is used as the object of a property it indicates that the preparer of the SpdxDocument made no attempt to determine the actual value.")
+
+  annotation(rdfs:label "undetermined")
+
+  type(owl:Thing)
+  value(c:term_status "testing"))
+ Individual(rdf:nil)
+
+)

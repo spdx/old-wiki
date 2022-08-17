@@ -1,0 +1,265 @@
+
+<http://spdx.org/rdf/terms> a <http://www.w3.org/2002/07/owl#Ontology>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "LicenseSlug",
+   "UtcXsdDate" .
+<http://spdx.org/rdf/terms#licenseInfoFromFiles> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Licensing information that was discovered directly in the package.  This is effectively a union of the licenseInfoInFile properties of all the files contained in the package.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "licenseInfoFromFiles";
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#License> <http://spdx.org/rdf/terms#ExtractedLicensingInfo> _:NoneClass)] .
+<http://spdx.org/rdf/terms#reviewed> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The review property relates a SpdxDocument to the review history.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#SpdxDocument>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "reviewed";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#Review> .
+<http://spdx.org/rdf/terms#algorithm> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies the algorithm used to produce a checksum.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Checksum>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "algorithm";
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#oneOf> (<http://spdx.org/rdf/terms#checksumAlgorithm_sha1>)] .
+<http://spdx.org/rdf/terms#checksumValue> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The checksumValue property provides a digest value produced using a specific algorithm.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Checksum>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "checksumValue";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://spdx.org/rdf/terms#created> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The date and time at which the SpdxDocument was created.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#CreationInfo>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "created";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#UtcXsdDate> .
+<http://spdx.org/rdf/terms#creationInfo> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The creationInfo property relates an SpdxDocument to a set of information about the creation of the SpdxDocument.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#SpdxDocument>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "creationInfo";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#CreationInfo> .
+<http://spdx.org/rdf/terms#creator> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The name and, optionally, contact information of a person, organization or tool that created, or was used to create, the SpdxDocument.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#CreationInfo>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "creator";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://spdx.org/rdf/terms#describesPackage> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The describesPackage property relates an SpdxDocument to the package which it describes.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#SpdxDocument>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "describesPackage";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#Package> .
+<http://spdx.org/rdf/terms#downloadLocation> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The URI at which this package is available for download.  Private (ie, not publicly reachable) URIs are acceptable as values of this property.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#File>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "downloadLocation";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://spdx.org/rdf/terms#extractedText> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Verbatim license or licensing notice text that was discovered.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#License>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "extractedText";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://spdx.org/rdf/terms#fileName> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the file relative to the root of the package.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#File>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "fileName";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://spdx.org/rdf/terms#fileType> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The type of the file.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#File>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "fileType";
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#oneOf> (<http://spdx.org/rdf/terms#fileType_source> <http://spdx.org/rdf/terms#fileType_archive> <http://spdx.org/rdf/terms#fileType_binary> <http://spdx.org/rdf/terms#fileType_other>)] .
+<http://spdx.org/rdf/terms#hasFile> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a particular file belongs to a package.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "hasFile";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#File> .
+<http://spdx.org/rdf/terms#licenseDeclared> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The licensing that is declared by the authors of the package.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "licenseDeclared";
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#License> <http://spdx.org/rdf/terms#ExtractedLicensingInfo> <http://spdx.org/rdf/terms#ConjunctiveLicenseSet> <http://spdx.org/rdf/terms#DisjunctiveLicenseSet> _:NoneClass)] .
+<http://spdx.org/rdf/terms#licenseInfoInFile> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Licensing information that was discovered directly in the subject File.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#File>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "licenseInfoInFile";
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#License> <http://spdx.org/rdf/terms#ExtractedLicensingInfo> _:NoneClass)] .
+<http://spdx.org/rdf/terms#licenseText> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The full text of the license.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#File>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "licenseText";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://spdx.org/rdf/terms#name> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The full name of the package including version information.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "name";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://spdx.org/rdf/terms#packageFileName> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The base name of the package filename.  This will often included the package name, version information and archive/compression method.  For example, zlib-1.2.5.tar.gz.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "packageFileName";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://spdx.org/rdf/terms#packageVerificationCode> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A manifest based hash of the package.  This allows consumers of this dataset to determin if a package they have in hand is identical to the package from which the data was produced.  This algorithm works even if the SPDX document is included in the package.  This algorithm is described in detail in the SPDX spec.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "packageVerificationCode";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://spdx.org/rdf/terms#reviewDate> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The date and time at which the SpdxDocument was reviewed.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Review>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "reviewDate";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#UtcXsdDate> .
+<http://spdx.org/rdf/terms#reviewer> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The name and, optionally, contact information of the person who performed the review.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Review>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "reviewer";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://spdx.org/rdf/terms#sourceInfo> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Allows the producer(s) of the SPDX document to describe how the package was acquired and/or changed from the original source.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#Package>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "sourceInfo";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://spdx.org/rdf/terms#spdxVersion> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies the version of this specification that was used to produce this SPDX document.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#SpdxDocument>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "sdpxVersion";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://spdx.org/rdf/terms#checksum> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The checksum property provides a digest of a File or File. This allows consumers of the SPDX document to verify that the content of the files or package has not changed.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#Package> <http://spdx.org/rdf/terms#File>)];
+   <http://www.w3.org/2000/01/rdf-schema#label> "checksum";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#Checksum> .
+<http://spdx.org/rdf/terms#licenseConcluded> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "The licensing that the preparer of this SPDX document has concluded, based on the evidence, actual applies to the package.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#Package> <http://spdx.org/rdf/terms#File>)];
+   <http://www.w3.org/2000/01/rdf-schema#label> "licenseConcluded";
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#License> <http://spdx.org/rdf/terms#ExtractedLicensingInfo> <http://spdx.org/rdf/terms#ConjunctiveLicenseSet> <http://spdx.org/rdf/terms#DisjunctiveLicenseSet> _:NoneClass)] .
+<http://spdx.org/rdf/terms#licenseId> a <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A short name for the license that is made up of ascii characters from the set 'a'-'z', 'A'-'Z', '0'-'9', '+', '_', and '-'.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> <http://spdx.org/rdf/terms#License>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "licenseId";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://spdx.org/rdf/terms#LicenseSlug> .
+<http://spdx.org/rdf/terms#member> a <http://www.w3.org/2002/07/owl#ObjectProperty>;
+   <http://www.w3.org/2000/01/rdf-schema#comment> "A license, or other licensing information, that is a member of the subject license set.";
+   <http://www.w3.org/2000/01/rdf-schema#domain> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#ConjunctiveLicenseSet> <http://spdx.org/rdf/terms#DisjunctiveLicenseSet>)];
+   <http://www.w3.org/2000/01/rdf-schema#label> "member";
+   <http://www.w3.org/2000/01/rdf-schema#range> [ a <http://www.w3.org/2002/07/owl#Class>;
+     <http://www.w3.org/2002/07/owl#unionOf> (<http://spdx.org/rdf/terms#License> <http://spdx.org/rdf/terms#ExtractedLicensingInfo> <http://spdx.org/rdf/terms#ConjunctiveLicenseSet> <http://spdx.org/rdf/terms#DisjunctiveLicenseSet>)] .
+<http://spdx.org/rdf/terms#Checksum> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "Checksum";
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#checksumValue>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#algorithm>] .
+<http://spdx.org/rdf/terms#CreationInfo> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "CreationInfo";
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <rdfs:comment>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#created>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#creator>] .
+<http://spdx.org/rdf/terms#Review> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "Review";
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <rdfs:comment>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#reviewDate>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#reviewer>] .
+<http://spdx.org/rdf/terms#ConjunctiveLicenseSet> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "ConjunctiveLicenseSet";
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#member>] .
+<http://spdx.org/rdf/terms#DisjunctiveLicenseSet> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "DisjunctiveLicenseSet";
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#member>] .
+<http://spdx.org/rdf/terms#SpdxDocument> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "SpdxDocument";
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#describesPackage>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#creationInfo>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#spdxVersion>] .
+<http://spdx.org/rdf/terms#ExtractedLicensingInfo> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "ExtractedLicensingInfo";
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#extractedText>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseId>] .
+<http://spdx.org/rdf/terms#License> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "License";
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseText>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseId>] .
+<http://spdx.org/rdf/terms#File> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "File";
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#checksum>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseInfoInFile>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseConcluded>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#fileType>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#fileName>] .
+<http://spdx.org/rdf/terms#Package> a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "Package";
+   <http://www.w3.org/2000/01/rdf-schema#subClassOf> [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseConcluded>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#licenseDeclared>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#sourceInfo>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#packageVerificationCode>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#maxCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#checksum>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#downloadLocation>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#packageFileName>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#cardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#name>],
+   [ a <http://www.w3.org/2002/07/owl#Restriction>;
+     <http://www.w3.org/2002/07/owl#minCardinality> "1";
+     <http://www.w3.org/2002/07/owl#onProperty> <http://spdx.org/rdf/terms#hasFile>] .
+(<http://spdx.org/rdf/terms#none>) a <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:NoneClass a <http://www.w3.org/2002/07/owl#Class>;
+   <http://www.w3.org/2002/07/owl#oneOf> (<http://spdx.org/rdf/terms#none>) .

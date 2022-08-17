@@ -1,0 +1,1269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns:dc="http://purl.org/dc/terms/"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+      xmlns:owl="http://www.w3.org/2002/07/owl#"
+      xmlns:doap="http://usefulinc.com/ns/doap"
+      xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#" 
+      xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>SPDX Vocabulary Specification</title>
+<!--    <base href="http://spdx.org/rdf/terms"/> -->
+
+    <link rel="shortcut icon" href="/sites/all/themes/spdx/favicon.ico" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/spdx/universe_nav.css?a" />
+    <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/spdx/style.css?a" />
+    <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/spdx/zen.css?a" />
+
+    <style type="text/css" media="screen">
+      <!--
+          body { font-family: Verdana, Geneva, sans-serif; }
+          table th { vertical-align: top; text-align: left; }
+          h3 { border-bottom: 1px black solid; }
+          h2 { border-bottom: 2px black solid; }
+          dt { font-weight: bold; }
+          li p { margin-top: 0; }
+          dd ul { padding-left: 0ex; margin-left: 0;}
+        -->
+    </style>
+
+
+  </head>
+
+  <body typeof="owl:Ontology" about="#">
+    <div id="page">
+      <div id="page-inner">
+        <div id="header"><div id="header-inner" class="clear-block">
+            <div id="util_nav">
+              <ul class="inline_list list_icon float_left" style="padding-top:2px;">
+                <li style="padding-right:4px; border-right:1px solid;"><a class="" href="http://www.linuxfoundation.org" style="background:0;">LINUXFOUNDATION.ORG</a></li>
+                <li style="padding-left:4px; padding-right:4px; border-right:1px solid;"><a href="https://fossbazaar.org/" class="" style="background:0; padding-right:0">FOSSBAZAAR</a></li>
+                <li style="padding-left:4px;"><a href="http://events.linuxfoundation.org" class="" style="background:0; padding-right:0">EVENTS</a></li>
+              </ul>
+            </div> <!-- close util_nav -->
+
+            <div id="logo-title">
+              <div id="logo"><a href="/" title="Home" rel="home"><img src="/images/logo_spdx.jpg" alt="Home" id="logo-image" /></a></div>
+	      <div id="lf_logo"><a href="http://linuxfoundation.org"></a></div>
+
+	      <div id="site-slogan">Software Package Data Exchange<sup>TM</sup></div>
+              
+            </div> <!-- /#logo-title -->
+
+            <br />
+
+            <div id="head">
+              <div id='tabs' class="clearfix">
+                <ul>
+                  <!-- node/2449 --><li><a href='/node/2449' title='Home' id='activetab'><span>Home</span></a></li>
+                  <li><a href='/node/2456' title='Specification'><span>Specification</span></a></li>
+                  <li><a href='/node/2240' title='Participation'><span>Participation</span></a></li>
+                  <li><a href='/blog' title='Blog'><span>Blog</span></a></li>
+                  <li><a href='/node/2475' title='Organization'><span>Organization</span></a></li>
+                </ul>
+
+                <br />
+                <br />
+                <br />
+              </div> <!-- tabs clearfix -->
+            </div><!-- close head -->
+
+            <div class="breadcrumb"><a href="/">Home</a> » <a href="/licenses">Licenses</a></div>
+
+        </div></div> <!-- /#header-inner, /#header -->
+        <h1>SPDX Vocabulary Specification</h1>
+        <dl>
+          <dt>Version:</dt>
+          <dd property="owl:versionInfo">2011-05-18-DRAFT</dd>
+          
+          <dt>Latest Version:</dt>
+          <dd><a href="http://spdx.org/rdf/terms">http://spdx.org/rdf/terms</a></dd>
+        </dl>
+        
+        <p>Copyright &#169; 2010-2011 Linux Foundation and its Contributors. All other rights are expressly reserved.</p>
+
+        <h2>Abstract</h2>
+        
+        <div property="rdfs:comment">
+          <p>This specification describes the SPDX language, defined as a dictionary of named properties and classes using W3C's RDF Technology.</p>
+
+          <p>SPDX is a designed to allow the exchange of data about software package.  This information includes both lists of files contained in the package and the licensing information related to the contained files or the package as a whole.</p>
+        </div>
+
+        <p>The prefix <code>spdx</code> prefix used in this document expands to <code>http://spdx.org/rdf/terms#</code>. </p>
+
+
+        <h3>Other vocabularies used by this one</h3>
+
+        <ul>
+          <li> <span rel="owl:imports" resource="http://usefulinc.com/ns/doap"> <a href="http://trac.usefulinc.com/doap">DOAP</a> </span> </li>
+        </ul>
+
+        <h2>Classes</h2>
+
+        <ul>
+          <li><a href="#SpdxDocument">SpdxDocument</a></li>
+          <li><a href="#Package">Package</a></li>
+          <li><a href="#Checksum">Checksum</a></li>
+          <li><a href="#PackageVerificationCode">PackageVerificationCode</a></li>
+          <li><a href="#CreationInfo">CreationInfo</a></li>
+          <li><a href="#Review">Review</a></li>
+          <li><a href="#File">File</a></li>
+          <li><a href="#License">License</a></li>
+          <li><a href="#ExtractedLicensingInfo">ExtractedLicensingInfo</a></li>
+          <li><a href="#ConjunctiveLicenseSet">ConjunctiveLicenseSet</a></li>
+          <li><a href="#DisjunctiveLicenseSet">DisjunctiveLicenseSet</a></li>
+          <li><a href="#AnyLicenseInfo">AnyLicenseInfo</a></li>
+          <li><a href="#SimpleLicenseInfo">SimpleLicenseInfo</a></li>
+        </ul>
+
+        <div about="#SpdxDocument" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="SpdxDocument">Class: <span property="rdfs:label">SpdxDocument</span></h3>
+
+          <p property="rdfs:comment">Each <code>SdpxDocument</code> represents the results of a provenance, ownership and licensing analysis of exactly on software package.  This is, effectively, the top level of SPDX information.</p>
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Properties:</dt>
+            <dd> <ul>
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#specVersion" rel="owl:onProperty">specVersion</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+                
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#creationInfo" rel="owl:onProperty">creationInfo</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p>
+                </li>
+                
+                <li> <p>
+                    <a href="#reviewed">reviewed</a>
+                    <br/>Cardinality: Optional, zero or more.</p></li>
+                
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#describesPackage" rel="owl:onProperty">describesPackage</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p>
+                </li>
+
+                <li> <p>
+                    <a href="#hasExtractedLicensingInfo">hasExtractedLicensingInfo</a>
+                    <br/>Cardinality: Optional, zero or more</p>
+                </li>
+
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <div about="#Package" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="Package">Class: <span property="rdfs:label">Package</span></h3>
+
+          <p property="rdfs:comment">Each <code>Package</code> represents a piece software that is delivered as a single unit.</p>
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Properties:</dt>
+
+            <dd> <ul>
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#name" rel="owl:onProperty">name</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+                
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#summary" rel="owl:onProperty">summary</a>
+                    <br/>Cardinality: Optional, <span property="owl:maxCardinality" content="1">zero or one</span></p></li>
+                
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#description" rel="owl:onProperty">description</a>
+                    <br/>Cardinality: Optional, <span property="owl:maxCardinality" content="1">zero or one</span></p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#packageFileName" rel="owl:onProperty">packageFileName</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#downloadLocation" rel="owl:onProperty">downloadLocation</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#checksum" rel="owl:onProperty">checksum</a>
+                    <br/>Cardinality: Optional, <span property="owl:maxCardinality" content="1">zero or one</span></p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#packageVerificationCode" rel="owl:onProperty">packageVerificationCode</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#sourceInfo" rel="owl:onProperty">sourceInfo</a>
+                    <br/>Cardinality: Optional, <span property="owl:maxCardinality" content="1">zero or one</span></p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#copyrightText" rel="owl:onProperty">copyrightText</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#licenseComments" rel="owl:onProperty">licenseComments</a>
+                    <br/>Cardinality: Optional, <span property="owl:maxCardinality" content="1">zero or one</span> </p> </li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#licenseDeclared" rel="owl:onProperty">licenseDeclared</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#licenseConcluded" rel="owl:onProperty">licenseConcluded</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#licenseInfoFromFiles" rel="owl:onProperty">licenseInfoFromFiles</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:minCardinality" content="1">one or more</span></p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#hasFile" rel="owl:onProperty">hasFile</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:minCardinality" content="1">one or more</span></p></li>
+
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <div about="#File" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="File">Class: <span property="rdfs:label">File</span> </h3>
+
+          <p property="rdfs:comment">Each <code>File</code> represents a sequence of octets that is contained in a software package.</p>
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Properties:</dt>
+
+            <dd> <ul>
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#fileName" rel="owl:onProperty">fileName</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span> </p> </li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#fileType" rel="owl:onProperty">fileType</a>
+                    <br/>Cardinality: Optional, <span property="owl:maxCardinality" content="1">zero or one</span> </p> </li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#copyrightText" rel="owl:onProperty">copyrightText</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#licenseComments" rel="owl:onProperty">licenseComments</a>
+                    <br/>Cardinality: Optional, <span property="owl:maxCardinality" content="1">zero or one</span> </p> </li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#licenseConcluded" rel="owl:onProperty">licenseConcluded</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span> </p> </li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#licenseInfoInFile"  rel="owl:onProperty">licenseInfoInFile</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:minCardinality" content="1">one or more</span> </p> </li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#checksum" rel="owl:onProperty">checksum</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span> </p> </li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#artifactOf" rel="owl:onProperty">artifactOf</a>
+                    <br/>Cardinality: Optional, <span property="owl:maxCardinality" content="1">zero or one</span> </p> </li>
+
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        
+        <div about="#License" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="License">Class: <span property="rdfs:label">License</span></h3>
+          
+          <p property="rdfs:comment">Each <code>License</code> represents a software license.  This class is used by the SPDX license repository to represent standard license.</p>
+          
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Properties:</dt>
+
+            <dd> <ul>
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#licenseId" rel="owl:onProperty">licenseId</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span> </p> </li>
+                
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#licenseText" rel="owl:onProperty">licenseText</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span> </p> </li>
+                
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        
+        <div about="#Checksum" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="Checksum">Class: <span property="rdfs:label">Checksum</span></h3>
+
+          <p property="rdfs:comment">Each <code>Checksum</code> is a digest of a file.  This digest is produced using a cryptographic hash algorithm which allows the contents of a file to be verified.</p>
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Properties:</dt>
+
+            <dd> <ul rel="rdfs:subClassOf">
+                <li> <p typeof="owl:Restriction">
+                    <a href="#algorithm" rel="owl:onProperty">algorithm</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li> <p typeof="owl:Restriction">
+                    <a href="#checksumValue" rel="owl:onProperty">checksumValue</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <div about="#PackageVerificationCode" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="PackageVerificationCode">Class: <span property="rdfs:label">PackageVerificationCode</span></h3>
+
+          <p property="rdfs:comment">The <code>PackageVerificationCode</code> is a digest of the package which allows the the package contents to be verified when the SPDX file is embedded in the package.  This digest is produced using a cryptographic hash algorithm applied to a manifest of the package.</p>
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Properties:</dt>
+
+            <dd> <ul>
+                <li><p>
+                    <a href="#packageVerificationCodeExcludedFile">packageVerificationCodeExcludedFile</a>
+                    <br/>Cardinality: Optional, zero or more</p></li>
+
+                <li rel="rdfs:subClassOf"> <p typeof="owl:Restriction">
+                    <a href="#packageVerificationCodeValue" rel="owl:onProperty">packageVerificationCodeValue</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <div about="#CreationInfo" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="CreationInfo">Class: <span property="rdfs:label">CreationInfo</span></h3>
+
+          <p property="rdfs:comment">Each <code>CreationInfo</code> provides information about an individual, organization or tool that was involved in the creation of this <a href="#SpdxDocument">SpdxDocument</a>.</p>
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Properties:</dt>
+
+            <dd> <ul rel="rdfs:subClassOf">
+                <li> <p typeof="owl:Restriction">
+                    <a href="#creator" rel="owl:onProperty">creator</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:minCardinality" content="1">one or more</span></p></li>
+
+                <li> <p typeof="owl:Restriction">
+                    <a href="#created" rel="owl:onProperty">created</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li> <p typeof="owl:Restriction">
+                    <span rel="owl:onProperty" resource="rdfs:comment"/>
+                    <a href="http://www.w3.org/TR/rdf-schema/#ch_comment">rdfs:comment</a>
+                    <br/>Cardinality: Optional, <span property="owl:maxCardinality" content="1">zero or one</span></p></li>
+
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <div about="#Review" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="Review">Class: <span property="rdfs:label">Review</span></h3>
+
+          <p property="rdfs:comment">Each <code>Review</code> represents a signoff by an individual on the information in the <a href="#SpdxDocument">SpdxDocument</a>.</p>
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Properties:</dt>
+
+            <dd> <ul rel="rdfs:subClassOf">
+                <li> <p typeof="owl:Restriction">
+                    <a href="#reviewer" rel="owl:onProperty">reviewer</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li> <p typeof="owl:Restriction">
+                    <a href="#reviewDate" rel="owl:onProperty">reviewDate</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li> <p typeof="owl:Restriction">
+                    <span rel="owl:onProperty" resource="rdfs:comment"/>
+                    <a href="http://www.w3.org/TR/rdf-schema/#ch_comment">rdfs:comment</a>
+                    <br/>Cardinality: Optional, <span property="owl:maxCardinality" content="1">zero or one</span></p></li>
+
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <div about="#ExtractedLicensingInfo" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="ExtractedLicensingInfo">Class: <span property="rdfs:label">ExtractedLicensingInfo</span></h3>
+
+          <p property="rdfs:comment">Each <code>ExtractedLicensingInfo</code> represents a license or licensing notice that was found in the package.  Any license text that is recognized as a license may be represented as a <a href="#License">License</a> rather than and ExtractedLicensingInfo.</p>
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Properties:</dt>
+
+            <dd> <ul rel="rdfs:subClassOf"> 
+                <li> <p typeof="owl:Restriction">
+                    <a href="#licenseId" rel="owl:onProperty">licenseId</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+                <li> <p typeof="owl:Restriction">
+                    <a href="#extractedText" rel="owl:onProperty">extractedText</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:cardinality" content="1">one</span></p></li>
+
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <div about="#ConjunctiveLicenseSet" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="ConjunctiveLicenseSet">Class: <span property="rdfs:label">ConjunctiveLicenseSet</span></h3>
+
+          <p property="rdfs:comment">Each <code>ConjunctiveLicenseSet</code> represents set of <a href="#License">licenses</a>, or other licensing information, all of which apply.</p>
+
+          <p>Refines <span rel="rdfs:subClassOf" resource="rdfs:Container"/> <a href="http://www.w3.org/TR/rdf-schema/#ch_container">rdfs:Container</a>. </p>
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Properties:</dt>
+
+            <dd> <ul rel="rdfs:subClassOf">
+                <li> <p typeof="owl:Restriction">
+                    <a href="#member" rel="owl:onProperty">member</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:minCardinality" content="1">one</span> or more.</p></li>
+
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <div about="#DisjunctiveLicenseSet" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="DisjunctiveLicenseSet">Class: <span property="rdfs:label">DisjunctiveLicenseSet</span></h3>
+
+          <p property="rdfs:comment">Each <code>DisjunctiveLicenseSet</code> represents set of <a href="#License">licenses</a>, or other licensing information, only one of which apply.</p>
+
+          <p>Refines <span rel="rdfs:subClassOf" resource="rdfs:Container"/> <a href="http://www.w3.org/TR/rdf-schema/#ch_container">rdfs:Container</a>. </p>
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Properties:</dt>
+
+            <dd> <ul rel="rdfs:subClassOf">
+                <li> <p typeof="owl:Restriction">
+                    <a href="#member" rel="owl:onProperty">member</a>
+                    <br/>Cardinality: Mandatory, <span property="owl:minCardinality" content="1">one</span> or more.</p></li>
+
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <div about="#AnyLicenseInfo" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="AnyLicenseInfo">Class: <span property="rdfs:label">AnyLicenseInfo</span></h3>
+
+          <p property="rdfs:comment">The <code>AnyLicenseInfo</code> class includes all resources that represent licensing information.</p>
+
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Members</dt>
+            <dd>All resources in any of the following classes:
+              <ul rel="owl:unionOf" resource="[_:anyLicMem1]">
+                <li about="[_:anyLicMem1]" typeof="rdf:List">
+                  <a rel="rdf:first" href="#License">License</a><span rel="rdf:rest" resource="[_:anyLicMem2]"/></li>
+                <li about="[_:anyLicMem2]" typeof="rdf:List">
+                  <a rel="rdf:first" href="#ExtractedLicensingInfo">ExtractedLicensingInfo</a><span rel="rdf:rest" resource="[_:anyLicMem3]"/></li>
+                <li about="[_:anyLicMem3]" typeof="rdf:List">
+                  <a rel="rdf:first" href="#ConjunctiveLicenseSet">ConjunctiveLicenseSet</a><span rel="rdf:rest" resource="[_:anyLicMem4]"/></li>
+                <li about="[_:anyLicMem4]" typeof="rdf:List">
+                  <a rel="rdf:first" href="#DisjunctiveLicenseSet">DisjunctiveLicenseSet</a><span rel="rdf:rest" resource="[rdf:nil]"/></li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <div about="#SimpleLicenseInfo" typeof="owl:Class"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3 id="SimpleLicenseInfo">Class: <span property="rdfs:label">SimpleLicenseInfo</span></h3>
+
+          <p property="rdfs:comment">The <code>SimpleLicenseInfo</code> class includes all resources that represent simple, atomic, licensing information.</p>
+
+
+          <dl>
+            <dt>Status:</dt>
+            <dd property="vs:term_status">testing</dd>
+            
+            <dt>Members</dt>
+            <dd>All resources in any of the following classes:
+              <ul rel="owl:unionOf" resource="[_:simpLicMem1]">
+                <li about="[_:simpLicMem1]" typeof="rdf:List">
+                  <a rel="rdf:first" href="#License">License</a><span rel="rdf:rest" resource="[_:simpLicMem2]"/></li>
+                <li about="[_:simpLicMem2]" typeof="rdf:List">
+                  <a rel="rdf:first" href="#ExtractedLicensingInfo">ExtractedLicensingInfo</a><span rel="rdf:rest" resource="[rdf:nil]"/></li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+
+        <h2>Properties</h2>
+        
+        <ul>
+          <li><a href="#algorithm">algorithm</a></li>
+          <li><a href="#artifactOf">artifactOf</a></li>
+          <li><a href="#checksum">checksum</a></li>
+          <li><a href="#checksumValue">checksumValue</a></li>
+          <li><a href="#copyrightText">copyrightText</a></li>
+          <li><a href="#created">created</a></li>
+          <li><a href="#creationInfo">creationInfo</a></li>
+          <li><a href="#creator">creator</a></li>
+          <li><a href="#describesPackage">describesPackage</a></li>
+          <li><a href="#description">description</a></li>
+          <li><a href="#downloadLocation">downloadLocation</a></li>
+          <li><a href="#extractedText">extractedText</a></li>
+          <li><a href="#fileName">fileName</a></li>
+          <li><a href="#fileType">fileType</a></li>
+          <li><a href="#hasExtractedLicensingInfo">hasExtractedLicensingInfo</a></li>
+          <li><a href="#hasFile">hasFile</a></li>
+          <li><a href="#licenseComments">licenseComments</a></li>
+          <li><a href="#licenseConcluded">licenseConcluded</a></li>
+          <li><a href="#licenseDeclared">licenseDeclared</a></li>
+          <li><a href="#licenseId">licenseId</a></li>
+          <li><a href="#licenseText">licenseText</a></li>
+          <li><a href="#licenseInfoFromFiles">licenseInfoFromFiles</a></li>
+          <li><a href="#licenseInfoInFile">licenseInfoInFile</a></li>
+          <li><a href="#member">member</a></li>
+          <li><a href="#name">name</a></li>
+          <li><a href="#packageFileName">packageFileName</a></li>
+          <li><a href="#packageVerificationCode">packageVerificationCode</a></li>
+          <li><a href="#packageVerificationCodeExcludedFile">packageVerificationCodeExcludedFile</a></li>
+          <li><a href="#packageVerificationCodeValue">packageVerificationCodeValue</a></li>
+          <li><a href="#reviewDate">reviewDate</a></li>
+          <li><a href="#reviewed">reviewed</a></li>
+          <li><a href="#reviewer">reviewer</a></li>
+          <li><a href="#sourceInfo">sourceInfo</a></li>
+          <li><a href="#specVersion">specVerison</a></li>
+          <li><a href="#summary">summary</a></li>
+        </ul>
+
+        <div id="algorithm" about="#algorithm" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">algorithm</span></h3>
+
+          <p property="rdfs:comment">Identifies the algorithm used to produce the subject <a href="#Checksum">checksum</a>.</p>
+          
+          <p>Currently, <a href="http://www.itl.nist.gov/fipspubs/fip180-1.htm">SHA-1</a> is the only supported algorithm.  It is anticpated that other algorithms will be supported at a later time.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#Checksum">Checksum</a> </dd> 
+            <dt>Range:</dt> <dd rel="rdfs:range"> <span typeof="owl:Class"> <span rel="owl:oneOf"> <span typeof="rdf:List"> 
+                    <span rel="rdf:first"> <a href="#checksumAlgorithm_sha1"> <code> spdx:checksumAlgorithm_sha1</code></a> </span> 
+                    <span rel="rdf:rest" resource="[rdf:nil]" /> 
+            </span> </span> </span> </dd>               
+            
+          </dl>
+        </div>
+
+        <div id="artifactOf" about="#artifactOf" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">artifactOf</span></h3>
+
+          <div property="rdfs:comment">
+            <p>Indicates the project in which the file originated.</p>
+          
+            <p>Tools must preserve <code>doap:hompage</code> and <code>doap:name</code> properties and the URI (if one is known) of <code>doap:Project</code> resources that are values of this property.  All other properties of <code>doap:Projects</code> are not directly supported by SPDX and may be dropped when translating to or from some SPDX formats.</p>
+
+          </div>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#File">File</a> </dd> 
+            <dt>Range:</dt> <dd> <a rel="rdfs:range" href="http://usefulinc.com/ns/doap#Project">doap:Project</a> </dd> 
+            
+          </dl>
+        </div>
+
+        <div id="checksum" about="#checksum" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">checksum</span></h3>
+
+          <p property="rdfs:comment">The <code>checksum</code> property provides a digest of a <code>File</code> or <code>Package</code>. This allows consumers of the SPDX document to verify that the content of the files or package has not changed.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt> <dd rel="rdfs:domain"> Any of:
+              <div typeof="owl:Class">
+                <ul rel="owl:unionOf" resource="[_:checksumDomain1]">
+                  <li typeof="rdf:List" about="[_:checksumDomain1]"> <a rel="rdf:first" href="#Package">Package</a> <span rel="rdf:rest" resource="[_:checksumDomain2]"/> </li>
+                  <li typeof="rdf:List" about="[_:checksumDomain2]"> <a rel="rdf:first" href="#File">File</a> <span rel="rdf:rest" resource="[rdf:nil]"/> </li>
+              </ul> </div>
+            </dd> 
+            <dt>Range:</dt><dd><a rel="rdfs:range" href="#Checksum">Checksum</a></dd>
+          </dl>
+        </div>
+
+        <div id="checksumValue" about="#checksumValue" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">checksumValue</span></h3>
+
+          <p property="rdfs:comment">The <code>checksumValue</code> property provides a hex encoded digest value produced using a specific algorithm.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#Checksum">Checksum</a></dd>
+            <dt>Range:</dt><dd><span rel="rdfs:range" resource="[xsd:hexBinary]"/><a href="http://www.w3.org/TR/xmlschema-2/#hexBinary">xsd:hexBinary</a></dd>
+          </dl>
+        </div>
+
+        <div id="created" about="#created" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">created</span></h3>
+
+          <p property="rdfs:comment">The date and time at which the <a href="#SpdxDocument">SpdxDocument</a> was created.  This value must in UTC and have 'Z' as its timezone indicator.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#CreationInfo">CreationInfo</a></dd>
+            <dt>Range:</dt><dd><span rel="rdfs:range" resource="[xsd:dateTime]"/><a href="http://www.w3.org/TR/xmlschema-2/#dateTime">xsd:dateTime</a></dd>
+          </dl>
+        </div>
+
+        <div id="copyrightText" about="#copyrightText" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">copyrightText</span></h3>
+
+          <p property="rdfs:comment">The text of copyright declarations discovered in the <a href="#Package">package</a> or <a href="#File">file</a>.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt> <dd rel="rdfs:domain"> Any of:
+              <div typeof="owl:Class">
+                <ul rel="owl:unionOf" resource="[_:cpTxtDomain1]">
+                  <li typeof="rdf:List" about="[_:cpTxtDomain1]"> <a rel="rdf:first" href="#Package">Package</a> <span rel="rdf:rest" resource="[_:cpTxtDomain2]"/> </li>
+                  <li typeof="rdf:List" about="[_:cpTxtDomain2]"> <a rel="rdf:first" href="#File">File</a> <span rel="rdf:rest" resource="[rdf:nil]"/> </li>
+            </ul> </div> </dd> 
+
+            <dt>Range:</dt> <dd rel="rdfs:range"> Any of:
+              <div typeof="owl:Class">
+                <ul rel="owl:unionOf" resource="[_:cpTxtRng1]">
+                  <li typeof="rdf:List" about="[_:cpTxtRng1]"> <span rel="rdf:first" resource="[rdfs:Literal]"/> <a href="http://www.w3.org/TR/rdf-schema/#ch_literal">rdfs:Literal</a> <span rel="rdf:rest" resource="[_:cpTxtRng2]"/> </li>
+                  <li typeof="rdf:List" about="[_:cpTxtRng2]"> <span rel="rdf:first" resource="[_:NoneClass]"/> <a href="#none">spdx:none</a> <span rel="rdf:rest" resource="[_:cpTxtRng3]"/> </li>
+                  <li typeof="rdf:List" about="[_:cpTxtRng3]"> <span rel="rdf:first" resource="[_:NoAssertionClass]"/> <a href="#noassertion">spdx:noassertion</a> <span rel="rdf:rest" resource="[rdf:nil]"/> </li>
+            </ul> </div> </dd> 
+
+          </dl>
+        </div>
+
+        <div id="creationInfo" about="#creationInfo" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">creationInfo</span></h3>
+
+          <p property="rdfs:comment">The <code>creationInfo</code> property relates an <code>SpdxDocument</code> to a set of information about the creation of the SpdxDocument.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#SpdxDocument">SpdxDocument</a></dd>
+            <dt>Range:</dt><dd><a href="#CreationInfo" rel="rdfs:range">CreationInfo</a></dd>
+          </dl>
+        </div>
+
+        <div id="creator" about="#creator" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">creator</span></h3>
+
+          <p property="rdfs:comment">The name and, optionally, contact information of a person, organization or tool that created, or was used to create, the <a href="#SpdxDocument">SpdxDocument</a>.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#CreationInfo">CreationInfo</a></dd>
+            <dt>Range:</dt><dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+
+        <div id="describesPackage" about="#describesPackage" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">describesPackage</span></h3>
+
+          <p property="rdfs:comment">The <code>describesPackage</code> property relates an <code>SpdxDocument</code> to the package which it describes.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#SpdxDocument">SpdxDocument</a></dd>
+            <dt>Range:</dt><dd><a href="#Package" rel="rdfs:range">Package</a></dd>
+          </dl>
+        </div>
+
+        <div id="description" about="#description" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">description</span></h3>
+
+          <p property="rdfs:comment">Provides a detailed description of the <a href="#Package">package</a>.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#Package">Package</a></dd>
+            <dt>Range:</dt><dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <div id="downloadLocation" about="#downloadLocation" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">downloadLocation</span></h3>
+
+          <p property="rdfs:comment">The URI at which this package is available for download.  Private (ie, not publicly reachable) URIs are acceptable as values of this property.</p>
+
+          <p>The values <a href="#none"><code>http://spdx.org/rdf/terms#none</code></a> and <a href="#noassertion"><code>http://spdx.org/rdf/terms#noassertion</code></a> may be used to specify that the package is not downloadable or that no attempt was made to determine its download location, respectively.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#Package">Package</a> </dd>
+            <dt>Range:</dt> <dd rel="rdfs:range" resource="[xsd:anyURI]"><a href="http://www.w3.org/TR/xmlschema-2/#anyURI"><code>xsd:anyURI</code></a></dd>
+          </dl>
+        </div>
+
+        <div id="extractedText" about="#extractedText" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">extractedText</span></h3>
+
+          <p property="rdfs:comment">Verbatim license or licensing notice text that was discovered.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#ExtractedLicensingInfo">ExtractedLicensingInfo</a> </dd>
+            <dt>Range:</dt> <dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <div id="fileName" about="#fileName" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">fileName</span></h3>
+
+          <p property="rdfs:comment">The name of the file relative to the root of the package.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#File">File</a></dd>
+            <dt>Range:</dt> <dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <div id="fileType" about="#fileType" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">fileType</span></h3>
+
+          <p property="rdfs:comment">The type of the file.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#File">File</a> </dd>
+            <dt>Range:</dt> <dd rel="rdfs:range">
+              One of:
+              <div typeof="owl:Class">
+                <ul rel="owl:oneOf" resource="[_:fileType1]">
+                  <li typeof="rdf:List" about="[_:fileType1]"> 
+                    <span rel="rdf:first"> <a href="#fileType_source"> <code>spdx:fileType_source</code> </a> </span> 
+                    <p>Indicates the file is a source code file.</p> <span rel="rdf:rest" resource="[_:fileType2]"/> </li>
+
+                  <li typeof="rdf:List" about="[_:fileType2]"> 
+                    <span rel="rdf:first"> <a href="#fileType_archive"> <code>spdx:fileType_archive</code> </a> </span>
+                    <p>Indicates the file is an archive file.</p>
+                    <span rel="rdf:rest" resource="[_:fileType3]"/></li>
+
+                  <li typeof="rdf:List" about="[_:fileType3]">
+                    <span rel="rdf:first"> <a href="#fileType_binary"> <code>spdx:fileType_binary</code></a> </span>
+                    <p>Indicates the file is not a text file.  <code>filetype_archive</code> is preferred for archive files even though they are binary.</p>
+                    <span rel="rdf:rest" resource="[_:fileType4]"/></li>
+
+                  <li typeof="rdf:List" about="[_:fileType4]">
+                    <span rel="rdf:first"> <a href="#fileType_other"> <code>spdx:fileType_other</code></a> </span>
+                    <p>Indicates the file did not fall into any of the other categories.</p>
+                    <span rel="rdf:rest" resource="[rdf:nil]"/></li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+
+        <div id="hasExtractedLicensingInfo" about="#hasExtractedLicensingInfo" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">hasExtractedLicensingInfo</span></h3>
+
+          <p property="rdfs:comment">Indicates that a particular <a href="#ExtractedLicensingInfo">ExtractedLicensingInfo</a> was defined in the subject <a href="#SpdxDocument">SpdxDocument</a>.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#SpdxDocument">SpdxDocument</a></dd>
+            <dt>Range:</dt><dd><a href="#ExtractedLicensingInfo" rel="rdfs:range">ExtractedLicensingInfo</a></dd>
+          </dl>
+        </div>
+
+        <div id="hasFile" about="#hasFile" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">hasFile</span></h3>
+
+          <p property="rdfs:comment">Indicates that a particular <a href="#File">file</a> belongs to a <a href="#Package">package</a>.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#Package">Package</a></dd>
+            <dt>Range:</dt><dd><a href="#File" rel="rdfs:range">File</a></dd>
+          </dl>
+        </div>
+
+        <div id="licenseComments" about="#licenseComments" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">licenseComments</span></h3>
+
+          <p property="rdfs:comment">The <code>licenseComments</code> property allows the preparer of the SPDX document to describe why the licensing in <a href="#licenseConcluded"><code>spdx:licenseConcluded</code></a> was chosen.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt>  <dd rel="rdfs:domain"> Any of:
+              <ul rel="owl:unionOf" resource="[_:licCommDomain1]">
+                <li typeof="rdf:List" about="[_:licCommDomain1]"> <a rel="rdf:first" href="#Package">Package</a> <span rel="rdf:rest" resource="[_:licCommDomain2]"/> </li>
+                <li typeof="rdf:List" about="[_:licCommDomain2]"> <a rel="rdf:first" href="#File">File</a> <span rel="rdf:rest" resource="[rdf:nil]"/> </li>
+            </ul> </dd> 
+
+            <dt>Range:</dt><dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <div id="licenseConcluded" about="#licenseConcluded" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">licenseConcluded</span></h3>
+
+          <p property="rdfs:comment">The licensing that the preparer of this SPDX document has concluded, based on the evidence, actual applies to the package.</p>
+          
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt> <dd rel="rdfs:domain"> Any of:
+              <div typeof="owl:Class">
+                <ul rel="owl:unionOf" resource="[_:licConclDomain1]">
+                  <li typeof="rdf:List" about="[_:licConclDomain1]"> <a rel="rdf:first" href="#Package">Package</a> <span rel="rdf:rest" resource="[_:licConclDomain2]"/> </li>
+                  <li typeof="rdf:List" about="[_:licConclDomain2]"> <a rel="rdf:first" href="#File">File</a> <span rel="rdf:rest" resource="[rdf:nil]"/> </li>
+            </ul> </div> </dd> 
+
+            <dt>Range:</dt> <dd rel="rdfs:range">
+              Any of:
+              
+              <div typeof="owl:Class">
+                <ul rel="owl:unionOf" resource="[_:licConclRange1]">
+                  <li about="[_:licConclRange1]" typeof="rdf:List">
+                    <a rel="rdf:first" href="#AnyLicenseInfo">AnyLicenseInfo</a><span rel="rdf:rest" resource="[_:licConclRange2]"/></li>
+                  <li about="[_:licConclRange2]" typeof="rdf:List">
+                    <span rel="rdf:first" resource="[_:NoneClass]"/><a href="#none"><code>spdx:none</code></a><span rel="rdf:rest" resource="[_:licConclRange3]"/></li>
+                  <li about="[_:licConclRange3]" typeof="rdf:List">
+                    <span rel="rdf:first" resource="[_:NoAssertionClass]"/><a href="#noassertion"><code>spdx:noassertion</code></a><span rel="rdf:rest" resource="[rdf:nil]"/></li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        
+        <div id="licenseDeclared" about="#licenseDeclared" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">licenseDeclared</span></h3>
+
+          <p property="rdfs:comment">The licensing that is declared by the authors of the package.</p>
+          
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#Package">Package</a> </dd>
+            <dt>Range:</dt> <dd rel="rdfs:range">
+              Any of:
+              
+              <div typeof="owl:Class">
+                <ul rel="owl:unionOf" resource="[_:licDeclRange1]">
+                  <li about="[_:licDeclRange1]" typeof="rdf:List">
+                    <a rel="rdf:first" href="#AnyLicenseInfo">AnyLicenseInfo</a><span rel="rdf:rest" resource="[_:licDeclRange2]"/></li>
+                  <li about="[_:licDeclRange2]" typeof="rdf:List">
+                    <span rel="rdf:first" resource="[_:NoneClass]"/><a href="#none"><code>spdx:none</code></a><span rel="rdf:rest" resource="[_:licDeclRange3]"/></li>
+                  <li about="[_:licDeclRange3]" typeof="rdf:List">
+                    <span rel="rdf:first" resource="[_:NoAssertionClass]"/><a href="#noassertion"><code>spdx:noassertion</code></a><span rel="rdf:rest" resource="[rdf:nil]"/></li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        
+        <div id="licenseId" about="#licenseId" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">licenseId</span></h3>
+
+          <p property="rdfs:comment">A short name for the license that is at least 3 characters long and made up of the characters from the set 'a'-'z', 'A'-'Z', '0'-'9', '+', '_', '.', and '-'.  Formally, all <code>licenseId</code> values must match the regular expression: <code>[-+_.a-zA-Z0-9]{3,}</code></p>
+
+          <dl>
+            <dt>Status:</dt> 
+            <dd property="vs:term_status">testing</dd> 
+
+            <dt>Domain:</dt>
+            <dd rel="rdfs:domain"> 
+              <ul rel="owl:unionOf" resource="[_:licIdDomain1]">
+                <li about="[_:licIdDomain1]" typeof="rdf:List">
+                  <a rel="rdf:first" href="#License">License</a><span rel="rdf:rest" resource="[_:licIdDomain2]"/></li>
+                <li about="[_:licIdDomain2]" typeof="rdf:List">
+                  <a rel="rdf:first" href="#ExtractedLicensingInfo">ExtractedLicensingInfo</a><span rel="rdf:rest" resource="[rdf:nil]"/></li>
+              </ul>
+            </dd>
+
+            <dt>Range:</dt> <dd rel="rdfs:range" resource="[xsd:string]"><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <div id="licenseText" about="#licenseText" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">licenseText</span></h3>
+
+          <p property="rdfs:comment">The full text of the license.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#License">License</a> </dd>
+            <dt>Range:</dt> <dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <div id="licenseInfoFromFiles" about="#licenseInfoFromFiles" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">licenseInfoFromFiles</span></h3>
+          
+          <p property="rdfs:comment">Licensing information that was discovered directly in the package.  This is effectively a union of the <a href="#licenseInfoInFile">licenseInfoInFile</a> properties of all the files contained in the package.</p>
+          
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#Package">Package</a> </dd>
+            <dt>Range:</dt> <dd rel="rdfs:range">
+              Any of:
+              
+              <div typeof="owl:Class">
+                <ul rel="owl:unionOf" resource="[_:licFromFilesRange1]">
+                  <li about="[_:licFromFilesRange1]" typeof="rdf:List">
+                    <a rel="rdf:first" href="#SimpleLicenseInfo">SimpleLicenseInfo</a><span rel="rdf:rest" resource="[_:licFromFilesRange2]"/></li>
+                  <li about="[_:licFromFilesRange2]" typeof="rdf:List">
+                    <span rel="rdf:first" resource="[_:NoneClass]"/><a href="#none"><code>spdx:none</code></a><span rel="rdf:rest" resource="[_:licFromFilesRange3]"/></li>
+                  <li about="[_:licFromFilesRange3]" typeof="rdf:List">
+                    <span rel="rdf:first" resource="[_:NoAssertionClass]"/><a href="#noassertion"><code>spdx:noassertion</code></a><span rel="rdf:rest" resource="[rdf:nil]"/></li>
+
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        
+
+        <div id="licenseInfoInFile" about="#licenseInfoInFile" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">licenseInfoInFile</span></h3>
+
+          <p property="rdfs:comment">Licensing information that was discovered directly in the subject <a href="#File">File</a>.</p>
+          
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#File">File</a> </dd>
+            <dt>Range:</dt> <dd rel="rdfs:range">
+              Any of:
+              
+              <div typeof="owl:Class">
+                <ul rel="owl:unionOf" resource="[_:licInFileRange1]">
+                  <li about="[_:licInFileRange1]" typeof="rdf:List">
+                    <a rel="rdf:first" href="#SimpleLicenseInfo">SimpleLicenseInfo</a><span rel="rdf:rest" resource="[_:licInFileRange2]"/></li>
+                  <li about="[_:licInFileRange2]" typeof="rdf:List">
+                    <span rel="rdf:first" resource="[_:NoneClass]"/><a href="#none"><code>spdx:none</code></a><span rel="rdf:rest" resource="[_:licInFileRange3]"/></li>
+                  <li about="[_:licInFileRange3]" typeof="rdf:List">
+                    <span rel="rdf:first" resource="[_:NoAssertionClass]"/><a href="#noassertion"><code>spdx:noassertion</code></a><span rel="rdf:rest" resource="[rdf:nil]"/></li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        
+
+        <div id="member" about="#member" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">member</span></h3>
+
+          <p property="rdfs:comment">A <a href="#License">license</a>, or other licensing information, that is a member of the subject license set.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt> <dd rel="rdfs:domain">
+              Any of:
+
+              <div typeof="owl:Class">
+                <ul rel="owl:unionOf" resource="[_:memberDomain1]">
+                  <li typeof="rdf:List" about="[_:memberDomain1]"> <a rel="rdf:first" href="#ConjunctiveLicenseSet">ConjunctiveLicenseSet</a> <span rel="rdf:rest" resource="[_:memberDomain2]"/> </li>
+                  <li typeof="rdf:List" about="[_:memberDomain2]"> <a rel="rdf:first" href="#DisjunctiveLicenseSet">DisjunctiveLicenseSet</a> <span rel="rdf:rest" resource="[rdf:nil]"/> </li>
+            </ul> </div> </dd> 
+
+            <dt>Range:</dt> <dd><a rel="rdfs:range" href="#AnyLicenseInfo">AnyLicenseInfo</a></dd>
+
+            <dt>Refines:</dt> <dd> <span rel="rdfs:subPropertyOf" resource="rdfs:member"> <a href="http://www.w3.org/TR/rdf-schema/#ch_member">rdfs:member</a> </span> </dd> 
+          </dl>
+        </div>
+
+        <div id="name" about="#name" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">name</span></h3>
+
+          <p property="rdfs:comment">The full name of the package including version information.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#Package">Package</a></dd>
+            <dt>Range:</dt> <dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <div id="packageFileName" about="#packageFileName" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">packageFileName</span></h3>
+
+          <p property="rdfs:comment">The base name of the package file name.  For example, <code>zlib-1.2.5.tar.gz</code>.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#Package">Package</a> </dd>
+            <dt>Range:</dt> <dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <div id="packageVerificationCode" about="#packageVerificationCode" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">packageVerificationCode</span></h3>
+
+          <p property="rdfs:comment">A manifest based digest (the algorithm is defined in section [link goes here]) of the package.  This allows consumers of this dataset to determine if a package they have in hand is identical to the package from which the data was produced.  This algorithm works even if the SPDX document is included in the package.  This algorithm is described in detail in the SPDX spec.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#Package">Package</a> </dd>
+            <dt>Range:</dt> <dd><a rel="rdfs:range" href="#PackageVerificationCode">PackageVerificationCode</a></dd>
+          </dl>
+        </div>
+
+        <div id="packageVerificationCodeExcludedFile" about="#packageVerificationCodeExcludedFile" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">packageVerificationCodeExcludedFile</span></h3>
+
+          <p property="rdfs:comment">A file that was excluded when calculating the package verification code.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#PackageVerificationCode">PackageVerificationCode</a> </dd>
+            <dt>Range:</dt> <dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <div id="packageVerificationCodeValue" about="#packageVerificationCodeValue" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">packageVerificationCodeValue</span></h3>
+
+          <p property="rdfs:comment">The actual package verification code as a hex encoded value.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#PackageVerificationCode">PackageVerificationCode</a> </dd>
+            <dt>Range:</dt><dd><span rel="rdfs:range" resource="[xsd:hexBinary]"/><a href="http://www.w3.org/TR/xmlschema-2/#hexBinary">xsd:hexBinary</a></dd>
+          </dl>
+        </div>
+
+        <div id="reviewDate" about="#reviewDate" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">reviewDate</span></h3>
+
+          <p property="rdfs:comment">The date and time at which the <a href="#SpdxDocument">SpdxDocument</a> was reviewed.  This value must be in UTC and have 'Z' as its timezone indicator.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#Review">Review</a></dd>
+            <dt>Range:</dt><dd><span rel="rdfs:range" resource="[xsd:dateTime]"/><a href="http://www.w3.org/TR/xmlschema-2/#dateTime">xsd:dateTime</a></dd>
+          </dl>
+        </div>
+
+        <div id="reviewed" about="#reviewed" typeof="owl:ObjectProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">reviewed</span></h3>
+
+          <p property="rdfs:comment">The <code>review</code> property relates a <code>SpdxDocument</code> to the review history.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#SpdxDocument">SpdxDocument</a></dd>
+            <dt>Range:</dt><dd><a href="#Review" rel="rdfs:range">Review</a></dd>
+          </dl>
+        </div>
+
+        <div id="reviewer" about="#reviewer" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">reviewer</span></h3>
+
+          <p property="rdfs:comment">The name and, optionally, contact information of the person who performed the review.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd><a rel="rdfs:domain" href="#Review">Review</a></dd>
+            <dt>Range:</dt><dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <div id="sourceInfo" about="#sourceInfo" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">sourceInfo</span></h3>
+
+          <p property="rdfs:comment">Allows the producer(s) of the SPDX document to describe how the package was acquired and/or changed from the original source.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#Package">Package</a> </dd>
+            <dt>Range:</dt> <dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <div id="specVersion" about="#specVersion" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">specVersion</span></h3>
+
+          <p property="rdfs:comment">Identifies the version of this specification that was used to produce this SPDX document.  Currently the only supported value is <code>SPDX-1.0</code>.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#SpdxDocument">SpdxDocument</a> </dd>
+            <dt>Range:</dt> <dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+            
+          </dl>
+        </div>
+
+        <div id="summary" about="#summary" typeof="owl:DatatypeProperty"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Property: <span property="rdfs:label">summary</span></h3>
+
+          <p property="rdfs:comment">Provides a short description of the <a href="#Package">package</a>.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+            <dt>Domain:</dt><dd> <a rel="rdfs:domain" href="#Package">Package</a> </dd>
+            <dt>Range:</dt> <dd><span rel="rdfs:range" resource="[xsd:string]"/><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></dd>
+          </dl>
+        </div>
+
+        <h2>Individuals</h2>
+
+        <ul>
+          <li><a href="#checksumAlgorithm_sha1">checksumAlgorithm_sha1</a></li>
+          <li><a href="#fileType_archive">fileType_archive</a></li>
+          <li><a href="#fileType_binary">fileType_binary</a></li>
+          <li><a href="#fileType_other">fileType_other</a></li>
+          <li><a href="#fileType_source">fileType_source</a></li>
+          <li><a href="#none">none</a></li>
+          <li><a href="#noassertion">noassertion</a></li>
+        </ul>
+
+        <div id="checksumAlgorithm_sha1" about="#checksumAlgorithm_sha1" typeof="owl:Thing"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Individual: <span property="rdfs:label">checksumAlgorithm_sha1</span></h3>
+
+          <p property="rdfs:comment">Indicates the algorithm used was <a href="http://www.itl.nist.gov/fipspubs/fip180-1.htm">SHA-1</a></p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+          </dl>
+        </div>
+
+        <div id="fileType_archive" about="#fileType_archive" typeof="owl:Thing"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Individual: <span property="rdfs:label">fileType_archive</span></h3>
+
+          <p property="rdfs:comment">Indicates the file is a archive file.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+          </dl>
+        </div>
+
+        <div id="fileType_binary" about="#fileType_binary" typeof="owl:Thing"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Individual: <span property="rdfs:label">fileType_binary</span></h3>
+
+          <p property="rdfs:comment">Indicates the file is not a text file.  <a href="#fileType_archive"><code>spdx:filetype_archive</code></a> is preferred for archive files even though they are binary.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+          </dl>
+        </div>
+
+        <div id="fileType_other" about="#fileType_other" typeof="owl:Thing"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Individual: <span property="rdfs:label">fileType_other</span></h3>
+
+          <p property="rdfs:comment">Indicates the file is not a <a href="#fileType_source">source</a>, <a href="#fileType_archive">archive</a> or <a href="#fileType_binary">binary</a> file.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+          </dl>
+        </div>
+
+        <div id="fileType_source" about="#fileType_source" typeof="owl:Thing"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Individual: <span property="rdfs:label">fileType_source</span></h3>
+
+          <p property="rdfs:comment">Indicates the file is a source code file.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+          </dl>
+        </div>
+
+        <div id="none" about="#none" typeof="owl:Thing"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Individual: <span property="rdfs:label">none</span></h3>
+
+          <p property="rdfs:comment">When this value is used as the object of a property it indicates that the preparer of the <a href="#SpdxDocument">SpdxDocument</a> believes that there is no value for the property.  This value should only be used if there is sufficient evidence to support this contention.</p>
+          
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+          </dl>
+
+
+          <div typeof="owl:Class" about="[_:NoneClass]"> 
+            <span rel="owl:oneOf"> 
+              <span typeof="rdf:List"> 
+                <span rel="rdf:first" resource="#none" />
+                <span rel="rdf:rest" resource="rdf:nil"/>
+              </span> 
+            </span>
+          </div>
+        </div>
+
+
+        <div id="noassertion" about="#noassertion" typeof="owl:Thing"><span rel="rdfs:isDefinedBy" resource="#"/>
+          <h3>Individual: <span property="rdfs:label">noassertion</span></h3>
+
+          <p property="rdfs:comment">Indicates that the preparer of the SPDX document is not making any assertion
+            regarding the value of this field.</p>
+
+          <dl>
+            <dt>Status:</dt> <dd property="vs:term_status">testing</dd> 
+          </dl>
+
+          <div typeof="owl:Class" about="[_:NoAssertionClass]"> 
+            <span rel="owl:oneOf"> 
+              <span typeof="rdf:List"> 
+                <span rel="rdf:first" resource="#noassertion" />
+                <span rel="rdf:rest" resource="rdf:nil"/>
+              </span> 
+            </span>
+          </div>
+
+        </div>
+
+        <div id="footer"><div id="footer-inner" class="region region-footer">
+            <div class="content">
+              <p><a href="/about/spdx">About SPDX</a> |  <a href="/about/spdx/contact">Contact Us</a> | <a href="/codeOfConduct">Code of Conduct</a> | <a href="http://www.linuxfoundation.org/privacy">Privacy Policy</a> | <a href="http://www.linuxfoundation.org/terms">Terms of Use</a></p>
+            </div>
+            
+          </div> </div> <!-- /#footer-inner, /#footer -->
+
+    </div> </div> <!-- /#page-inner, /#page -->
+  <div id="foot">
+    <p>
+      &#169; 2008-2011 The Linux Foundation.  Linux is a registered trademark of Linus Torvalds.
+      <br />
+      Software Package Data Exchange and SPDX are trademarks of the Linux Foundation.
+      <br />
+      Please see our <a href = "/codeOfConduct">code of conduct</a> and
+      <a href = "http://www.linuxfoundation.org/privacy">privacy policy</a>.
+    </p>
+  </div>
+
+</body>
+</html>

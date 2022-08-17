@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl"?>
+<rdf:RDF xml:lang="en"
+         xmlns="http://spx.org/rdf/ns/sdpx#" 
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  	<SPDXDoc rdf:about="http://spdx.org/tomcat6-0-26/2010531/goneall">
+		 <SPDXVersion>SPDX-1.0</SPDXVersion>
+		 <UniqueID>tomcat6-0-26/2010531/goneall</UniqueID>
+		<CreatedBy>SPDX Committee</CreatedBy>
+		<Created>2010-05-31T18:30:22Z</Created>
+	  <hasPackageOverview>
+		  <PackageOverview rdf:about="http://spdx.org/apache-tomcat-6.0.26">
+			<DeclaredName>Apache Tomcat</DeclaredName>
+			<FileName>apache-tomcat-6.0.26-src.zip</FileName>
+			<URL rdf:resource="http://apache.thelorne.com/tomcat/tomcat-6/v6.0.26/bin/apache-tomcat-6.0.26.zip" />
+			<SourceInfo>No additional information</SourceInfo>
+			<DeclaredLicense rdf:resource="http://spdx.org/rdf/licenses/asl20" />
+			<DetectedLicense rdf:resource="http://spdx.org/rdf/licenses/asl20" />
+			<DetectedLicense rdf:resource="http://spdx.org/rdf/licenses/epl20" />
+			<DeclaredCopyright>Apache Foundation</DeclaredCopyright>
+			<CopyrightDate>1997-2007</CopyrightDate>
+			<ShortDesc>A Java Servlet and Java Servet Pages specifications implementation.</ShortDesc>
+		  </PackageOverview>
+	  </hasPackageOverview>
+	</SPDXDoc>
+</rdf:RDF>
+

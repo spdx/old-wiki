@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms">
+    <xhv:icon rdf:resource="http://spdx.org/sites/all/themes/spdx/favicon.ico"/>
+    <xhv:shortcut rdf:resource="http://spdx.org/sites/all/themes/spdx/favicon.ico"/>
+    <xhv:stylesheet rdf:resource="http://spdx.org/sites/all/themes/spdx/style.css?a"/>
+    <xhv:stylesheet rdf:resource="http://spdx.org/sites/all/themes/spdx/universe_nav.css?a"/>
+    <xhv:stylesheet rdf:resource="http://spdx.org/sites/all/themes/spdx/zen.css?a"/>
+  </rdf:Description>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#hasExtractedLicensingInfo">
+    <rdfs:label>hasExtractedLicensingInfo</rdfs:label>
+    <rdfs:comment>Indicates that a particular ExtractedLicensingInfo was defined in the subject SpdxDocument.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class rdf:about="http://spdx.org/rdf/terms#SpdxDocument">
+        <rdfs:label>SpdxDocument</rdfs:label>
+        <rdfs:comment>An SdpxDocument represents the results of a contents, provenance, ownership and licensing analysis of exactly one software package.  This is, effectively, the top level of SPDX information.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917d"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917f"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917h"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917j"/>
+        <vs:term_status>testing</vs:term_status>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy>
+      <owl:Ontology rdf:about="http://spdx.org/rdf/terms#">
+        <xhv:home rdf:resource="http://spdx.org/"/>
+        <rdfs:comment>
+          This specification describes the SPDX language, defined as a dictionary of named properties and classes using W3C's RDF Technology.
+
+          SPDX is a designed to allow the exchange of data about software packages.  This information includes general information about the package, licensing information about the package as a whole, a manifest of files contained in the package and licensing information related to the contained files.
+        </rdfs:comment>
+        <owl:imports rdf:resource="http://usefulinc.com/ns/doap"/>
+        <owl:versionInfo>{{version}}</owl:versionInfo>
+      </owl:Ontology>
+    </rdfs:isDefinedBy>
+    <rdfs:range>
+      <owl:Class rdf:about="http://spdx.org/rdf/terms#ExtractedLicensingInfo">
+        <rdfs:label>ExtractedLicensingInfo</rdfs:label>
+        <rdfs:comment>An ExtractedLicensingInfo represents a license or licensing notice that was found in the package.  Any license text that is recognized as a license may be represented as a License rather than a ExtractedLicensingInfo.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917bu"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917bv"/>
+        <vs:term_status>testing</vs:term_status>
+      </owl:Class>
+    </rdfs:range>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#packageVerificationCodeExcludedFile">
+    <rdfs:label>packageVerificationCodeExcludedFile</rdfs:label>
+    <rdfs:comment>A file that was excluded when calculating the package verification code.  This is usually be a file containg SPDX data regarding the package.  If a package contains more than one SPDX file all SPDX files must be excluded from the package verification code.  If this is not done each recalculation of the package verification code in one file will require the other to be recalculated to be valid which will require the original which will require the original file's be recalculated, ad infinitum.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class rdf:about="http://spdx.org/rdf/terms#PackageVerificationCode">
+        <rdfs:label>PackageVerificationCode</rdfs:label>
+        <rdfs:comment>A PackageVerificationCode is a value that allows authentication of the package.  This differs from the Checksum in that it uses an algorithm that allows the the SPDX file to be embedded in the pacakge.  This digest is produced using a cryptographic hash algorithm applied to a manifest of the package.  Some files in the package (ie, the SPDX files) are explicitly excluded from the digest.  This allows those files to not impact the verification code.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917bk"/>
+        <vs:term_status>testing</vs:term_status>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#reviewed">
+    <rdfs:label>reviewed</rdfs:label>
+    <rdfs:comment>The review property relates a SpdxDocument to the review history.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#SpdxDocument"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range>
+      <owl:Class rdf:about="http://spdx.org/rdf/terms#Review">
+        <rdfs:label>Review</rdfs:label>
+        <rdfs:comment>A Review represents a signoff by an individual on the information in an SpdxDocument.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917bq"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917br"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917bs"/>
+        <vs:term_status>testing</vs:term_status>
+      </owl:Class>
+    </rdfs:range>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#algorithm">
+    <rdfs:label>algorithm</rdfs:label>
+    <rdfs:comment>Identifies the algorithm used to produce the subject Checksum.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class rdf:about="http://spdx.org/rdf/terms#Checksum">
+        <rdfs:label>Checksum</rdfs:label>
+        <rdfs:comment>A Checksum is simple value that allows the contents of a file to be authenticated.  Even small changes to the content of the file will change it's checksum value.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917bh"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917bi"/>
+        <vs:term_status>testing</vs:term_status>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <owl:Thing rdf:about="http://spdx.org/rdf/terms#checksumAlgorithm_sha1">
+            <rdfs:label>checksumAlgorithm_sha1</rdfs:label>
+            <rdfs:comment>Indicates the algorithm used was SHA-1</rdfs:comment>
+            <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <vs:term_status>testing</vs:term_status>
+          </owl:Thing>
+        </owl:oneOf>
+      </owl:Class>
+    </rdfs:range>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#artifactOf">
+    <rdfs:label>artifactOf</rdfs:label>
+    <rdfs:comment>
+            Indicates the project in which the file originated.
+          
+            Tools must preserve doap:hompage and doap:name properties and the URI (if one is known) of doap:Project resources that are values of this property.  All other properties of doap:Projects are not directly supported by SPDX and may be dropped when translating to or from some SPDX formats.
+
+          </rdfs:comment>
+    <rdfs:domain>
+      <owl:Class rdf:about="http://spdx.org/rdf/terms#File">
+        <rdfs:label>File</rdfs:label>
+        <rdfs:comment>A File represents a named sequence of information that is contained in a software package.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917an"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917ap"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917ar"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917at"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917av"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917ax"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917az"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917bb"/>
+        <vs:term_status>testing</vs:term_status>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://usefulinc.com/ns/doap#Project"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#checksumAlgorithm_sha1"/>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#checksumValue">
+    <rdfs:label>checksumValue</rdfs:label>
+    <rdfs:comment>The checksumValue property provides a hex encoded digest value produced using a specific algorithm.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Checksum"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#created">
+    <rdfs:label>created</rdfs:label>
+    <rdfs:comment>The date and time at which the SpdxDocument was created.  This value must in UTC and have 'Z' as its timezone indicator.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class rdf:about="http://spdx.org/rdf/terms#CreationInfo">
+        <rdfs:label>CreationInfo</rdfs:label>
+        <rdfs:comment>A CreationInfo provides information about the individuals, organizations and tools involved in the creation of an SpdxDocument.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917bm"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917bn"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917bo"/>
+        <vs:term_status>testing</vs:term_status>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#creationInfo">
+    <rdfs:label>creationInfo</rdfs:label>
+    <rdfs:comment>The creationInfo property relates an SpdxDocument to a set of information about the creation of the SpdxDocument.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#SpdxDocument"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://spdx.org/rdf/terms#CreationInfo"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#creator">
+    <rdfs:label>creator</rdfs:label>
+    <rdfs:comment>The name and, optionally, contact information of a person, organization or tool that created, or was used to create, the SpdxDocument.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#CreationInfo"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#describesPackage">
+    <rdfs:label>describesPackage</rdfs:label>
+    <rdfs:comment>The describesPackage property relates an SpdxDocument to the package which it describes.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#SpdxDocument"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range>
+      <owl:Class rdf:about="http://spdx.org/rdf/terms#Package">
+        <rdfs:label>Package</rdfs:label>
+        <rdfs:comment>A Package represents a piece software that is delivered as a single unit.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917ab"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917ad"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917af"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917ah"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917aj"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917al"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917l"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917n"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917p"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917r"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917t"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917v"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917x"/>
+        <rdfs:subClassOf rdf:nodeID="bn1307468544917z"/>
+        <vs:term_status>testing</vs:term_status>
+      </owl:Class>
+    </rdfs:range>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#description">
+    <rdfs:label>description</rdfs:label>
+    <rdfs:comment>Provides a detailed description of the package.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#downloadLocation">
+    <rdfs:label>downloadLocation</rdfs:label>
+    <rdfs:comment>The URI at which this package is available for download.  Private (ie, not publicly reachable) URIs are acceptable as values of this property.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#extractedText">
+    <rdfs:label>extractedText</rdfs:label>
+    <rdfs:comment>Verbatim license or licensing notice text that was discovered.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#ExtractedLicensingInfo"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#fileName">
+    <rdfs:label>fileName</rdfs:label>
+    <rdfs:comment>The name of the file relative to the root of the package.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#File"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#fileType">
+    <rdfs:label>fileType</rdfs:label>
+    <rdfs:comment>The type of the file.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#File"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <owl:Thing rdf:about="http://spdx.org/rdf/terms#fileType_source">
+            <rdfs:label>fileType_source</rdfs:label>
+            <rdfs:comment>Indicates the file is a source code file.</rdfs:comment>
+            <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <vs:term_status>testing</vs:term_status>
+          </owl:Thing>
+          <owl:Thing rdf:about="http://spdx.org/rdf/terms#fileType_archive">
+            <rdfs:label>fileType_archive</rdfs:label>
+            <rdfs:comment>Indicates the file is a archive file.</rdfs:comment>
+            <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <vs:term_status>testing</vs:term_status>
+          </owl:Thing>
+          <owl:Thing rdf:about="http://spdx.org/rdf/terms#fileType_binary">
+            <rdfs:label>fileType_binary</rdfs:label>
+            <rdfs:comment>Indicates the file is not a text file.  spdx:filetype_archive is preferred for archive files even though they are binary.</rdfs:comment>
+            <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <vs:term_status>testing</vs:term_status>
+          </owl:Thing>
+          <owl:Thing rdf:about="http://spdx.org/rdf/terms#fileType_other">
+            <rdfs:label>fileType_other</rdfs:label>
+            <rdfs:comment>Indicates the file is not a source, archive or binary file.</rdfs:comment>
+            <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <vs:term_status>testing</vs:term_status>
+          </owl:Thing>
+        </owl:oneOf>
+      </owl:Class>
+    </rdfs:range>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#fileType_archive"/>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#fileType_binary"/>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#fileType_other"/>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#fileType_source"/>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#hasFile">
+    <rdfs:label>hasFile</rdfs:label>
+    <rdfs:comment>Indicates that a particular file belongs to a package.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://spdx.org/rdf/terms#File"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#licenseDeclared">
+    <rdfs:label>licenseDeclared</rdfs:label>
+    <rdfs:comment>The licensing that the creators of the software in the package, or the packager, have declared.  Declarations by the original software creator should be preferred, if they exist.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://spdx.org/rdf/terms#AnyLicenseInfo">
+            <rdfs:label>AnyLicenseInfo</rdfs:label>
+            <rdfs:comment>The AnyLicenseInfo class includes all resources that represent licensing information.</rdfs:comment>
+            <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://spdx.org/rdf/terms#License">
+                <rdfs:label>License</rdfs:label>
+                <rdfs:comment>A License represents a software copyright license.  This class is used by the SPDX license list to represent standard license.</rdfs:comment>
+                <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+                <rdfs:subClassOf rdf:nodeID="bn1307468544917bd"/>
+                <rdfs:subClassOf rdf:nodeID="bn1307468544917bf"/>
+                <vs:term_status>testing</vs:term_status>
+              </owl:Class>
+              <rdf:Description rdf:about="http://spdx.org/rdf/terms#ExtractedLicensingInfo"/>
+              <owl:Class rdf:about="http://spdx.org/rdf/terms#ConjunctiveLicenseSet">
+                <rdfs:label>ConjunctiveLicenseSet</rdfs:label>
+                <rdfs:comment>A ConjunctiveLicenseSet represents a set of licensing information all of which apply.</rdfs:comment>
+                <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+                <rdfs:subClassOf rdf:nodeID="bn1307468544917bx"/>
+                <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+                <vs:term_status>testing</vs:term_status>
+              </owl:Class>
+              <owl:Class rdf:about="http://spdx.org/rdf/terms#DisjunctiveLicenseSet">
+                <rdfs:label>DisjunctiveLicenseSet</rdfs:label>
+                <rdfs:comment>A DisjunctiveLicenseSet represents a set of licensing information only one of which applies.  This class implies that the copier gets to choose which of these licenses they would prefer to use.</rdfs:comment>
+                <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+                <rdfs:subClassOf rdf:nodeID="bn1307468544917bz"/>
+                <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Container"/>
+                <vs:term_status>testing</vs:term_status>
+              </owl:Class>
+            </owl:unionOf>
+            <vs:term_status>testing</vs:term_status>
+          </owl:Class>
+          <owl:Class rdf:nodeID="nbn1307468544917cxNNoneClass">
+            <owl:oneOf rdf:parseType="Collection">
+              <owl:Thing rdf:about="http://spdx.org/rdf/terms#none">
+                <rdfs:label>none</rdfs:label>
+                <rdfs:comment>When this value is used as the object of a property it indicates that the preparer of the SpdxDocument believes that there is no value for the property.  This value should only be used if there is sufficient evidence to support this contention.</rdfs:comment>
+                <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+                <vs:term_status>testing</vs:term_status>
+              </owl:Thing>
+            </owl:oneOf>
+          </owl:Class>
+          <owl:Class rdf:nodeID="nbn1307468544917czNNoAssertionClass">
+            <owl:oneOf rdf:parseType="Collection">
+              <owl:Thing rdf:about="http://spdx.org/rdf/terms#noassertion">
+                <rdfs:label>noassertion</rdfs:label>
+                <rdfs:comment>Indicates that the preparer of the SPDX document is not making any assertion
+            regarding the value of this field.</rdfs:comment>
+                <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+                <vs:term_status>testing</vs:term_status>
+              </owl:Thing>
+            </owl:oneOf>
+          </owl:Class>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#licenseInfoFromFiles">
+    <rdfs:label>licenseInfoFromFiles</rdfs:label>
+    <rdfs:comment>Licensing information that was discovered directly in the package.  There will be an instance of this property for each distinct value of all licenseInfoInFile properties of all files contained in the package.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://spdx.org/rdf/terms#SimpleLicenseInfo">
+            <rdfs:label>SimpleLicenseInfo</rdfs:label>
+            <rdfs:comment>The SimpleLicenseInfo class includes all resources that represent simple, atomic, licensing information.</rdfs:comment>
+            <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+            <owl:unionOf rdf:nodeID="nbn1307468544917ceNsimpLicMem1"/>
+            <vs:term_status>testing</vs:term_status>
+          </owl:Class>
+          <rdf:Description rdf:about="nbn1307468544917cxNNoneClass"/>
+          <rdf:Description rdf:about="nbn1307468544917czNNoAssertionClass"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#licenseInfoInFile">
+    <rdfs:label>licenseInfoInFile</rdfs:label>
+    <rdfs:comment>Licensing information that was discovered directly in the subject file.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#File"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:nodeID="nbn1307468544917elNlicInFileRange1"/>
+      </owl:Class>
+    </rdfs:range>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#licenseText">
+    <rdfs:label>licenseText</rdfs:label>
+    <rdfs:comment>The full text of the license.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#License"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#name">
+    <rdfs:label>name</rdfs:label>
+    <rdfs:comment>The full name of the package including version information.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#noassertion"/>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#none"/>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#packageFileName">
+    <rdfs:label>packageFileName</rdfs:label>
+    <rdfs:comment>The base name of the package file name.  For example, zlib-1.2.5.tar.gz.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#packageVerificationCode">
+    <rdfs:label>packageVerificationCode</rdfs:label>
+    <rdfs:comment>A manifest based digest (the algorithm is defined in section [link goes here]) of the package.  This allows consumers of this dataset to determine if a package they have in hand is identical to the package from which the data was produced.  This algorithm works even if the SPDX document is included in the package.  This algorithm is described in detail in the SPDX spec.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://spdx.org/rdf/terms#PackageVerificationCode"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#packageVerificationCodeValue">
+    <rdfs:label>packageVerificationCodeValue</rdfs:label>
+    <rdfs:comment>The actual package verification code as a hex encoded value.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#PackageVerificationCode"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#referencesFile">
+    <rdfs:label>referencesFile</rdfs:label>
+    <rdfs:comment>Indicates that the intellectual property metadata of the value is described in SpdxDocument.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#SpdxDocument"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://spdx.org/rdf/terms#File"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#reviewDate">
+    <rdfs:label>reviewDate</rdfs:label>
+    <rdfs:comment>The date and time at which the SpdxDocument was reviewed.  This value must be in UTC and have 'Z' as its timezone indicator.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Review"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#reviewer">
+    <rdfs:label>reviewer</rdfs:label>
+    <rdfs:comment>The name and, optionally, contact information of the person who performed the review.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Review"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#sourceInfo">
+    <rdfs:label>sourceInfo</rdfs:label>
+    <rdfs:comment>Allows the producer(s) of the SPDX document to describe how the package was acquired and/or changed from the original source.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#specVersion">
+    <rdfs:label>specVersion</rdfs:label>
+    <rdfs:comment>Identifies the version of this specification that was used to produce this SPDX document.  Currently the only supported value is SPDX-1.0.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#SpdxDocument"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#summary">
+    <rdfs:label>summary</rdfs:label>
+    <rdfs:comment>Provides a short description of the package.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://spdx.org/rdf/terms#Package"/>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#ConjunctiveLicenseSet"/>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#DisjunctiveLicenseSet"/>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#SimpleLicenseInfo"/>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#checksum">
+    <rdfs:label>checksum</rdfs:label>
+    <rdfs:comment>The checksum property provides a digest of a File or Package. This allows consumers of the SPDX document to verify that the content of the files or package has not changed.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#Package"/>
+          <rdf:Description rdf:about="http://spdx.org/rdf/terms#File"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://spdx.org/rdf/terms#Checksum"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#copyrightText">
+    <rdfs:label>copyrightText</rdfs:label>
+    <rdfs:comment>The text of copyright declarations discovered in the Package or File.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:nodeID="nbn1307468544917crNcpTxtDomain1"/>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+          <rdf:Description rdf:about="nbn1307468544917cxNNoneClass"/>
+          <rdf:Description rdf:about="nbn1307468544917czNNoAssertionClass"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#licenseComments">
+    <rdfs:label>licenseComments</rdfs:label>
+    <rdfs:comment>The licenseComments property allows the preparer of the SPDX document to describe why the licensing in spdx:licenseConcluded was chosen.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description>
+        <owl:unionOf rdf:nodeID="nbn1307468544917dlNlicCommDomain1"/>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#licenseConcluded">
+    <rdfs:label>licenseConcluded</rdfs:label>
+    <rdfs:comment>The licensing that the preparer of this SPDX document has concluded, based on the evidence, actual applies to the package.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:nodeID="nbn1307468544917dpNlicConclDomain1"/>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:nodeID="nbn1307468544917dtNlicConclRange1"/>
+      </owl:Class>
+    </rdfs:range>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://spdx.org/rdf/terms#licenseId">
+    <rdfs:label>licenseId</rdfs:label>
+    <rdfs:comment>A short name for the license that is at least 3 characters long and made up of the characters from the set 'a'-'z', 'A'-'Z', '0'-'9', '+', '_', '.', and '-'.  Formally, all licenseId values must match the regular expression: [-+_.a-zA-Z0-9]{3,}</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description>
+        <owl:unionOf rdf:nodeID="nbn1307468544917ecNlicIdDomain1"/>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://spdx.org/rdf/terms#member">
+    <rdfs:label>member</rdfs:label>
+    <rdfs:comment>A license, or other licensing information, that is a member of the subject license set.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:nodeID="nbn1307468544917eqNmemberDomain1"/>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://spdx.org/rdf/terms#"/>
+    <rdfs:range rdf:resource="http://spdx.org/rdf/terms#AnyLicenseInfo"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#member"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#AnyLicenseInfo"/>
+  <rdf:Description rdf:about="http://spdx.org/rdf/terms#License"/>
+  <owl:Restriction rdf:nodeID="bn1307468544917ab">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#copyrightText"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917ad">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseComments"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917af">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseDeclared"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917ah">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseConcluded"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917aj">
+    <owl:minCardinality>1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseInfoFromFiles"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917al">
+    <owl:minCardinality>1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#hasFile"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917an">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#fileName"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917ap">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#fileType"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917ar">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#copyrightText"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917at">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseComments"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917av">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseConcluded"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917ax">
+    <owl:minCardinality>1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseInfoInFile"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917az">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#checksum"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bb">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#artifactOf"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bd">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseId"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bf">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseText"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bh">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#algorithm"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bi">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#checksumValue"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bk">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#packageVerificationCodeValue"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bm">
+    <owl:minCardinality>1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#creator"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bn">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#created"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bo">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bq">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#reviewer"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917br">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#reviewDate"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bs">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bu">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#licenseId"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bv">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#extractedText"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bx">
+    <owl:minCardinality>2</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#member"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917bz">
+    <owl:minCardinality>2</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#member"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917d">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#specVersion"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917f">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#creationInfo"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917h">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#describesPackage"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917j">
+    <owl:minCardinality>1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#referencesFile"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917l">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#name"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917n">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#summary"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917p">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#description"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917r">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#packageFileName"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917t">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#downloadLocation"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917v">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#checksum"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917x">
+    <owl:cardinality>1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#packageVerificationCode"/>
+  </owl:Restriction>
+  <owl:Restriction rdf:nodeID="bn1307468544917z">
+    <owl:maxCardinality>1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://spdx.org/rdf/terms#sourceInfo"/>
+  </owl:Restriction>
+</rdf:RDF>

@@ -1,0 +1,43 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:spdx="http://spdx.org/ont/#"
+    xmlns="http://spdx.org/rdf/notional-example#">
+  <spdx:SPDXDoc rdf:about="http://spdx.org/rdf/notional-example#tomcat6-0-26-2010531-goneall">
+    <spdx:Created>2010-05-31T18:30:22Z</spdx:Created>
+    <spdx:CreatedBy>SPDX Committee</spdx:CreatedBy>
+    <spdx:ReviewedBy>SPDX Reviewers</spdx:ReviewedBy>
+    <spdx:SPDXVersion>SPDX-1.0</spdx:SPDXVersion>
+    <spdx:DescribesPackage>
+      <spdx:Package rdf:about="http://spdx.org/rdf/notional-example#tomcat-6-0-26">
+        <spdx:SHA1>this should really be a SHA1...83b46d9346bcbc517dbf6f1cac9ef8b1</spdx:SHA1>
+        <spdx:DeclaredName>Apache Tomcat</spdx:DeclaredName>
+        <spdx:FileName>apache-tomcat-6.0.26-src.zip</spdx:FileName>
+        <spdx:URL rdf:resource="http://apache.thelorne.com/tomcat/tomcat-6/v6.0.26/bin/apache-tomcat-6.0.26.zip"/>
+        <spdx:SourceInfo>downloaded from thelorne.com, not Apache site for some reason. See URL</spdx:SourceInfo>
+        <spdx:hasDeclaredLicense rdf:resource="http://spdx.org/rdf/licenses/asl20"/>
+        <spdx:hasDetectedLicense rdf:resource="http://spdx.org/rdf/licenses/asl20"/>
+        <spdx:hasDetectedLicense rdf:resource="http://spdx.org/rdf/licenses/epl20"/>
+        <spdx:hasDetectedLicense rdf:resource="http://spdx.org/rdf/notional-example#License-1"/>
+        <spdx:hasCopyright>Apache Foundation 1997-2007</spdx:hasCopyright>
+        <spdx:ShortDescription>A Java Servlet and Java Servet Pages specifications implementation.</spdx:ShortDescription>
+        <spdx:Description>Apache Tomcat is the servlet container that is used in the official Reference Implementation for the Java Servlet and JavaServer Pages technologies. The Java Servlet and JavaServer Pages specifications are developed by Sun under the Java Community Process. Apache Tomcat is developed in an open and participatory environment and released under the Apache Software License. Apache Tomcat is intended to be a collaboration of the best-of-breed developers from around the world. We invite you to participate in this open development project. To learn more about getting involved, click here. Apache Tomcat powers numerous large-scale, mission-critical web applications across a diverse range of industries and organizations. Some of these users and their stories are listed on the PoweredBy wiki page</spdx:Description>
+        <spdx:hasFile>
+          <spdx:File rdf:about="http://spdx.org/rdf/notional-example#I4">
+            <spdx:SHA1>c40ff76afed9a5af526849cb7d849427</spdx:SHA1>
+            <spdx:FileName>apache-tomcat-6.0.26-src/java/javax/annotation/security/PermitAll.java</spdx:FileName>
+            <spdx:hasFileCopyright>unknown</spdx:hasFileCopyright>
+            <spdx:hasFileLicense rdf:resource="http://spdx.org/rdf/licenses/asl20"/>
+            <spdx:FileType>source</spdx:FileType>
+          </spdx:File>
+        </spdx:hasFile>
+      </spdx:Package>
+    </spdx:DescribesPackage>
+    <spdx:hasNonStandardLicense> 
+          <spdx:License rdf:about="http://spdx.org/rdf/notional-example#License-1">
+            <spdx:LicenseText><![CDATA[/*   Here is my non-standard license. Do with this source file as you wish.]]></spdx:LicenseText>
+            <spdx:LicenseID>1</spdx:LicenseID>
+            <spdx:LicenseURL>http://spdx.org/unknownURL</spdx:LicenseURL>
+          </spdx:License>
+    </spdx:hasNonStandardLicense>
+   </spdx:SPDXDoc>
+</rdf:RDF>
